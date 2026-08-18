@@ -1,0 +1,691 @@
+Navrhovaný obsah hypotézy
+1. Problém: reprezentace není vjem
+
+Začal bych základní otázkou:
+
+Co běžným neuronovým architekturám chybí, pokud chceme vysvětlit kontinuální vjem?
+
+Rozlišíme:
+
+classification
+
+=representation
+
+=perception
+
+=phenomenal experience.
+
+Síť schopná říct cat ještě nevysvětluje existenci průběžného interního stavu „vidím kočku před sebou“.
+
+Tady definujeme náš deep percept: ne jako qualia, ale jako integrovaný, persistentní, dynamický interní perceptuální stav.
+
+Výstup kapitoly: přesná definice toho, co se snažíme vytvořit a měřit.
+
+2. H1 — Globally clockless computation
+
+První mechanistická hypotéza:
+
+Globální diskrétní update clock není nutný pro neuronální výpočet a jeho odstranění umožňuje dynamiku závislou na skutečném relativním časování lokálních událostí.
+
+Každý neuron bude mít vlastní lifecycle:
+
+N
+i
+	​
+
+(t)
+
+a nebude existovat:
+
+S
+t
+	​
+
+→S
+t+1
+	​
+
+
+jako povinný update celé sítě.
+
+Místo toho:
+
+event
+i
+	​
+
+(t)→N
+j
+	​
+
+→event
+j
+	​
+
+(t+Δt).
+
+Důležité: clockless ≠ absence času.
+
+Cognia
+
+Engine musí podporovat autonomní/event-driven jednotky a synaptická zpoždění.
+
+Experiment
+
+Stejná síť:
+
+A: synchronous update
+B: asynchronous event-driven update
+
+a porovnání jejich state-space dynamics.
+
+3. H2 — Stochastic spontaneous activity
+
+Nenulová spontánní aktivita není pouze noise, ale umožňuje síti kontinuálně explorovat vlastní stavový prostor.
+
+Pro neuron:
+
+P(spike
+i
+	​
+
+∣no external input)>0.
+
+Externí informace potom pravděpodobnost modifikuje:
+
+P(spike
+i
+	​
+
+,t)=F(I
+i
+	​
+
+,S
+i
+	​
+
+,…).
+
+Síť tedy není bez vstupu mrtvá.
+
+Důležitá predikce:
+
+noise=0
+
+nemusí být optimální a
+
+noise→∞
+
+také ne.
+
+Může existovat:
+
+σ
+∗
+
+při kterém je schopnost tvorby strukturovaných interních stavů maximální.
+
+Cognia
+
+Stochastic neuron + parametrizovatelný baseline firing.
+
+Experiment
+
+Sweep:
+
+σ=0→σ
+high
+	​
+
+
+a hledání vztahu mezi stochasticitou a kvalitou metastabilních reprezentací.
+
+4. H3 — Endogenní oscilátory jako časová struktura
+
+Tohle bych udělal samostatnou kapitolu.
+
+Oscilátory nejsou globální hodiny výpočtu. Jsou interními zdroji časově strukturovaného signálu.
+
+Oscilátor:
+
+O
+k
+	​
+
+(t)
+
+může modulovat:
+
+P(spike
+i
+	​
+
+,t)=F(I
+i
+	​
+
+,S
+i
+	​
+
+,O
+k
+	​
+
+(t)).
+
+Může existovat mnoho:
+
+O
+1
+	​
+
+,O
+2
+	​
+
+,…,O
+n
+	​
+
+
+s různými:
+
+f,ϕ,A.
+
+Neuron může být ovlivněn několika současně.
+
+Klíčová myšlenka
+
+Informace není pouze:
+
+kdo spikuje
+
+ale:
+
+kdo + kdy + vzhledem k 
+c
+ˇ
+emu.
+Cognia
+
+Oscillator musí být prvek sítě, nikoli scheduler enginu.
+
+Experiment
+
+Zachovat firing rate a spike count, ale provést phase scrambling.
+
+Tohle je jeden z nejsilnějších falsifikačních testů celé teorie. Rešerše ho také identifikovala jako klíčový směr.
+
+5. H4 — Nekumutativní neuronální dynamika
+
+Tuhle bych po našem posledním rozhovoru určitě povýšil na samostatnou hypotézu.
+
+Výsledný interní stav závisí nejen na množině událostí, ale také na jejich pořadí a relativním časování.
+
+Formálně:
+
+F
+B
+	​
+
+(F
+A
+	​
+
+(S))
+
+=F
+A
+	​
+
+(F
+B
+	​
+
+(S)).
+
+Síť tedy není pouze funkcí:
+
+S=f(inputs),
+
+ale:
+
+S(t)=F(history).
+
+STDP je jeden konkrétní mechanismus, kterým taková order dependence vzniká.
+
+Cognia
+
+Engine nesmí zahodit kauzální pořadí událostí jejich agregací do jednoho update kroku.
+
+Experiment
+
+Stejné události:
+
+A→B
+
+versus:
+
+B→A.
+
+Měříme:
+
+D(S
+AB
+	​
+
+,S
+BA
+	​
+
+).
+6. H5 — Self-organization a symmetry breaking
+
+Tady začínáme vysvětlovat vznik jednoho perceptu.
+
+Z množiny konkurenčních mikrostavů může síť vlastní dynamikou spontánně vytvořit koherentní makrostav.
+
+Například:
+
+P(A)≈P(B)
+
+se díky rekurenci, stochasticitě a vzájemné interakci změní na:
+
+A≫B.
+
+Žádný controller nemusí říct:
+
+„vyber A“.
+
+To je důležité.
+
+Percept není sestaven centrálním konstruktorem. Percept se samoorganizuje.
+
+Cognia
+
+Potřebujeme umožnit:
+
+lokální excitaci,
+inhibici,
+recurrence,
+stochasticitu,
+případně homeostatické mechanismy.
+Experiment
+
+Bistabilní/ambivalentní vstupy.
+
+Síť musí spontánně vytvářet jednotlivé koherentní interpretace a případně mezi nimi přecházet.
+
+7. H6 — Metastabilní perceptuální manifold
+
+Tohle bych považoval za jádro celé hypotézy.
+
+Percept není aktivace konkrétního neuronu ani statický pattern. Je metastabilní oblast trajektorie distribuovaného stavového prostoru sítě.
+
+Celý systém:
+
+S(t)=(s
+1
+	​
+
+,s
+2
+	​
+
+,…,s
+n
+	​
+
+)
+
+se pohybuje v prostoru S.
+
+Percept P
+A
+	​
+
+ odpovídá oblasti:
+
+M
+A
+	​
+
+⊂S.
+
+Jednotlivé neurony mohou měnit aktivitu:
+
+s
+i
+	​
+
+(t)
+
+=s
+i
+	​
+
+(t+Δt),
+
+ale systém zůstává:
+
+S(t)∈M
+A
+	​
+
+.
+
+To je velmi důležité.
+
+Struktura přetrvává, její nositelé se mohou měnit.
+
+První rešerše už ukázala silné precedenty pro metastabilní dynamiku, takže novost nebude samotná existence metastability.
+
+Cognia
+
+Potřebujeme nástroje pro záznam celého state-space, ne jen output neuronů.
+
+Experiment
+
+PCA/UMAP nebo jiné state-space analýzy, lifetime, separabilita, transition entropy a perturbace.
+
+8. H7 — Hystereze a kontinuální existence vnitřního světa
+
+Nový percept nevzniká z nulového stavu; vzniká transformací předchozího globálního stavu.
+
+Tedy:
+
+S(t+Δt)=F(S(t),I(t)).
+
+Nikoli:
+
+S=F(I).
+
+Proto stejný vstup:
+
+I
+
+může v závislosti na historii vést k:
+
+S
+A
+	​
+
+
+nebo:
+
+S
+B
+	​
+
+.
+
+Tady začíná být síť skutečně stavovým systémem.
+
+Cognia
+
+Žádné implicitní resetování mezi „samples“.
+
+Experiment musí běžet jako kontinuální zkušenost.
+
+Experiment
+
+Postupně měnit stimul:
+
+A→ambiguous→B
+
+a obráceně:
+
+B→ambiguous→A.
+
+Pokud systém vytváří persistentní interní model, jeho interpretace ambivalentní oblasti by měla záviset na historii.
+
+9. H8 — Predictive constraint
+
+Teprve sem bych umístil predictive processing.
+
+Stochasticita sama vytvoří obrovské množství stavů. Potřebujeme mechanismus, který některé stavy stabilizuje vzhledem ke světu.
+
+Senzorická prediction error omezuje prostor metastabilních stavů tak, aby dynamika konvergovala ke stavům schopným vysvětlovat a predikovat senzorický tok.
+
+Schematicky:
+
+World→Sensory(t)
+
+zatímco:
+
+S(t)→Prediction(t+Δt).
+
+Rozdíl:
+
+ϵ=Sensory−Prediction
+
+zpětně modifikuje dynamiku.
+
+To je podle mě odpověď na důležitou otázku:
+
+Proč stochastic síť nevytváří pouze nesmyslné halucinace?
+
+Protože realita představuje constraint.
+
+10. Learning — síť se neučí output, ale dynamiku
+
+Tohle může být jedna z nejzajímavějších kapitol.
+
+Klasicky:
+
+input→target
+
+a optimalizujeme chybu outputu.
+
+My chceme prozkoumat:
+
+Může se systém naučit strukturu vlastního stavového prostoru pomocí lokální plasticity?
+
+STDP:
+
+Δw
+ij
+	​
+
+=F(t
+j
+	​
+
+−t
+i
+	​
+
+)
+
+plus oscilace, stochasticita a prediction error mohou postupně deformovat dynamický prostor:
+
+S→S
+′
+
+tak, že zkušené struktury prostředí získávají stabilnější dynamické reprezentace.
+
+To bych pracovně nazýval tvým:
+
+Deep State Learning.
+
+Ale před publikací bychom museli prověřit, zda termín není zavádějící nebo už obsazený.
+
+11. Global Workspace jako přístup k perceptu
+
+Tady konečně přichází GWT/GNW.
+
+Navrhoval bych oddělit:
+
+formation of percept
+	​
+
+
+od:
+
+global availability of percept
+	​
+
+.
+
+Naše hypotéza řeší primárně první.
+
+GWT řeší hlavně druhé.
+
+Tedy:
+
+Sensory input
+	​
+
+→local dynamics
+→metastable perceptual state
+→workspace access
+→global broadcast.
+	​
+
+
+Workspace potom nemusí vytvářet vjem.
+
+Může umožnit ostatním systémům vjem využít.
+
+Tohle bude důležitá teoretická hranice vůči GNW.
+
+12. Perceptual Manifold — interní svět
+
+Teď můžeme definovat silnější celek.
+
+Jednotlivý percept:
+
+M
+A
+	​
+
+
+není celý vnitřní svět.
+
+Celková dynamická reprezentace:
+
+M(t)
+
+obsahuje současně prostorové, objektové, tělesné, časové a další vztahy.
+
+Různé moduly z ní získávají různé projekce:
+
+O
+i
+	​
+
+=f
+i
+	​
+
+(M).
+
+Například:
+
+M→
+⎩
+⎨
+⎧
+	​
+
+motorika
+pam
+e
+ˇ
+t
+ˇ
+jazyk
+hodnocen
+ı
+ˊ
+pozornost
+predikce
+	​
+
+
+To odpovídá tvé důležité myšlence:
+
+systém nepotřebuje pro každý modul znovu rekonstruovat okolní svět. Existuje průběžný interní dynamický stav, který mohou různé mechanismy využívat.
+
+13. Fenomenální hypotéza — qualia
+
+A až tady bych otevřel vědomí v silném smyslu.
+
+Formuloval bych to velmi opatrně:
+
+Phenomenal State Hypothesis: Pokud fenomenální zkušenost vzniká z neuronální dynamiky, kandidátním substrátem není jednotlivá aktivace ani diskrétní reprezentace, ale časově rozvinutý metastabilní globální dynamický stav systému.
+
+Ne:
+
+metastability=qualia.
+
+Ale:
+
+metastable perceptual dynamics
+⟶
+?
+	​
+
+phenomenal experience
+	​
+
+
+Otazník je vědecky zásadní.
+
+Rešerše nám pro přímé ztotožnění s qualia neposkytla důkaz.
+
+14. Predikce celé teorie
+
+Tady už musí být hypotéza nebezpečná sama sobě.
+
+Pokud má DPSH pravdu, očekáváme mimo jiné:
+
+odstranění globálního clocku změní třídu dosažitelných dynamických stavů;
+malé množství stochasticity bude výhodnější než nulová i extrémní stochasticita;
+phase scrambling poškodí určité interní reprezentace i při zachovaném firing rate;
+A→B vytvoří jinou trajektorii než B→A;
+ambivalentní vstup může spontánně skončit v jednom z několika metastabilních perceptů;
+předchozí stav ovlivní interpretaci současného vstupu;
+po odstranění externího stimulu může část perceptuální struktury dočasně přetrvávat;
+prediction error bude destabilizovat stavy nekompatibilní se senzorickou realitou;
+naučené prostředí změní geometrii spontánní dynamiky sítě;
+phase disruption a timing disruption způsobí jiný typ poškození než pouhé snížení firing rate.
+
+Každý bod se dá experimentálně napadnout.
+
+15. Experimentální roadmapa Cognia
+
+A publikaci bych od implementace neodděloval. Každá kapitola vytvoří Cognia experiment:
+
+Theory→Cognia mechanism→prediction→experiment→measurement→falsification
+	​
+
+
+Začal bych velmi malými sítěmi. Nechceme nejdřív vytvořit „umělý mozek“. Chceme zjistit, zda jednotlivé mechanismy vůbec produkují předpokládanou dynamiku.
+
+A výsledný výzkumný řetězec bych viděl:
+
+autonomous neurons
+	​
+
+→stochastic activity
+→oscillatory temporal structure
+→non-commutative dynamics
+→symmetry breaking
+→metastability
+→hysteresis
+→predictively constrained manifold
+→global accessibility
+→
+?
+phenomenal experience
+	​
+
+	​
+
+
+Tohle bych považoval za obsah první verze naší hypotézy.
+
+A začal bych opravdu kapitolou 1 – „Co přesně nazýváme vjemem?“. Dokud přesně nedefinujeme percept, deep percept, internal state, representation a qualia, nebudeme později schopni říct, co Cognia experiment skutečně prokázal a co už je jen naše interpretace.
