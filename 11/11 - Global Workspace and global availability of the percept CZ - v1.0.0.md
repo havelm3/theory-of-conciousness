@@ -27,6 +27,7 @@ vytváří.
 Může být mechanismem, který vybraný již existující dynamický stav
 zpřístupňuje dalším funkčním subsystémům.
 
+
 ## 11.2 Percept může existovat bez globálního broadcastu
 
 Předpokládejme lokální nebo distribuovaný stav:
@@ -71,6 +72,7 @@ versus:
 globally accessible processing.
 ```
 
+
 ## 11.3 Global Workspace jako funkční rozhraní
 
 Pracovně definujeme Global Workspace jako mechanismus, který umožní,
@@ -96,6 +98,7 @@ Workspace tedy nemusí obsahovat úplnou kopii celého Perceptual Manifold.
 Může zpřístupnit určitou jeho projekci nebo aktuálně relevantní
 makrostav.
 
+
 ## 11.4 Specializované subsystémy
 
 DPSH předpokládá existenci specializovaných funkčních modulů.
@@ -118,6 +121,7 @@ Každý z nich může mít vlastní lokální dynamiku.
 Global Workspace poskytuje mechanismus, kterým mohou některé výsledky
 těchto lokálních dynamik získat širší vliv.
 
+
 ## 11.5 Lokální dostupnost
 
 Ne každý stav musí být globální.
@@ -136,6 +140,7 @@ global broadcast.
 
 Tím se vyhneme představě, že každý neuronální stav je automaticky
 součástí vědomého zpracování.
+
 
 ## 11.6 Kandidát na workspace
 
@@ -167,6 +172,7 @@ F(
 ).
 ```
 
+
 ## 11.7 Workspace selection nemusí být centrální selector
 
 Stejně jako u perceptuálního výběru nechceme zavést funkci:
@@ -190,6 +196,7 @@ Každý má určitou schopnost aktivovat distribuovanou workspace síť.
 Jedna reprezentace může překročit dynamický threshold a spustit
 globální šíření.
 
+
 ## 11.8 Ignition
 
 Pracovní mechanismus může mít podobu:
@@ -208,6 +215,7 @@ global accessibility.
 
 Ignition tedy může být dynamickým přechodem, nikoli explicitní
 programovou událostí.
+
 
 ## 11.9 Ignition jako fázový přechod
 
@@ -244,6 +252,7 @@ global regime.
 
 DPSH tuto možnost považuje za testovatelnou, nikoli za hotový závěr.
 
+
 ## 11.10 Percept formation před ignition
 
 Jedna z hlavních odlišností DPSH je hypotéza:
@@ -275,6 +284,7 @@ nikoli nutně:
 construction.
 ```
 
+
 ## 11.11 Silnější alternativa
 
 Je však nutné připustit i alternativu:
@@ -295,6 +305,7 @@ workspace-dependent percept formation.
 ```
 
 DPSH nesmí předem předpokládat výsledek.
+
 
 ## 11.12 Workspace jako broadcast dynamického stavu
 
@@ -322,6 +333,7 @@ predictions,
 affordances,
 relevance.
 ```
+
 
 ## 11.13 Broadcast není kopírování všech neuronů
 
@@ -359,6 +371,7 @@ similarity to previous experience.
 
 Všechny však mohou být ovlivněny stejným základním perceptuálním stavem.
 
+
 ## 11.14 Workspace a observables
 
 Pro každý modul `i` lze definovat:
@@ -372,6 +385,7 @@ objektu.
 
 To je kompatibilní s představou Perceptual Manifold jako společné
 interní reality dostupné různým mechanismům různými projekcemi.
+
 
 ## 11.15 Global availability a integrace
 
@@ -390,6 +404,7 @@ Stejný percept je použit napříč více subsystémy.
 
 To může být jeden z hlavních významů globální dostupnosti.
 
+
 ## 11.16 Workspace a jednotnost chování
 
 Bez globálního přístupu mohou různé moduly reagovat na odlišné lokální
@@ -406,6 +421,7 @@ consistent planning.
 ```
 
 Globální dostupnost tak může přispívat k jednotnému chování organismu.
+
 
 ## 11.17 Workspace a pozornost
 
@@ -429,6 +445,7 @@ Pozornost však nemusí být totožná s workspace.
 
 Může fungovat jako modulátor selekce.
 
+
 ## 11.18 Workspace a prediction error
 
 Silný nevyřešený prediction error může být jedním z triggerů globálního
@@ -448,6 +465,7 @@ workspace ignition.
 
 Tím lze vysvětlit, proč neočekávané události často získávají širší
 zpracování.
+
 
 ## 11.19 Workspace a novelty
 
@@ -473,6 +491,7 @@ global access.
 
 Systém tak nemusí globálně broadcastovat vše.
 
+
 ## 11.20 Workspace a relevance
 
 Behaviorálně významný stav může být amplifikován i při nízké novelty.
@@ -492,6 +511,7 @@ workspace priority
 ```
 
 není pouze funkcí prediction error.
+
 
 ## 11.21 Workspace a intuitivní rozhodování
 
@@ -532,6 +552,7 @@ od:
 explicit reason representation.
 ```
 
+
 ## 11.22 Explicitní reasoning
 
 Po workspace access může systém spustit další proces:
@@ -554,6 +575,7 @@ action selection.
 ```
 
 Tím vzniká rekurentní smyčka mezi workspace a Perceptual Manifold.
+
 
 ## 11.23 Workspace není pouze výstupní buffer
 
@@ -581,6 +603,7 @@ modified M.
 
 Takový systém je uzavřená dynamická smyčka.
 
+
 ## 11.24 Rekurentní workspace
 
 Proto může být vhodnější:
@@ -604,6 +627,7 @@ interní dynamiku.
 
 To je důležité pro dlouhodobé vědomé zpracování.
 
+
 ## 11.25 Workspace a pracovní paměť
 
 Globálně dostupný stav může být udržován déle díky:
@@ -625,6 +649,7 @@ a:
 ```
 workspace maintenance.
 ```
+
 
 ## 11.26 Percept bez workspace
 
@@ -650,6 +675,7 @@ persists,
 
 pak máme evidence pro oddělení percept formation od global access.
 
+
 ## 11.27 Workspace bez stabilního perceptu
 
 Opačný případ je také možný.
@@ -671,6 +697,7 @@ workspace activity
 ```
 
 sama o sobě nemusí být dostatečná pro perceptuální obsah.
+
 
 ## 11.28 Workspace ablation
 
@@ -701,6 +728,7 @@ ale:
 ```
 global accessibility reduced.
 ```
+
 
 ## 11.29 Cross-module test
 
@@ -734,6 +762,7 @@ motor.
 
 Tím lze globální dostupnost přímo měřit.
 
+
 ## 11.30 Workspace jako omezený zdroj
 
 Global Workspace Theory často pracuje s představou omezené kapacity.
@@ -751,6 +780,7 @@ Pokud workspace nemůže současně globálně stabilizovat všechny, vznikne:
 ```
 access competition.
 ```
+
 
 ## 11.31 Workspace competition
 
@@ -773,6 +803,7 @@ global broadcast.
 
 To může být další symmetry-breaking proces na vyšší úrovni.
 
+
 ## 11.32 Dvě úrovně symmetry breaking
 
 Můžeme tedy rozlišit:
@@ -794,6 +825,7 @@ global access(M_A).
 ```
 
 Tyto procesy nemusí být identické.
+
 
 ## 11.33 Workspace jako další dynamický manifold
 
@@ -824,6 +856,7 @@ perceptual manifold P
 workspace manifold W.
 ```
 
+
 ## 11.34 Vazba P a W
 
 Formálně:
@@ -850,6 +883,7 @@ a:
 top-down modulation.
 ```
 
+
 ## 11.35 Ignition threshold
 
 Pro workspace můžeme definovat makroskopickou veličinu:
@@ -869,6 +903,7 @@ G(t) > θ_G.
 Důležité je testovat, zda existuje skutečný nelineární přechod, nebo jen
 plynulé zvýšení dostupnosti.
 
+
 ## 11.36 Ignition a stochasticita
 
 Pokud je kandidátní stav těsně pod threshold:
@@ -885,6 +920,7 @@ ignition.
 
 To může vést k trial-to-trial variabilitě při identickém near-threshold
 stimulu.
+
 
 ## 11.37 Ignition a fáze
 
@@ -910,6 +946,7 @@ a selhat při:
 
 Tím lze testovat propojení lokální časové organizace s globálním
 broadcastem.
+
 
 ## 11.38 Ignition a historie
 
@@ -939,6 +976,7 @@ refractory effects,
 history dependence.
 ```
 
+
 ## 11.39 Explicitní report
 
 Report lze chápat jako downstream funkci:
@@ -959,6 +997,7 @@ neznamená to automaticky, že report vytváří percept.
 
 Je pouze jedním z observables globálně dostupného stavu.
 
+
 ## 11.40 Report-free measurement
 
 Pro výzkum je důležité používat i metriky nezávislé na explicitním
@@ -974,6 +1013,7 @@ perturbation response.
 ```
 
 Tím lze oddělit perceptuální dynamiku od samotného report mechanismu.
+
 
 ## 11.41 Workspace a fenomenální hypotéza
 
@@ -1008,6 +1048,7 @@ global availability
 ```
 
 umožňuje tyto alternativy později testovat.
+
 
 ## 11.42 Možné modely vztahu perceptu a vědomí
 
@@ -1044,6 +1085,7 @@ je nutná pro fenomenální zkušenost.
 
 DPSH musí zůstat kompatibilní s testováním všech tří možností.
 
+
 ## 11.43 Experiment GW1 – local percept without workspace
 
 Vytvoříme úlohu:
@@ -1072,6 +1114,7 @@ cross-module transfer.
 Pokud lokální funkce zůstanou, ale globální přístup zmizí, podporuje to
 separaci obou mechanismů.
 
+
 ## 11.44 Experiment GW2 – workspace ablation after percept formation
 
 Necháme nejprve vzniknout:
@@ -1098,6 +1141,7 @@ a zda se změní pouze:
 global accessibility.
 ```
 
+
 ## 11.45 Experiment GW3 – workspace ablation before percept formation
 
 Naopak vypneme workspace před stimulačním vstupem.
@@ -1112,6 +1156,7 @@ nevznikne vůbec, může to znamenat, že workspace je pro percept formation
 nutný.
 
 Tím získáme přímý test vztahu.
+
 
 ## 11.46 Experiment GW4 – cross-module accessibility
 
@@ -1136,6 +1181,7 @@ versus:
 ```
 workspace OFF.
 ```
+
 
 ## 11.47 Experiment GW5 – ignition threshold
 
@@ -1169,6 +1215,7 @@ nebo:
 nonlinear threshold / ignition.
 ```
 
+
 ## 11.48 Experiment GW6 – competition
 
 Současně vytvoříme:
@@ -1193,6 +1240,7 @@ Sledujeme:
 ```
 which state gains access.
 ```
+
 
 ## 11.49 Experiment GW7 – novelty
 
@@ -1219,6 +1267,7 @@ local percept formation.
 Hypotéza předpokládá, že novelty může ovlivnit access i při podobné
 perceptuální síle.
 
+
 ## 11.50 Experiment GW8 – unresolved prediction error
 
 Síť dostane vstup, který lokální perceptual model neumí dobře vysvětlit.
@@ -1233,6 +1282,7 @@ workspace activation.
 
 Tím testujeme hypotézu, že workspace řeší zejména lokálně nevyřešené
 situace.
+
 
 ## 11.51 Experiment GW9 – intuitive action before report
 
@@ -1258,6 +1308,7 @@ t_action < t_report,
 
 může rozhodnutí vzniknout před explicitní globální dostupností.
 
+
 ## 11.52 Experiment GW10 – top-down feedback
 
 Po workspace ignition změníme top-down signál:
@@ -1274,6 +1325,7 @@ local perceptual dynamics.
 
 Pokud workspace skutečně tvoří rekurentní smyčku, musí globální stav
 zpětně ovlivnit Perceptual Manifold.
+
 
 ## 11.53 Experiment GW11 – workspace phase dependence
 
@@ -1294,6 +1346,7 @@ global availability.
 ```
 
 To propojuje Global Workspace s oscilační částí DPSH.
+
 
 ## 11.54 Experiment GW12 – capacity limit
 
@@ -1319,6 +1372,7 @@ switching.
 
 Tím lze testovat omezenou kapacitu workspace.
 
+
 ## 11.55 Metrika global accessibility
 
 Definujeme:
@@ -1342,6 +1396,7 @@ Vysoká:
 globally accessible state.
 ```
 
+
 ## 11.56 Metrika ignition
 
 Můžeme měřit:
@@ -1355,6 +1410,7 @@ number of activated modules.
 
 Důležité bude odlišit skutečný nelineární ignition od prostého zvýšení
 celkové aktivity.
+
 
 ## 11.57 Metrika workspace selectivity
 
@@ -1375,6 +1431,7 @@ P(access_B).
 Manipulace relevance nebo attention by měla systematicky měnit jejich
 pravděpodobnost.
 
+
 ## 11.58 Falsifikační kritéria
 
 Navrhované rozdělení DPSH a Global Workspace bude oslabeno, pokud:
@@ -1393,6 +1450,7 @@ Navrhované rozdělení DPSH a Global Workspace bude oslabeno, pokud:
 
 V takovém případě bude nutné vztah DPSH a Global Workspace zásadně
 přeformulovat.
+
 
 ## 11.59 Výzkumná hypotéza kapitoly
 

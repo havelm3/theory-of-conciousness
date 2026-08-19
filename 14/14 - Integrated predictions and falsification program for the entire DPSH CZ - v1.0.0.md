@@ -10,104 +10,137 @@ experimentálně testovat.
 
 Celá DPSH však netvrdí, že vědomý nebo hluboký percept vzniká pouze z:
 
-    stochasticity
+```
+stochasticity
+```
 
 nebo:
 
-    oscillations
+```
+oscillations
+```
 
 nebo:
 
-    metastability.
+```
+metastability.
+```
 
 Centrální tvrzení je integrační.
 
 DPSH předpokládá, že relevantní perceptuální dynamika vzniká z
 interakce více mechanismů:
 
-    globally unclocked dynamics
-        +
-    spontaneous stochastic activity
-        +
-    endogenous temporal organization
-        +
-    non-commutative event ordering
-        +
-    recurrent self-organization
-        +
-    symmetry breaking
-        +
-    metastability
-        +
-    hysteresis
-        +
-    predictive constraints
-        +
-    local plasticity
-        +
-    shared perceptual manifold
-        +
-    global accessibility.
+```
+globally unclocked dynamics
+    +
+spontaneous stochastic activity
+    +
+endogenous temporal organization
+    +
+non-commutative event ordering
+    +
+recurrent self-organization
+    +
+symmetry breaking
+    +
+metastability
+    +
+hysteresis
+    +
+predictive constraints
+    +
+local plasticity
+    +
+shared perceptual manifold
+    +
+global accessibility.
+```
 
 Proto je nutné testovat nejen:
 
-    does mechanism X work?
+```
+does mechanism X work?
+```
 
 ale také:
 
-    does mechanism X causally contribute to the integrated system?
+```
+does mechanism X causally contribute to the integrated system?
+```
 
 
 ## 14.2 Hierarchie hypotéz
 
 Jednotlivé dílčí hypotézy DPSH nemají stejnou epistemickou sílu.
 
-Lze je rozdělit do čtyř vrstev.
+Lze je rozdělit do čtyř vrstev. Uvedené názvy jsou závazné a odpovídají
+deklaracím v sekcích `Výzkumná hypotéza kapitoly` jednotlivých kapitol.
 
 ### Vrstva A – základní dynamické mechanismy
 
 Sem patří:
 
-    H1 globally clockless dynamics
-    H2 functional stochasticity
-    H3 endogenous temporal organization
-    H4 non-commutative neural dynamics.
+```
+H1 Globally Clockless Dynamics Hypothesis
+H2 Functional Stochasticity Hypothesis
+H3 Endogenous Temporal Organization Hypothesis
+H4 Non-Commutative Neural Dynamics Hypothesis.
+```
 
 Tyto hypotézy popisují vlastnosti elementární dynamiky systému.
-
 
 ### Vrstva B – vznik interního makrostavu
 
 Sem patří:
 
-    H5 self-organized symmetry breaking
-    H6 metastable perceptual manifold
-    H7 perceptual continuity and hysteresis
-    H8 predictively constrained dynamics.
+```
+H5 Self-Organized Symmetry Breaking Hypothesis
+H6 Metastable Perceptual Manifold Hypothesis
+H7 Perceptual Continuity and Hysteresis Hypothesis
+H8 Predictively Constrained Dynamics Hypothesis.
+```
 
 Tyto hypotézy popisují vznik a udržování funkčního interního stavu.
-
 
 ### Vrstva C – učení a systémová integrace
 
 Sem patří:
 
-    H9 Deep State Learning
-    H10 Global Accessibility
-    H11 Shared Perceptual Manifold.
+```
+H9 Deep State Learning Hypothesis
+H10 Global Accessibility Hypothesis
+H11 Shared Perceptual Manifold Hypothesis.
+```
 
 Tyto hypotézy popisují, jak se dynamika učí, sdílí a zpřístupňuje.
-
 
 ### Vrstva D – fenomenální interpretace
 
 Sem patří:
 
-    H12 Phenomenal Dynamic Substrate Hypothesis.
+```
+H12 Phenomenal Dynamic Substrate Hypothesis.
+```
 
 Tato vrstva není přímo ověřitelná pouze pomocí Cognia.
 
 Je závislá na výsledcích předchozích vrstev a na biologických datech.
+
+### Mimo hierarchii – technická podmínka testovatelnosti
+
+Kapitola 15 formuluje ještě jednu dílčí hypotézu:
+
+```
+H13 Experimental Realizability Hypothesis.
+```
+
+H13 není nadstavbou vrstvy D. Je předpokladem, bez kterého nelze
+vrstvy A–D vůbec experimentálně testovat.
+
+Tyto epistemické vrstvy `A`–`D` je nutné odlišovat od tří úrovní
+tvrzení `E1`–`E3` zavedených v sekci 1.12, které popisují, jak silné
+tvrzení o výsledku lze vůbec vznést.
 
 
 ## 14.3 Závislosti mezi hypotézami
@@ -119,34 +152,36 @@ předchozí vrstvy.
 
 Pracovní závislost:
 
-    H1
+```
+ H1
+  |
+  v
+ H2 ----+
+  |     |
+  v     v
+ H3 --> H4
+   \    /
+    \  /
+     v
+    H5
      |
      v
-    H2 ----+
-     |     |
-     v     v
-    H3 --> H4
-      \    /
-       \  /
-        v
-       H5
-        |
-        v
-       H6
-      /  \
-     v    v
-    H7    H8
-      \   /
-       \ /
-        v
-       H9
-      /  \
-     v    v
-   H10   H11
-      \   /
-       \ /
-        v
-       H12.
+    H6
+   /  \
+  v    v
+ H7    H8
+   \   /
+    \ /
+     v
+    H9
+   /  \
+  v    v
+H10   H11
+   \   /
+    \ /
+     v
+    H12.
+```
 
 Tento diagram není tvrzením, že všechny mechanismy jsou nutné.
 
@@ -158,19 +193,23 @@ Je experimentální roadmapou.
 Nejmenší soubor mechanismů, který má smysl testovat jako základ
 dynamického perceptu, je:
 
-    autonomous stateful units
-        +
-    recurrence
-        +
-    spontaneous stochasticity
-        +
-    temporal organization
-        +
-    history dependence.
+```
+autonomous stateful units
+    +
+recurrence
+    +
+spontaneous stochasticity
+    +
+temporal organization
+    +
+history dependence.
+```
 
 Z tohoto jádra musí být možné vytvořit:
 
-    persistent internal macrostate.
+```
+persistent internal macrostate.
+```
 
 Pokud to není možné, vyšší vrstvy teorie nemají dostatečný základ.
 
@@ -183,31 +222,41 @@ zjednodušené kontrolní sítě.
 
 Porovnání:
 
-    full DPSH core
+```
+full DPSH core
+```
 
 versus:
 
-    synchronous rate-based control.
+```
+synchronous rate-based control.
+```
 
 Měřit:
 
-    state dimensionality,
-    metastability,
-    transition entropy,
-    history dependence,
-    perturbation response,
-    temporal coding,
-    contextual persistence.
+```
+state dimensionality,
+metastability,
+transition entropy,
+history dependence,
+perturbation response,
+temporal coding,
+contextual persistence.
+```
 
 Silná predikce:
 
-    dynamics_full
-        !=
-    dynamics_control
+```
+dynamics_full
+    !=
+dynamics_control
+```
 
 i při podobné:
 
-    task accuracy.
+```
+task accuracy.
+```
 
 
 ## 14.6 Accuracy není hlavní kriterium
@@ -220,18 +269,24 @@ DPSH je teorií interní dynamiky.
 
 Systém může mít:
 
-    same task accuracy
+```
+same task accuracy
+```
 
 ale zásadně rozdílnou:
 
-    internal organization.
+```
+internal organization.
+```
 
 Proto musí být vždy měřeny také:
 
-    trajectory structure,
-    state persistence,
-    temporal dependency,
-    causal state influence.
+```
+trajectory structure,
+state persistence,
+temporal dependency,
+causal state influence.
+```
 
 
 ## 14.7 Ablation program
@@ -240,23 +295,27 @@ Každý mechanismus musí být možné samostatně odstranit.
 
 Základní full model:
 
-    async
-    + stochastic
-    + oscillatory
-    + recurrent
-    + STDP
-    + predictive
-    + continuous state.
+```
+async
++ stochastic
++ oscillatory
++ recurrent
++ STDP
++ predictive
++ continuous state.
+```
 
 Pak vytváříme:
 
-    - stochasticity
-    - oscillations
-    - recurrence
-    - STDP
-    - prediction
-    - history
-    - workspace
+```
+- stochasticity
+- oscillations
+- recurrence
+- STDP
+- prediction
+- history
+- workspace
+```
 
 a měříme změnu systému.
 
@@ -271,28 +330,34 @@ Některé mechanismy mohou fungovat pouze ve vzájemné interakci.
 
 Například:
 
-    stochasticity x oscillations
-    oscillations x STDP
-    phase x delays
-    recurrence x inhibition
-    prediction x hysteresis.
+```
+stochasticity x oscillations
+oscillations x STDP
+phase x delays
+recurrence x inhibition
+prediction x hysteresis.
+```
 
 Proto je vhodné používat faktoriální design.
 
 Například:
 
-    stochasticity:
-        ON / OFF
+```
+stochasticity:
+    ON / OFF
 
-    phase structure:
-        intact / scrambled
+phase structure:
+    intact / scrambled
 
-    plasticity:
-        ON / OFF.
+plasticity:
+    ON / OFF.
+```
 
 Vznikne:
 
-    2 x 2 x 2
+```
+2 x 2 x 2
+```
 
 experimentálních podmínek.
 
@@ -303,27 +368,33 @@ Lze tak měřit interakční efekt.
 
 DPSH předpokládá možnost, že:
 
-    effect(A + B)
-        >
-    effect(A)
-        +
-    effect(B).
+```
+effect(A + B)
+    >
+effect(A)
+    +
+effect(B).
+```
 
 Například:
 
-    stochasticity alone
-        ->
-    variability.
+```
+stochasticity alone
+    ->
+variability.
 
-    oscillation alone
-        ->
-    temporal regularity.
+oscillation alone
+    ->
+temporal regularity.
+```
 
 Ale:
 
-    stochasticity + oscillation
-        ->
-    structured exploration.
+```
+stochasticity + oscillation
+    ->
+structured exploration.
+```
 
 Takový synergický efekt je pro integrační hypotézu důležitější než
 samostatná účinnost komponent.
@@ -333,11 +404,15 @@ samostatná účinnost komponent.
 
 Opačně může experiment ukázat:
 
-    A is not necessary
+```
+A is not necessary
+```
 
 protože:
 
-    B can substitute A.
+```
+B can substitute A.
+```
 
 Například explicitní oscillator cells nemusí být nutné, pokud rekurentní
 síť vytváří emergentní oscilaci.
@@ -346,11 +421,15 @@ V takovém případě musí být hypotéza zobecněna.
 
 Ne:
 
-    oscillator cell is required
+```
+oscillator cell is required
+```
 
 ale:
 
-    temporal organization is required.
+```
+temporal organization is required.
+```
 
 
 ## 14.11 Nutnost versus dostatečnost
@@ -361,7 +440,9 @@ Každý mechanismus musí být posuzován ve dvou směrech.
 
 Pokud odstraníme:
 
-    X,
+```
+X,
+```
 
 zmizí relevantní vlastnost?
 
@@ -369,17 +450,23 @@ zmizí relevantní vlastnost?
 
 Pokud máme pouze:
 
-    X,
+```
+X,
+```
 
 vznikne relevantní vlastnost?
 
 Například:
 
-    oscillations
+```
+oscillations
+```
 
 mohou být:
 
-    useful but not sufficient.
+```
+useful but not sufficient.
+```
 
 DPSH nesmí zaměňovat tyto dvě otázky.
 
@@ -388,23 +475,27 @@ DPSH nesmí zaměňovat tyto dvě otázky.
 
 Pro jednotlivý mechanismus lze definovat:
 
-    mechanism
-        ->
-    intermediate effect
-        ->
-    macrostate change
-        ->
-    behavioral consequence.
+```
+mechanism
+    ->
+intermediate effect
+    ->
+macrostate change
+    ->
+behavioral consequence.
+```
 
 Například:
 
-    phase relation
-        ->
-    transmission efficacy
-        ->
-    state transition
-        ->
-    perceptual choice.
+```
+phase relation
+    ->
+transmission efficacy
+    ->
+state transition
+    ->
+perceptual choice.
+```
 
 Experiment musí ideálně měřit všechny mezikroky.
 
@@ -429,28 +520,36 @@ Toto je hlavní testovatelná teze.
 
 Pokud má DPSH pravdu, musí platit:
 
-    remove temporal organization
-        ->
-    degrade macrostate structure
+```
+remove temporal organization
+    ->
+degrade macrostate structure
+```
 
 i pokud zachováme přibližně:
 
-    firing rate,
-    spike count,
-    network size,
-    sensory information.
+```
+firing rate,
+spike count,
+network size,
+sensory information.
+```
 
 Stejně:
 
-    remove recurrence
-        ->
-    degrade persistence.
+```
+remove recurrence
+    ->
+degrade persistence.
+```
 
 A:
 
-    remove history
-        ->
-    degrade context dependence.
+```
+remove history
+    ->
+degrade context dependence.
+```
 
 Tedy různé mechanismy musí mít specifické signatury selhání.
 
@@ -463,45 +562,57 @@ Každý mechanismus by měl mít očekávaný typ poruchy.
 
 Očekáváme možné:
 
-    rigidity,
-    poor exploration,
-    reduced spontaneous transitions.
+```
+rigidity,
+poor exploration,
+reduced spontaneous transitions.
+```
 
 ### Bez phase organization
 
 Očekáváme:
 
-    poorer temporal coordination,
-    weaker dynamic routing,
-    degraded timing-sensitive learning.
+```
+poorer temporal coordination,
+weaker dynamic routing,
+degraded timing-sensitive learning.
+```
 
 ### Bez recurrence
 
 Očekáváme:
 
-    poor persistence,
-    reduced metastability.
+```
+poor persistence,
+reduced metastability.
+```
 
 ### Bez history
 
 Očekáváme:
 
-    loss of hysteresis,
-    reduced context dependence.
+```
+loss of hysteresis,
+reduced context dependence.
+```
 
 ### Bez prediction
 
 Očekáváme:
 
-    excessive drift
-    nebo
-    poor adaptation to changed environment.
+```
+excessive drift
+nebo
+poor adaptation to changed environment.
+```
 
 ### Bez plasticity
 
 Očekáváme:
 
-    fixed manifold geometry.
+```
+fixed manifold geometry.
+```
 
 Takové signatury jsou důležité pro falsifikaci.
 
@@ -510,17 +621,23 @@ Takové signatury jsou důležité pro falsifikaci.
 
 DPSH předpovídá:
 
-    spike patterns vary
+```
+spike patterns vary
+```
 
 zatímco:
 
-    macrostate identity persists.
+```
+macrostate identity persists.
+```
 
 Tedy:
 
-    high microstate variability
-        +
-    low macrostate variability.
+```
+high microstate variability
+    +
+low macrostate variability.
+```
 
 Pokud stabilní percept vyžaduje téměř identické spike patterns, tato
 část hypotézy bude oslabena.
@@ -530,17 +647,23 @@ Pokud stabilní percept vyžaduje téměř identické spike patterns, tato
 
 Silná predikce:
 
-    same approximate rate
-    same spike count
-    same topology
+```
+same approximate rate
+same spike count
+same topology
+```
 
 ale:
 
-    different temporal organization
+```
+different temporal organization
+```
 
 vede k:
 
-    different internal dynamics.
+```
+different internal dynamics.
+```
 
 Pokud ne, časová část DPSH ztrácí význam.
 
@@ -549,19 +672,27 @@ Pokud ne, časová část DPSH ztrácí význam.
 
 Pro:
 
-    same current input X
+```
+same current input X
+```
 
 po:
 
-    history A
+```
+history A
+```
 
 a:
 
-    history B
+```
+history B
+```
 
 musí existovat:
 
-    S_A(X) != S_B(X)
+```
+S_A(X) != S_B(X)
+```
 
 alespoň v některých relevantních úlohách.
 
@@ -572,11 +703,15 @@ To je základní podmínka kontinuálního interního modelu.
 
 Po vytvoření:
 
-    M_A
+```
+M_A
+```
 
 krátký:
 
-    sensory dropout
+```
+sensory dropout
+```
 
 nesmí okamžitě zničit celý perceptuální stav.
 
@@ -587,15 +722,21 @@ Musí existovat měřitelná persistence.
 
 Po:
 
-    M_A
+```
+M_A
+```
 
 a:
 
-    M_B
+```
+M_B
+```
 
 musí stejný:
 
-    X_ambiguous
+```
+X_ambiguous
+```
 
 vést k rozdílným pravděpodobnostem výsledku.
 
@@ -606,13 +747,17 @@ Tím se prokáže funkční význam interního stavu.
 
 Po učení:
 
-    spontaneous_before
-        !=
-    spontaneous_after.
+```
+spontaneous_before
+    !=
+spontaneous_after.
+```
 
 Silnější predikce:
 
-    spontaneous_after
+```
+spontaneous_after
+```
 
 bude strukturálně podobnější naučeným evoked states.
 
@@ -621,11 +766,15 @@ bude strukturálně podobnější naučeným evoked states.
 
 Stav s nízkým prediction error:
 
-    M_correct
+```
+M_correct
+```
 
 má mít vyšší persistence než:
 
-    M_inconsistent
+```
+M_inconsistent
+```
 
 za jinak srovnatelných podmínek.
 
@@ -634,12 +783,16 @@ za jinak srovnatelných podmínek.
 
 Při příliš silném:
 
-    top-down gain
+```
+top-down gain
+```
 
 očekáváme:
 
-    reduced sensory correction,
-    excessive state persistence.
+```
+reduced sensory correction,
+excessive state persistence.
+```
 
 Toto je systémová predikce rovnováhy mezi interním modelem a realitou.
 
@@ -648,8 +801,10 @@ Toto je systémová predikce rovnováhy mezi interním modelem a realitou.
 
 Musí existovat alespoň některé podmínky:
 
-    local percept present
-    global access reduced.
+```
+local percept present
+global access reduced.
+```
 
 Pokud nelze oba procesy oddělit, H10 bude nutné přeformulovat.
 
@@ -658,10 +813,12 @@ Pokud nelze oba procesy oddělit, H10 bude nutné přeformulovat.
 
 Stejný interní makrostav by měl být použitelný pro:
 
-    prediction,
-    action,
-    valuation,
-    report.
+```
+prediction,
+action,
+valuation,
+report.
+```
 
 Pokud každý modul potřebuje zcela nezávislou reprezentaci, H11 je
 oslabena.
@@ -674,13 +831,15 @@ implementuje základní fyziku modelu.
 
 Testovat:
 
-    event ordering,
-    delays,
-    stochastic distribution,
-    oscillator phase,
-    refractory periods,
-    plasticity timing,
-    state logging.
+```
+event ordering,
+delays,
+stochastic distribution,
+oscillator phase,
+refractory periods,
+plasticity timing,
+state logging.
+```
 
 Pokud engine není deterministicky reprodukovatelný při fixed random
 seed, nebude možné interpretovat výsledky.
@@ -690,14 +849,18 @@ seed, nebude možné interpretovat výsledky.
 
 Každý experiment musí podporovat:
 
-    random seed,
-    network snapshot,
-    exact configuration,
-    event log.
+```
+random seed,
+network snapshot,
+exact configuration,
+event log.
+```
 
 Experiment:
 
-    run(configuration, seed)
+```
+run(configuration, seed)
+```
 
 musí být opakovatelný.
 
@@ -706,22 +869,30 @@ musí být opakovatelný.
 
 Pro stochastic experimenty je nutné porovnávat:
 
-    same network
-    same input
-    same stochastic sequence
+```
+same network
+same input
+same stochastic sequence
+```
 
 proti:
 
-    same network
-    fresh stochastic sequence.
+```
+same network
+fresh stochastic sequence.
+```
 
 Tím lze oddělit:
 
-    stochastic distribution effect
+```
+stochastic distribution effect
+```
 
 od:
 
-    exploration effect.
+```
+exploration effect.
+```
 
 
 ## 14.29 Experimentální fáze 1 – autonomní dynamika
@@ -734,10 +905,12 @@ Je:
 
 Testovat:
 
-    deterministic silence,
-    spontaneous activity,
-    oscillatory regimes,
-    metastability.
+```
+deterministic silence,
+spontaneous activity,
+oscillatory regimes,
+metastability.
+```
 
 Pokud ne, další vrstvy zatím nemají smysl.
 
@@ -746,39 +919,53 @@ Pokud ne, další vrstvy zatím nemají smysl.
 
 Síť dostane jednoduché konkurenční podmínky:
 
-    A
-    B.
+```
+A
+B.
+```
 
 Testujeme:
 
-    symmetry breaking,
-    state persistence,
-    spontaneous switching.
+```
+symmetry breaking,
+state persistence,
+spontaneous switching.
+```
 
 Měříme:
 
-    order parameter,
-    dwell time,
-    transition entropy.
+```
+order parameter,
+dwell time,
+transition entropy.
+```
 
 
 ## 14.31 Experimentální fáze 3 – temporal causality
 
 Testujeme:
 
-    A -> B
+```
+A -> B
+```
 
 versus:
 
-    B -> A.
+```
+B -> A.
+```
 
 A:
 
-    phase intact
+```
+phase intact
+```
 
 versus:
 
-    phase scrambled.
+```
+phase scrambled.
+```
 
 To ověří, zda timing skutečně tvoří důležitou state variable.
 
@@ -787,19 +974,25 @@ To ověří, zda timing skutečně tvoří důležitou state variable.
 
 Použijeme:
 
-    A -> blank -> X_ambiguous
+```
+A -> blank -> X_ambiguous
+```
 
 a:
 
-    B -> blank -> X_ambiguous.
+```
+B -> blank -> X_ambiguous.
+```
 
 Toto je první skutečný test Deep Percept.
 
 Podmínkou úspěchu je:
 
-    internal state during blank
-        ->
-    predicts later choice.
+```
+internal state during blank
+    ->
+predicts later choice.
+```
 
 
 ## 14.33 Experimentální fáze 5 – causal perturbation
@@ -810,11 +1003,15 @@ Musíme jej aktivně změnit.
 
 Například:
 
-    M_A -> perturb -> M_B.
+```
+M_A -> perturb -> M_B.
+```
 
 Potom:
 
-    same X
+```
+same X
+```
 
 musí vést k jinému výsledku.
 
@@ -827,10 +1024,12 @@ Síť dostane časově strukturované prostředí.
 
 Testujeme:
 
-    next-state prediction,
-    occlusion,
-    unexpected continuation,
-    correction after mismatch.
+```
+next-state prediction,
+occlusion,
+unexpected continuation,
+correction after mismatch.
+```
 
 Tady se z paměťového state stává model prostředí.
 
@@ -839,14 +1038,18 @@ Tady se z paměťového state stává model prostředí.
 
 Teprve po vytvoření stabilního manifold zapneme:
 
-    ongoing plasticity during spontaneous activity.
+```
+ongoing plasticity during spontaneous activity.
+```
 
 Testujeme:
 
-    consolidation,
-    generalization,
-    drift,
-    self-reinforcement.
+```
+consolidation,
+generalization,
+drift,
+self-reinforcement.
+```
 
 To je riziková část hypotézy a musí být testována opatrně.
 
@@ -857,28 +1060,36 @@ Přidáme více vstupních modalit.
 
 Například:
 
-    visual-like input
-    audio-like input.
+```
+visual-like input
+audio-like input.
+```
 
 Testujeme:
 
-    cross-modal completion,
-    shared state,
-    context integration.
+```
+cross-modal completion,
+shared state,
+context integration.
+```
 
 
 ## 14.37 Experimentální fáze 9 – Global Workspace
 
 Až poté přidáme:
 
-    workspace.
+```
+workspace.
+```
 
 Testujeme:
 
-    global broadcast,
-    competition,
-    ignition,
-    top-down feedback.
+```
+global broadcast,
+competition,
+ignition,
+top-down feedback.
+```
 
 Workspace nesmí maskovat selhání nižší perceptuální vrstvy.
 
@@ -887,11 +1098,15 @@ Workspace nesmí maskovat selhání nižší perceptuální vrstvy.
 
 Cognia nemůže přímo testovat:
 
-    qualia.
+```
+qualia.
+```
 
 Může však testovat:
 
-    Deep Percept properties.
+```
+Deep Percept properties.
+```
 
 Biologická literatura musí následně ověřovat, zda stejné dynamické
 mechanismy korelují a kauzálně souvisejí s reportovaným vědomým
@@ -932,7 +1147,9 @@ Takový postup brání tomu, aby se teorie stala nefalsifikovatelnou.
 
 Za první významný úspěch bychom nepovažovali:
 
-    "system behaves intelligently."
+```
+"system behaves intelligently."
+```
 
 Minimální experimentální balík by měl ukázat současně:
 
@@ -970,15 +1187,21 @@ Pokud mechanismus selže, není to neúspěch výzkumu.
 
 Například:
 
-    oscillator cells not needed
+```
+oscillator cells not needed
+```
 
 může vést k lepší teorii:
 
-    emergent temporal structure is sufficient.
+```
+emergent temporal structure is sufficient.
+```
 
 Nebo:
 
-    stochasticity not necessary
+```
+stochasticity not necessary
+```
 
 může znamenat, že relevantní explorace vzniká jiným mechanismem.
 
@@ -992,11 +1215,13 @@ který stále reprodukuje relevantní jevy.
 
 Tedy:
 
-    full model
-        ->
-    remove unnecessary mechanism
-        ->
-    simpler explanatory core.
+```
+full model
+    ->
+remove unnecessary mechanism
+    ->
+simpler explanatory core.
+```
 
 Cílem není maximalizovat počet zajímavých mechanismů.
 
@@ -1012,19 +1237,27 @@ Například:
 
 ### DPSH model
 
-    dynamic metastable state.
+```
+dynamic metastable state.
+```
 
 ### Alternative A
 
-    explicit memory register.
+```
+explicit memory register.
+```
 
 ### Alternative B
 
-    conventional RNN hidden state.
+```
+conventional RNN hidden state.
+```
 
 ### Alternative C
 
-    rate-coded attractor.
+```
+rate-coded attractor.
+```
 
 Pokud všechny vysvětlí data stejně dobře, DPSH nemá dostatečnou
 explanatory advantage.
@@ -1034,16 +1267,20 @@ explanatory advantage.
 
 Porovnávat nejen:
 
-    task accuracy.
+```
+task accuracy.
+```
 
 Také:
 
-    complexity,
-    robustness,
-    generalization,
-    state richness,
-    perturbation behavior,
-    temporal sensitivity.
+```
+complexity,
+robustness,
+generalization,
+state richness,
+perturbation behavior,
+temporal sensitivity.
+```
 
 Silnější model musí vysvětlovat více relevantních jevů.
 
@@ -1070,22 +1307,28 @@ V takovém případě by bylo nutné původní teorii zásadně redukovat.
 
 Fenomenální H12 bude oslabena, pokud biologické experimenty ukáží, že:
 
-    conscious percept
+```
+conscious percept
+```
 
 systematicky přetrvává bez dynamických mechanismů, které DPSH považuje
 za kandidátní substrát.
 
 Zvlášť důležité by byly disociace:
 
-    same phenomenal state
-        +
-    radically different relevant macrostate
+```
+same phenomenal state
+    +
+radically different relevant macrostate
+```
 
 nebo:
 
-    same macrostate
-        +
-    systematically different phenomenal state.
+```
+same macrostate
+    +
+systematically different phenomenal state.
+```
 
 Takové výsledky by oslabily strukturální korespondenci.
 
@@ -1094,13 +1337,15 @@ Takové výsledky by oslabily strukturální korespondenci.
 
 Za potvrzení nelze považovat pouze:
 
-    high classification accuracy,
-    human-like text output,
-    self-report of consciousness,
-    complex behavior,
-    large neural network,
-    presence of oscillations,
-    presence of metastability.
+```
+high classification accuracy,
+human-like text output,
+self-report of consciousness,
+complex behavior,
+large neural network,
+presence of oscillations,
+presence of metastability.
+```
 
 Každá z těchto vlastností může existovat bez centrálního mechanismu
 DPSH.
@@ -1110,23 +1355,31 @@ DPSH.
 
 Za mimořádně silný výsledek bychom považovali situaci:
 
-    same network
-    same sensory input
-    same approximate firing rate
-    same spike count
-    same connectivity
+```
+same network
+same sensory input
+same approximate firing rate
+same spike count
+same connectivity
+```
 
 ale:
 
-    different relative timing / phase organization
+```
+different relative timing / phase organization
+```
 
 vede k:
 
-    different metastable perceptual state
+```
+different metastable perceptual state
+```
 
 a tato změna:
 
-    causally changes later interpretation.
+```
+causally changes later interpretation.
+```
 
 To by poskytlo velmi přímou podporu tvrzení, že časová organizace není
 vedlejší detail, ale součást interní reprezentace.
@@ -1136,19 +1389,27 @@ vedlejší detail, ale součást interní reprezentace.
 
 Další silný výsledek:
 
-    sensory input removed
+```
+sensory input removed
+```
 
 ale:
 
-    internal context persists,
+```
+internal context persists,
+```
 
 a:
 
-    perturbing that internal state
+```
+perturbing that internal state
+```
 
 změní reakci na pozdější:
 
-    identical ambiguous input.
+```
+identical ambiguous input.
+```
 
 Tím bychom prokázali funkční existenci interního dynamického stavu nad
 rámec aktuálního sensory stream.
@@ -1158,13 +1419,17 @@ rámec aktuálního sensory stream.
 
 Třetí:
 
-    learning
-        ->
-    spontaneous dynamics changes
+```
+learning
+    ->
+spontaneous dynamics changes
+```
 
 a spontaneous learning:
 
-    improves held-out generalization.
+```
+improves held-out generalization.
+```
 
 To by poskytlo podporu silné Deep State Learning hypotéze.
 
@@ -1175,28 +1440,32 @@ Pro potřeby výzkumu definujeme souhrnné kritérium.
 
 Systém má **Deep Percept**, pokud interní stav současně splňuje:
 
-    D1 decodability
-    D2 persistence
-    D3 metastability
-    D4 history dependence
-    D5 temporal sensitivity
-    D6 predictive relevance
-    D7 causal downstream influence
-    D8 robustness
-    D9 generalization
-    D10 distributed integration.
+```
+D1 decodability
+D2 persistence
+D3 metastability
+D4 history dependence
+D5 temporal sensitivity
+D6 predictive relevance
+D7 causal downstream influence
+D8 robustness
+D9 generalization
+D10 distributed integration.
+```
 
 Není nutné, aby každé kritérium bylo binární.
 
 Lze vytvořit vektor:
 
-    DP =
-        (
-            d1,
-            d2,
-            ...,
-            d10
-        ).
+```
+DP =
+    (
+        d1,
+        d2,
+        ...,
+        d10
+    ).
+```
 
 To umožní porovnávat různé architektury bez jediného arbitrárního
 "consciousness score".
@@ -1206,15 +1475,21 @@ To umožní porovnávat různé architektury bez jediného arbitrárního
 
 Pro praktické experimenty lze později vytvořit kompozitní metriku:
 
-    DPI = F(d1, d2, ..., d10).
+```
+DPI = F(d1, d2, ..., d10).
+```
 
 Je však důležité, aby:
 
-    DPI
+```
+DPI
+```
 
 nebyl interpretován jako:
 
-    degree of consciousness.
+```
+degree of consciousness.
+```
 
 Je pouze technickou metrikou funkčních vlastností Deep Percept.
 
@@ -1223,15 +1498,17 @@ Je pouze technickou metrikou funkčních vlastností Deep Percept.
 
 Každý experiment by měl být evidován ve formátu:
 
-    hypothesis
-    prediction
-    architecture
-    control
-    manipulated variable
-    dependent metrics
-    result
-    falsification status
-    interpretation.
+```
+hypothesis
+prediction
+architecture
+control
+manipulated variable
+dependent metrics
+result
+falsification status
+interpretation.
+```
 
 Tím lze zabránit zpětnému přizpůsobování hypotézy výsledkům.
 
@@ -1241,15 +1518,19 @@ Tím lze zabránit zpětnému přizpůsobování hypotézy výsledkům.
 U klíčových experimentů je vhodné ještě před spuštěním explicitně
 zapsat:
 
-    expected outcome,
-    null outcome,
-    falsifying outcome.
+```
+expected outcome,
+null outcome,
+falsifying outcome.
+```
 
 Například:
 
-    phase scramble
-        ->
-    predicted decrease in state separability.
+```
+phase scramble
+    ->
+predicted decrease in state separability.
+```
 
 Pokud výsledek nenastane, musí být zaznamenán jako negativní.
 
@@ -1258,15 +1539,19 @@ Pokud výsledek nenastane, musí být zaznamenán jako negativní.
 
 Teorie by měla mít verze:
 
-    DPSH 0.1
-    DPSH 0.2
-    ...
+```
+DPSH 0.1
+DPSH 0.2
+...
+```
 
 Každá verze zaznamená:
 
-    retained hypotheses,
-    rejected hypotheses,
-    modified mechanisms.
+```
+retained hypotheses,
+rejected hypotheses,
+modified mechanisms.
+```
 
 Cognia implementace musí být verzována současně s teorií.
 
@@ -1278,19 +1563,23 @@ jen proto, že zlepší výkon.
 
 Každá významná vlastnost engine musí mít vazbu:
 
-    theoretical assumption
-        ->
-    implementation
-        ->
-    experimental prediction.
+```
+theoretical assumption
+    ->
+implementation
+    ->
+experimental prediction.
+```
 
 Například:
 
-    H3 temporal organization
-        ->
-    local oscillator API
-        ->
-    phase scramble experiment.
+```
+H3 temporal organization
+    ->
+local oscillator API
+    ->
+phase scramble experiment.
+```
 
 
 ## 14.58 Cognia jako experimentální aparatura
@@ -1299,16 +1588,20 @@ Cognia zde není pouze výsledná AI.
 
 Je především:
 
-    experimental platform.
+```
+experimental platform.
+```
 
 Musí umožnit:
 
-    mechanism isolation,
-    precise perturbation,
-    logging,
-    replay,
-    ablation,
-    state-space analysis.
+```
+mechanism isolation,
+precise perturbation,
+logging,
+replay,
+ablation,
+state-space analysis.
+```
 
 To je důležitější než okamžitá schopnost řešit složité úlohy.
 
@@ -1320,10 +1613,12 @@ pozorovatelný.
 
 Výhody:
 
-    interpretable dynamics,
-    cheaper parameter sweeps,
-    easier causal analysis,
-    fewer confounds.
+```
+interpretable dynamics,
+cheaper parameter sweeps,
+easier causal analysis,
+fewer confounds.
+```
 
 Velká síť má smysl až tehdy, když mechanismus funguje v malém.
 
@@ -1332,20 +1627,26 @@ Velká síť má smysl až tehdy, když mechanismus funguje v malém.
 
 Teprve po prokázání základních mechanismů je vhodné měnit:
 
-    N neurons,
-    connectivity density,
-    oscillator count,
-    delay distribution.
+```
+N neurons,
+connectivity density,
+oscillator count,
+delay distribution.
+```
 
 Pak lze testovat:
 
-    scaling laws.
+```
+scaling laws.
+```
 
 Například:
 
-    state richness vs N
-    robustness vs redundancy
-    connectivity vs timing structure.
+```
+state richness vs N
+robustness vs redundancy
+connectivity vs timing structure.
+```
 
 
 ## 14.61 Hlavní výzkumná roadmapa
@@ -1354,47 +1655,69 @@ Celý program lze zjednodušit:
 
 ### Stage 1
 
-    Can autonomous dynamics exist?
+```
+Can autonomous dynamics exist?
+```
 
 ### Stage 2
 
-    Can it self-organize metastable states?
+```
+Can it self-organize metastable states?
+```
 
 ### Stage 3
 
-    Does timing causally matter?
+```
+Does timing causally matter?
+```
 
 ### Stage 4
 
-    Can a state retain perceptual context?
+```
+Can a state retain perceptual context?
+```
 
 ### Stage 5
 
-    Does that state causally alter future interpretation?
+```
+Does that state causally alter future interpretation?
+```
 
 ### Stage 6
 
-    Can it predict the environment?
+```
+Can it predict the environment?
+```
 
 ### Stage 7
 
-    Can experience reshape the state space?
+```
+Can experience reshape the state space?
+```
 
 ### Stage 8
 
-    Can spontaneous dynamics consolidate it?
+```
+Can spontaneous dynamics consolidate it?
+```
 
 ### Stage 9
 
-    Can multiple functions share the state?
+```
+Can multiple functions share the state?
+```
 
 ### Stage 10
 
-    Can selected content become globally available?
+```
+Can selected content become globally available?
+```
 
 ### Stage 11
 
-    Do corresponding biological dynamics track phenomenal perception?
+```
+Do corresponding biological dynamics track phenomenal perception?
+```
 
 
 ## 14.62 Minimum publishable experiment
@@ -1411,23 +1734,31 @@ Nejsilnější kandidát:
 
 Experiment:
 
-    A -> blank -> ambiguous X
+```
+A -> blank -> ambiguous X
+```
 
 v:
 
-    phase-intact
+```
+phase-intact
+```
 
 a:
 
-    rate-matched phase-scrambled
+```
+rate-matched phase-scrambled
+```
 
 síti.
 
 Měřit:
 
-    state separability,
-    persistence,
-    causal behavioral effect.
+```
+state separability,
+persistence,
+causal behavioral effect.
+```
 
 
 ## 14.63 Druhá publikace
@@ -1439,7 +1770,9 @@ Pokud první hypotéza uspěje:
 
 Tady by se testoval:
 
-    Deep State Learning.
+```
+Deep State Learning.
+```
 
 
 ## 14.64 Třetí publikace
@@ -1458,9 +1791,11 @@ Tím by se testoval Perceptual Manifold.
 Teprve po podpoře mechanistické části má smysl publikovat širší
 teoretický argument:
 
-    Deep Percept
-        ->
-    candidate phenomenal substrate.
+```
+Deep Percept
+    ->
+candidate phenomenal substrate.
+```
 
 Bez funkčního mechanismu by byla fenomenální část příliš spekulativní.
 
@@ -1476,13 +1811,17 @@ Celou mechanistickou teorii lze shrnout otázkou:
 
 Pokud:
 
-    no,
+```
+no,
+```
 
 pak velká část DPSH ztrácí důvod existence.
 
 Pokud:
 
-    yes,
+```
+yes,
+```
 
 následuje otázka:
 
@@ -1496,36 +1835,52 @@ DPSH proto postupuje od nejslabšího k nejsilnějšímu tvrzení:
 
 ### Tvrzení A
 
-    dynamic states exist.
+```
+dynamic states exist.
+```
 
 ### Tvrzení B
 
-    dynamic states carry information.
+```
+dynamic states carry information.
+```
 
 ### Tvrzení C
 
-    dynamic states causally affect future processing.
+```
+dynamic states causally affect future processing.
+```
 
 ### Tvrzení D
 
-    dynamic states form integrated perceptual context.
+```
+dynamic states form integrated perceptual context.
+```
 
 ### Tvrzení E
 
-    experience reshapes their geometry.
+```
+experience reshapes their geometry.
+```
 
 ### Tvrzení F
 
-    they function as shared internal world model.
+```
+they function as shared internal world model.
+```
 
 ### Tvrzení G
 
-    selected content becomes globally available.
+```
+selected content becomes globally available.
+```
 
 ### Tvrzení H
 
-    these mechanisms may constitute a candidate substrate of
-    phenomenal experience.
+```
+these mechanisms may constitute a candidate substrate of
+phenomenal experience.
+```
 
 Každý krok musí být podpořen samostatně.
 
@@ -1577,25 +1932,33 @@ mechanismů.
 
 Je jím:
 
-    freeze theory version 0.1
+```
+freeze theory version 0.1
+```
 
 a převést jednotlivé hypotézy do:
 
-    Cognia engine requirements
-        ->
-    minimal experimental architectures
-        ->
-    predefined metrics
-        ->
-    ablation experiments.
+```
+Cognia engine requirements
+    ->
+minimal experimental architectures
+    ->
+predefined metrics
+    ->
+ablation experiments.
+```
 
 Od tohoto okamžiku musí nové architektonické prvky vznikat primárně jako
 odpověď na:
 
-    experimentální problém
+```
+experimentální problém
+```
 
 nebo:
 
-    falsifikovanou část hypotézy,
+```
+falsifikovanou část hypotézy,
+```
 
 nikoli pouze proto, že intuitivně připomínají biologický mozek.

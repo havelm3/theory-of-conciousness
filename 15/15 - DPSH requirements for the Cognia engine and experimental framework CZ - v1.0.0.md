@@ -9,12 +9,14 @@ nesmí fungovat pouze jako prostředí pro definici neuronových sítí.
 
 Musí zároveň fungovat jako:
 
-    simulator,
-    perturbation framework,
-    recorder,
-    replay system,
-    ablation platform,
-    experimental runtime.
+```
+simulator,
+perturbation framework,
+recorder,
+replay system,
+ablation platform,
+experimental runtime.
+```
 
 Základní požadavek je:
 
@@ -26,10 +28,12 @@ Cognia proto nemá pouze vytvořit systém, který "funguje".
 
 Musí umožnit zjistit:
 
-    proč funguje,
-    který mechanismus je nutný,
-    který mechanismus je redundantní,
-    co se změní po jeho odstranění.
+```
+proč funguje,
+který mechanismus je nutný,
+který mechanismus je redundantní,
+co se změní po jeho odstranění.
+```
 
 
 ## 15.2 Oddělení tří vrstev systému
@@ -40,35 +44,41 @@ Cognia by měla důsledně oddělit minimálně tři vrstvy:
 
 Zajišťuje:
 
-    event processing,
-    simulation time,
-    random generator,
-    logging,
-    snapshotting,
-    replay.
+```
+event processing,
+simulation time,
+random generator,
+logging,
+snapshotting,
+replay.
+```
 
 ### 2. Neural architecture layer
 
 Definuje:
 
-    neurons,
-    synapses,
-    oscillators,
-    memory units,
-    modulators,
-    controllers,
-    populations.
+```
+neurons,
+synapses,
+oscillators,
+memory units,
+modulators,
+controllers,
+populations.
+```
 
 ### 3. Experimental layer
 
 Definuje:
 
-    stimuli,
-    interventions,
-    ablations,
-    measurements,
-    hypotheses,
-    expected outcomes.
+```
+stimuli,
+interventions,
+ablations,
+measurements,
+hypotheses,
+expected outcomes.
+```
 
 Toto oddělení je zásadní.
 
@@ -84,31 +94,43 @@ To však neznamená, že neuronální síť používá globální clock.
 
 Je nutné rozlišovat:
 
-    simulation time
+```
+simulation time
+```
 
 od:
 
-    neural processing clock.
+```
+neural processing clock.
+```
 
 Engine může evidovat:
 
-    t = 12.351 ms
+```
+t = 12.351 ms
+```
 
 a zpracovat událost.
 
 Neuronální architektura však nesmí být nucena do:
 
-    tick 1 -> update all neurons
-    tick 2 -> update all neurons
-    tick 3 -> update all neurons.
+```
+tick 1 -> update all neurons
+tick 2 -> update all neurons
+tick 3 -> update all neurons.
+```
 
 Tedy:
 
-    engine has time
+```
+engine has time
+```
 
 ale:
 
-    network has no mandatory global update step.
+```
+network has no mandatory global update step.
+```
 
 
 ## 15.4 Event-driven execution
@@ -117,29 +139,35 @@ Základní režim Cognia DPSH by měl být event-driven.
 
 Událost může být například:
 
-    spike,
-    oscillator phase event,
-    sensory event,
-    plasticity event,
-    refractory end,
-    modulation event.
+```
+spike,
+oscillator phase event,
+sensory event,
+plasticity event,
+refractory end,
+modulation event.
+```
 
 Každá událost má:
 
-    source,
-    target,
-    timestamp,
-    type,
-    payload.
+```
+source,
+target,
+timestamp,
+type,
+payload.
+```
 
 Například:
 
-    Event {
-        source: neuron_12
-        target: neuron_54
-        type: spike
-        time: 12.351 ms
-    }.
+```
+Event {
+    source: neuron_12
+    target: neuron_54
+    type: spike
+    time: 12.351 ms
+}.
+```
 
 Engine zpracovává události v časovém pořadí.
 
@@ -148,23 +176,31 @@ Engine zpracovává události v časovém pořadí.
 
 Je potřeba explicitní:
 
-    event queue.
+```
+event queue.
+```
 
 Minimální vlastnosti:
 
-    insert(event),
-    pop_next(),
-    peek_next_time(),
-    cancel(event),
-    inspect_queue().
+```
+insert(event),
+pop_next(),
+peek_next_time(),
+cancel(event),
+inspect_queue().
+```
 
 Queue musí respektovat:
 
-    exact timestamp order.
+```
+exact timestamp order.
+```
 
 Při shodném timestampu musí být chování:
 
-    deterministic under fixed seed
+```
+deterministic under fixed seed
+```
 
 nebo musí být explicitně definováno pravidlo ordering.
 
@@ -173,19 +209,27 @@ nebo musí být explicitně definováno pravidlo ordering.
 
 Pokud dvě události nastanou ve stejném čase:
 
-    t_A = t_B,
+```
+t_A = t_B,
+```
 
 musí být jasné, zda:
 
-    A then B
+```
+A then B
+```
 
 nebo:
 
-    B then A
+```
+B then A
+```
 
 nebo:
 
-    both treated as simultaneous.
+```
+both treated as simultaneous.
+```
 
 To je pro nekomutativní dynamiku zásadní.
 
@@ -196,24 +240,32 @@ Engine nesmí libovolně měnit pořadí bez záznamu.
 
 Každý neuron musí mít vlastní stav:
 
-    state_i(t).
+```
+state_i(t).
+```
 
 Minimálně může obsahovat:
 
-    membrane-like activation,
-    refractory state,
-    adaptation,
-    baseline spike probability,
-    recent spike history,
-    local modulation.
+```
+membrane-like activation,
+refractory state,
+adaptation,
+baseline spike probability,
+recent spike history,
+local modulation.
+```
 
 Neuron se aktualizuje:
 
-    when relevant event arrives
+```
+when relevant event arrives
+```
 
 nebo:
 
-    when its own internal dynamics requires it.
+```
+when its own internal dynamics requires it.
+```
 
 Nemusí se přepočítávat při každé změně globálního času.
 
@@ -224,9 +276,11 @@ Neuron musí mít možnost naplánovat vlastní budoucí událost.
 
 Například:
 
-    next spontaneous spike candidate,
-    refractory end,
-    adaptation decay.
+```
+next spontaneous spike candidate,
+refractory end,
+adaptation decay.
+```
 
 To umožňuje autonomní lifecycle bez globálního ticku.
 
@@ -238,22 +292,26 @@ neuron model.
 
 Musí podporovat:
 
-    baseline firing,
-    input-dependent firing probability,
-    refractory period,
-    optional noise amplitude,
-    random seed control.
+```
+baseline firing,
+input-dependent firing probability,
+refractory period,
+optional noise amplitude,
+random seed control.
+```
 
 Obecně:
 
-    P(spike_i,t) =
-        F(
-            baseline,
-            current_state,
-            input,
-            oscillator modulation,
-            stochastic component
-        ).
+```
+P(spike_i,t) =
+    F(
+        baseline,
+        current_state,
+        input,
+        oscillator modulation,
+        stochastic component
+    ).
+```
 
 
 ## 15.10 Deterministic control neuron
@@ -263,17 +321,23 @@ kontrola.
 
 Například:
 
-    same input transform,
-    same threshold,
-    no random component.
+```
+same input transform,
+same threshold,
+no random component.
+```
 
 To umožní přímo testovat:
 
-    stochastic ON
+```
+stochastic ON
+```
 
 versus:
 
-    stochastic OFF.
+```
+stochastic OFF.
+```
 
 
 ## 15.11 Random subsystem
@@ -282,18 +346,24 @@ Randomness nesmí být rozptýlený neřízeně po enginu.
 
 Cognia musí mít centralizovaný experimentální random subsystem:
 
-    RandomContext.
+```
+RandomContext.
+```
 
 Musí podporovat:
 
-    seed,
-    stream id,
-    snapshot,
-    replay.
+```
+seed,
+stream id,
+snapshot,
+replay.
+```
 
 Například:
 
-    random("neuron_12", "spike_generation").
+```
+random("neuron_12", "spike_generation").
+```
 
 To umožní přesnou reprodukci.
 
@@ -302,70 +372,94 @@ To umožní přesnou reprodukci.
 
 Je vhodné oddělit random streams podle funkce:
 
-    spontaneous spikes,
-    synaptic noise,
-    stimulus noise,
-    initialization,
-    learning noise.
+```
+spontaneous spikes,
+synaptic noise,
+stimulus noise,
+initialization,
+learning noise.
+```
 
 Pak lze například zmrazit:
 
-    spontaneous randomness
+```
+spontaneous randomness
+```
 
 a měnit pouze:
 
-    input noise.
+```
+input noise.
+```
 
 
 ## 15.13 Frozen randomness
 
 Engine musí umožnit:
 
-    record random sequence
+```
+record random sequence
+```
 
 a následně:
 
-    replay exact sequence.
+```
+replay exact sequence.
+```
 
 To je nutné pro experimenty:
 
-    fresh stochasticity
+```
+fresh stochasticity
+```
 
 versus:
 
-    frozen stochasticity.
+```
+frozen stochasticity.
+```
 
 
 ## 15.14 Synapse
 
 Synapse nesmí být pouze:
 
-    weight.
+```
+weight.
+```
 
 Minimální stav:
 
-    Synapse {
-        weight
-        delay
-        plasticity_rule
-        plasticity_state
-        enabled
-    }.
+```
+Synapse {
+    weight
+    delay
+    plasticity_rule
+    plasticity_state
+    enabled
+}.
+```
 
 
 ## 15.15 Synaptické zpoždění
 
 Každá synapse musí podporovat:
 
-    delay_ij.
+```
+delay_ij.
+```
 
 Spike vzniklý:
 
-    t
+```
+t
+```
 
 dorazí:
 
-    t + delay_ij.
+```
+t + delay_ij.
+```
 
 Delay musí být experimentálně měnitelný a logovatelný.
 
@@ -376,11 +470,15 @@ Engine by měl podporovat dvě varianty:
 
 ### Fixed delay
 
-    d_ij = const.
+```
+d_ij = const.
+```
 
 ### Plastic delay
 
-    d_ij(t)
+```
+d_ij(t)
+```
 
 měnitelný učením.
 
@@ -392,11 +490,15 @@ neměla znemožnit.
 
 Musí být explicitně podporováno:
 
-    excitatory connection
+```
+excitatory connection
+```
 
 a:
 
-    inhibitory connection.
+```
+inhibitory connection.
+```
 
 Inhibice nesmí být implementována pouze jako záporný workaround, pokud
 to znemožní rozdílnou plasticitu nebo dynamiku.
@@ -407,32 +509,40 @@ to znemožní rozdílnou plasticitu nebo dynamiku.
 Plasticity rule musí být oddělena od neuronu a synapse tak, aby bylo
 možné snadno zaměňovat:
 
-    STDP,
-    Hebbian,
-    rate-based,
-    no plasticity.
+```
+STDP,
+Hebbian,
+rate-based,
+no plasticity.
+```
 
 Například:
 
-    plasticity STDP {
-        pre_window
-        post_window
-        learning_rate
-    }.
+```
+plasticity STDP {
+    pre_window
+    post_window
+    learning_rate
+}.
+```
 
 
 ## 15.19 STDP
 
 Minimální STDP implementace musí mít:
 
-    t_pre,
-    t_post,
-    Δt,
-    Δw.
+```
+t_pre,
+t_post,
+Δt,
+Δw.
+```
 
 A logovat:
 
-    every plasticity event.
+```
+every plasticity event.
+```
 
 To umožní zpětně ověřit, zda učení skutečně proběhlo podle očekávaného
 timingu.
@@ -442,33 +552,43 @@ timingu.
 
 Plasticita musí umožňovat modulaci:
 
-    learning_gain.
+```
+learning_gain.
+```
 
 Například:
 
-    prediction error,
-    relevance,
-    reward,
-    consolidation gate.
+```
+prediction error,
+relevance,
+reward,
+consolidation gate.
+```
 
 Formálně:
 
-    Δw =
-        learning_gain * STDP(Δt).
+```
+Δw =
+    learning_gain * STDP(Δt).
+```
 
 
 ## 15.21 Learning gate
 
 Musí existovat možnost:
 
-    plasticity ON
-    plasticity OFF
+```
+plasticity ON
+plasticity OFF
+```
 
 globálně i lokálně.
 
 Například:
 
-    group.visual.plasticity = off.
+```
+group.visual.plasticity = off.
+```
 
 To je zásadní pro ablation experimenty.
 
@@ -480,11 +600,13 @@ architektury.
 
 Například:
 
-    oscillator Theta {
-        frequency: 8 Hz
-        phase: 0
-        amplitude: 1
-    }.
+```
+oscillator Theta {
+    frequency: 8 Hz
+    phase: 0
+    amplitude: 1
+}.
+```
 
 Oscillator není scheduler enginu.
 
@@ -493,71 +615,93 @@ Oscillator není scheduler enginu.
 
 Oscillator může generovat:
 
-    continuous modulation
+```
+continuous modulation
+```
 
 nebo:
 
-    discrete periodic events.
+```
+discrete periodic events.
+```
 
 Musí být možné definovat jeho vazbu na neurony:
 
-    oscillator -> neuron group.
+```
+oscillator -> neuron group.
+```
 
 A typ modulace:
 
-    excitability,
-    threshold,
-    spike probability,
-    synaptic gain,
-    plasticity gain.
+```
+excitability,
+threshold,
+spike probability,
+synaptic gain,
+plasticity gain.
+```
 
 
 ## 15.24 Více oscilátorů
 
 Síť musí podporovat mnoho nezávislých lokálních oscilátorů:
 
-    O1,
-    O2,
-    ...
-    On.
+```
+O1,
+O2,
+...
+On.
+```
 
 Každý s:
 
-    frequency,
-    phase,
-    amplitude,
-    coupling.
+```
+frequency,
+phase,
+amplitude,
+coupling.
+```
 
 
 ## 15.25 Phase query
 
 Pro každou událost musí být možné zjistit:
 
-    phase(O_k, t).
+```
+phase(O_k, t).
+```
 
 To je nutné pro následnou analýzu:
 
-    spike phase distribution,
-    phase locking,
-    phase-dependent plasticity.
+```
+spike phase distribution,
+phase locking,
+phase-dependent plasticity.
+```
 
 
 ## 15.26 Phase scrambling
 
 Experimentální framework musí podporovat operaci:
 
-    phase_scramble(group).
+```
+phase_scramble(group).
+```
 
 Ta může:
 
-    randomize oscillator phase,
-    destroy cross-population phase relationships,
+```
+randomize oscillator phase,
+destroy cross-population phase relationships,
+```
 
 ale ideálně zachovat:
 
-    mean oscillation frequency,
-    amplitude,
-    average firing rate.
+```
+mean oscillation frequency,
+amplitude,
+average firing rate.
+```
 
 Toto je jeden z klíčových experimentálních zásahů celé DPSH.
 
@@ -566,11 +710,15 @@ Toto je jeden z klíčových experimentálních zásahů celé DPSH.
 
 Vedle úplného scramblingu musí existovat:
 
-    phase_jitter(σ_phase).
+```
+phase_jitter(σ_phase).
+```
 
 To umožní hledat časový threshold:
 
-    how much phase disruption breaks function.
+```
+how much phase disruption breaks function.
+```
 
 
 ## 15.28 Emergentní oscilace
@@ -589,22 +737,30 @@ Cognia může obsahovat controllery.
 
 Je však nutné rozlišit:
 
-    modulatory controller
+```
+modulatory controller
+```
 
 od:
 
-    hidden central executive.
+```
+hidden central executive.
+```
 
 Controller může nastavovat:
 
-    gain,
-    attention,
-    learning gate,
-    relevance.
+```
+gain,
+attention,
+learning gate,
+relevance.
+```
 
 Neměl by například přímo volat:
 
-    percept = choose_best_state().
+```
+percept = choose_best_state().
+```
 
 Pokud by to dělal, samoorganizace by nebyla skutečně emergentní.
 
@@ -615,55 +771,71 @@ Explicitní paměťové jednotky mohou existovat.
 
 Musí však být jasně označené jako:
 
-    explicit state storage.
+```
+explicit state storage.
+```
 
 To umožní porovnat:
 
-    dynamic memory
+```
+dynamic memory
+```
 
 versus:
 
-    explicit memory cell.
+```
+explicit memory cell.
+```
 
 
 ## 15.31 Memory ablation
 
 Experimentální framework musí umožnit:
 
-    memory_cells OFF
+```
+memory_cells OFF
+```
 
 aniž změní ostatní architekturu.
 
 To je nutné pro test:
 
-    does metastable state retain context without explicit memory?
+```
+does metastable state retain context without explicit memory?
+```
 
 
 ## 15.32 Population abstraction
 
 Cognia by měla podporovat práci s populacemi:
 
-    population VisualA[100]
-    population VisualB[100].
+```
+population VisualA[100]
+population VisualB[100].
+```
 
 Je potřeba pro:
 
-    symmetric competition,
-    excitation/inhibition,
-    oscillator modulation,
-    collective analysis.
+```
+symmetric competition,
+excitation/inhibition,
+oscillator modulation,
+collective analysis.
+```
 
 
 ## 15.33 Population recorder
 
 Pro každou populaci musí být možné logovat:
 
-    spike count,
-    firing rate,
-    population state,
-    oscillator phase,
-    coherence,
-    mean activation.
+```
+spike count,
+firing rate,
+population state,
+oscillator phase,
+coherence,
+mean activation.
+```
 
 To usnadní sledování makrostavů.
 
@@ -672,21 +844,27 @@ To usnadní sledování makrostavů.
 
 Jedna z nejdůležitějších komponent:
 
-    StateRecorder.
+```
+StateRecorder.
+```
 
 Musí být možné v čase ukládat:
 
-    neuron states,
-    spike events,
-    oscillator states,
-    synaptic weights,
-    relevant modulatory states.
+```
+neuron states,
+spike events,
+oscillator states,
+synaptic weights,
+relevant modulatory states.
+```
 
 Výzkumným objektem není jen output.
 
 Je:
 
-    S(t).
+```
+S(t).
+```
 
 
 ## 15.35 Sampling state-space
@@ -695,45 +873,59 @@ Nemusí být praktické ukládat kompletní stav po každé mikro-události.
 
 Recorder musí podporovat:
 
-    fixed sampling interval,
-    event-triggered snapshot,
-    selected variable recording.
+```
+fixed sampling interval,
+event-triggered snapshot,
+selected variable recording.
+```
 
 Například:
 
-    sample every 1 ms
+```
+sample every 1 ms
+```
 
 nebo:
 
-    snapshot on macrostate transition.
+```
+snapshot on macrostate transition.
+```
 
 
 ## 15.36 Spike log
 
 Spike log musí obsahovat minimálně:
 
-    neuron id,
-    population,
-    timestamp,
-    local phase,
-    incoming cause if available.
+```
+neuron id,
+population,
+timestamp,
+local phase,
+incoming cause if available.
+```
 
 To umožní rekonstruovat:
 
-    spike trains,
-    order,
-    causal chains.
+```
+spike trains,
+order,
+causal chains.
+```
 
 
 ## 15.37 Causal trace
 
 Velmi užitečná funkce:
 
-    trace(event_id).
+```
+trace(event_id).
+```
 
 Ta by měla ukázat:
 
-    which events contributed to this event.
+```
+which events contributed to this event.
+```
 
 Nemusí jít o plnou filosofickou kauzalitu.
 
@@ -744,17 +936,21 @@ Stačí technický provenance graph.
 
 Každá změna:
 
-    w_ij
+```
+w_ij
+```
 
 musí mít:
 
-    old value,
-    new value,
-    timestamp,
-    pre event,
-    post event,
-    modulation value,
-    learning rule.
+```
+old value,
+new value,
+timestamp,
+pre event,
+post event,
+modulation value,
+learning rule.
+```
 
 To je zásadní pro Deep State Learning experimenty.
 
@@ -763,16 +959,20 @@ To je zásadní pro Deep State Learning experimenty.
 
 Engine musí podporovat:
 
-    snapshot network_state.
+```
+snapshot network_state.
+```
 
 Snapshot musí zahrnout:
 
-    neurons,
-    synapses,
-    oscillator phases,
-    random streams,
-    pending events,
-    plasticity state.
+```
+neurons,
+synapses,
+oscillator phases,
+random streams,
+pending events,
+plasticity state.
+```
 
 Pouze tak lze přesně vytvořit dvě experimentální větve ze stejného
 počátečního stavu.
@@ -782,12 +982,16 @@ počátečního stavu.
 
 Musí existovat:
 
-    restore(snapshot).
+```
+restore(snapshot).
+```
 
 Pak můžeme provést:
 
-    branch A = phase intact
-    branch B = phase scrambled
+```
+branch A = phase intact
+branch B = phase scrambled
+```
 
 od přesně stejného okamžiku.
 
@@ -796,23 +1000,31 @@ od přesně stejného okamžiku.
 
 Ideální framework:
 
-    snapshot S0
+```
+snapshot S0
 
-        /\
-       /  \
-      A    B
+    /\
+   /  \
+  A    B
+```
 
 A:
 
-    control condition.
+```
+control condition.
+```
 
 B:
 
-    intervention.
+```
+intervention.
+```
 
 Porovnáváme:
 
-    trajectories.
+```
+trajectories.
+```
 
 
 ## 15.42 Ablation API
@@ -822,12 +1034,14 @@ architektury.
 
 Například:
 
-    ablate stochasticity
-    ablate oscillators
-    ablate recurrence
-    ablate plasticity
-    ablate prediction
-    ablate workspace.
+```
+ablate stochasticity
+ablate oscillators
+ablate recurrence
+ablate plasticity
+ablate prediction
+ablate workspace.
+```
 
 To snižuje riziko implementačních confounds.
 
@@ -836,9 +1050,11 @@ To snižuje riziko implementačních confounds.
 
 Vedle ON/OFF by měla existovat i graduální manipulace:
 
-    recurrence_gain = 0.0 ... 1.0
-    stochasticity = 0.0 ... X
-    phase_jitter = 0 ... X.
+```
+recurrence_gain = 0.0 ... 1.0
+stochasticity = 0.0 ... X
+phase_jitter = 0 ... X.
+```
 
 Mnoho přechodů bude pravděpodobně nelineárních.
 
@@ -850,20 +1066,26 @@ statistikami.
 
 Například phase scrambling experiment musí ideálně držet podobné:
 
-    firing rate,
-    spike count,
-    total activity.
+```
+firing rate,
+spike count,
+total activity.
+```
 
 To může vyžadovat:
 
-    adaptive gain normalization.
+```
+adaptive gain normalization.
+```
 
 
 ## 15.45 Rate-matched control
 
 Pro experimenty s timingem by měl existovat helper:
 
-    match_firing_rate(reference, target).
+```
+match_firing_rate(reference, target).
+```
 
 Tím lze snížit možnost, že rozdíl vznikl pouze kvůli změně množství
 aktivity.
@@ -873,16 +1095,22 @@ aktivity.
 
 Další možnost:
 
-    record spike train
+```
+record spike train
+```
 
 a následně vytvořit:
 
-    reordered train
+```
+reordered train
+```
 
 se stejným:
 
-    neuron participation,
-    spike count.
+```
+neuron participation,
+spike count.
+```
 
 Manipulujeme pouze timing/order.
 
@@ -891,13 +1119,17 @@ Manipulujeme pouze timing/order.
 
 Framework musí podporovat:
 
-    reorder_events(window, mode).
+```
+reorder_events(window, mode).
+```
 
 Například:
 
-    reverse,
-    random permutation,
-    fixed jitter.
+```
+reverse,
+random permutation,
+fixed jitter.
+```
 
 To je klíčové pro test nekomutativní dynamiky.
 
@@ -906,13 +1138,17 @@ To je klíčové pro test nekomutativní dynamiky.
 
 Musí být možné:
 
-    perturb_delays(group, distribution).
+```
+perturb_delays(group, distribution).
+```
 
 Například:
 
-    +1 ms jitter
-    shuffle delays
-    zero delays.
+```
++1 ms jitter
+shuffle delays
+zero delays.
+```
 
 To umožní testovat časovou topologii.
 
@@ -923,7 +1159,9 @@ Stimulus nesmí být hardcoded v architektuře.
 
 Musí existovat:
 
-    InputSource.
+```
+InputSource.
+```
 
 Ten generuje časově definované sensory events.
 
@@ -932,9 +1170,11 @@ Ten generuje časově definované sensory events.
 
 Například:
 
-    stimulus A from 0–100 ms
-    blank 100–300 ms
-    ambiguous X 300–400 ms.
+```
+stimulus A from 0–100 ms
+blank 100–300 ms
+ambiguous X 300–400 ms.
+```
 
 Experiment musí být zapsán deklarativně.
 
@@ -943,24 +1183,32 @@ Experiment musí být zapsán deklarativně.
 
 Framework musí podporovat vstupy, které:
 
-    equally support multiple states.
+```
+equally support multiple states.
+```
 
 To je nutné pro:
 
-    symmetry breaking,
-    hysteresis,
-    perceptual reversal.
+```
+symmetry breaking,
+hysteresis,
+perceptual reversal.
+```
 
 
 ## 15.52 Continuous stimulus sweep
 
-Pro hysterézi musí být možné generovat parametrický vstup:
+Pro hysterezi musí být možné generovat parametrický vstup:
 
-    x(t) = 0 -> 1
+```
+x(t) = 0 -> 1
+```
 
 a pak:
 
-    1 -> 0.
+```
+1 -> 0.
+```
 
 S přesným logem transition threshold.
 
@@ -969,7 +1217,9 @@ S přesným logem transition threshold.
 
 Sensory framework musí podporovat:
 
-    temporary input removal
+```
+temporary input removal
+```
 
 bez resetu sítě.
 
@@ -980,25 +1230,33 @@ To je důležité pro test kontinuity.
 
 Pro predictive experiments:
 
-    learned A -> B
+```
+learned A -> B
+```
 
 ale test:
 
-    A -> C.
+```
+A -> C.
+```
 
 Framework musí přesně evidovat:
 
-    expected sequence
-    actual sequence.
+```
+expected sequence
+actual sequence.
+```
 
 
 ## 15.55 Multi-modal inputs
 
 Později musí být možné definovat paralelní:
 
-    visual input
-    audio input
-    body input.
+```
+visual input
+audio input
+body input.
+```
 
 Každý s vlastním timestampingem.
 
@@ -1007,32 +1265,40 @@ Každý s vlastním timestampingem.
 
 Experiment framework nesmí předpokládat, že každý pokus má:
 
-    one output label.
+```
+one output label.
+```
 
 Výstup může být:
 
-    action,
-    trajectory,
-    state classification,
-    transition time,
-    prediction error.
+```
+action,
+trajectory,
+state classification,
+transition time,
+prediction error.
+```
 
 
 ## 15.57 State-space export
 
 Cognia musí umět exportovat experimentální data do formátu vhodného pro:
 
-    PCA,
-    UMAP,
-    clustering,
-    transition analysis,
-    trajectory comparison.
+```
+PCA,
+UMAP,
+clustering,
+transition analysis,
+trajectory comparison.
+```
 
 Například:
 
-    CSV,
-    JSONL,
-    binary matrix.
+```
+CSV,
+JSONL,
+binary matrix.
+```
 
 
 ## 15.58 Feature selection
@@ -1041,22 +1307,30 @@ Nemusíme analyzovat každý interní parametr.
 
 Framework by měl umožnit:
 
-    record feature set.
+```
+record feature set.
+```
 
 Například:
 
-    neuron activation only
+```
+neuron activation only
+```
 
 nebo:
 
-    activation + phase + synaptic variables.
+```
+activation + phase + synaptic variables.
+```
 
 
 ## 15.59 Macrostate detector
 
 Pro některé experimenty bude užitečný modul:
 
-    MacrostateDetector.
+```
+MacrostateDetector.
+```
 
 Neměl by být součástí sítě.
 
@@ -1064,23 +1338,29 @@ Je pouze analytickým nástrojem pozorovatele.
 
 Může například identifikovat:
 
-    clusters,
-    transitions,
-    dwell times.
+```
+clusters,
+transitions,
+dwell times.
+```
 
 
 ## 15.60 Žádný hidden percept object
 
 Engine nesmí obsahovat stav:
 
-    CurrentPercept = A
+```
+CurrentPercept = A
+```
 
 pokud ho neuronální systém sám nevytvořil jako explicitní downstream
 reprezentaci.
 
 Analytický nástroj může později říct:
 
-    trajectory classified as M_A.
+```
+trajectory classified as M_A.
+```
 
 Ale to je external analysis.
 
@@ -1089,7 +1369,9 @@ Ale to je external analysis.
 
 Framework musí umožnit vytrénovat externí decoder nad stavovými daty:
 
-    state -> context label.
+```
+state -> context label.
+```
 
 Decoder nesmí ovlivnit samotnou síť.
 
@@ -1102,26 +1384,32 @@ Vedle dekódování musí být možné do state-space zasáhnout.
 
 Například:
 
-    stimulate population A
-    inhibit population B
-    shift oscillator phase.
+```
+stimulate population A
+inhibit population B
+shift oscillator phase.
+```
 
 Poté sledovat:
 
-    trajectory change,
-    behavior change.
+```
+trajectory change,
+behavior change.
+```
 
 
 ## 15.63 Perturbation API
 
 Například:
 
-    perturb {
-        at: 250 ms
-        target: population.A
-        type: activation
-        strength: 0.2
-    }.
+```
+perturb {
+    at: 250 ms
+    target: population.A
+    type: activation
+    strength: 0.2
+}.
+```
 
 
 ## 15.64 Local perturbation
@@ -1130,16 +1418,20 @@ Zásahy by měly být pokud možno lokální.
 
 Globální:
 
-    set_state(M_B)
+```
+set_state(M_B)
+```
 
 by porušil princip emergentní dynamiky.
 
 Lepší:
 
-    activate subset,
-    inhibit subset,
-    phase shift,
-    synaptic perturbation.
+```
+activate subset,
+inhibit subset,
+phase shift,
+synaptic perturbation.
+```
 
 
 ## 15.65 Workspace layer
@@ -1149,34 +1441,44 @@ struktura.
 
 Ne jako:
 
-    global variable.
+```
+global variable.
+```
 
 Měl by mít:
 
-    workspace populations,
-    recurrent connections,
-    candidate inputs,
-    broadcast outputs.
+```
+workspace populations,
+recurrent connections,
+candidate inputs,
+broadcast outputs.
+```
 
 
 ## 15.66 Workspace access measurement
 
 Framework musí měřit:
 
-    which modules received information,
-    when,
-    for how long.
+```
+which modules received information,
+when,
+for how long.
+```
 
 To umožní definovat:
 
-    global accessibility.
+```
+global accessibility.
+```
 
 
 ## 15.67 Workspace ablation
 
 Musí být možné:
 
-    disable workspace
+```
+disable workspace
+```
 
 bez odstranění nižších perceptuálních modulů.
 
@@ -1185,16 +1487,22 @@ bez odstranění nižších perceptuálních modulů.
 
 Musí být možné experimentálně oddělit:
 
-    feedforward access
+```
+feedforward access
+```
 
 a:
 
-    top-down feedback.
+```
+top-down feedback.
+```
 
 Například:
 
-    broadcast ON
-    feedback OFF.
+```
+broadcast ON
+feedback OFF.
+```
 
 
 ## 15.69 Predictive subsystem
@@ -1203,11 +1511,15 @@ Cognia musí podporovat alespoň dvě možnosti.
 
 ### Explicit predictor
 
-    state -> predicted sensory input.
+```
+state -> predicted sensory input.
+```
 
 ### Implicit prediction
 
-    learned state transitions.
+```
+learned state transitions.
+```
 
 Obě musí být samostatně testovatelné.
 
@@ -1218,24 +1530,32 @@ Pokud použijeme explicitní prediction error, měl by být distribuovatelný.
 
 Ne pouze:
 
-    global_error scalar.
+```
+global_error scalar.
+```
 
 Například:
 
-    error.visual.position
-    error.visual.shape
-    error.audio.frequency.
+```
+error.visual.position
+error.visual.shape
+error.audio.frequency.
+```
 
 
 ## 15.71 Precision modulation
 
 Pozdější verze musí umožnit:
 
-    error gain.
+```
+error gain.
+```
 
 Například:
 
-    precision = 0.2
+```
+precision = 0.2
+```
 
 pro noisy sensor.
 
@@ -1246,13 +1566,17 @@ Tím lze testovat attention/precision hypotézy.
 
 Controller může například měnit:
 
-    prediction gain,
-    sensory gain,
-    attention.
+```
+prediction gain,
+sensory gain,
+attention.
+```
 
 Ale neměl by přímo nastavovat:
 
-    correct percept.
+```
+correct percept.
+```
 
 
 ## 15.73 Experiment definition
@@ -1261,34 +1585,38 @@ Každý experiment by měl být deklarativně popsatelný.
 
 Například:
 
-    experiment PhaseScramble {
-        hypothesis: H3
-        seed: 42
+```
+experiment PhaseScramble {
+    hypothesis: H3
+    seed: 42
 
-        stimulus: A_blank_X
+    stimulus: A_blank_X
 
-        branches:
-            control:
-                phase: intact
+    branches:
+        control:
+            phase: intact
 
-            intervention:
-                phase: scrambled
+        intervention:
+            phase: scrambled
 
-        metrics:
-            state_separability
-            dwell_time
-            choice
-    }.
+    metrics:
+        state_separability
+        dwell_time
+        choice
+}.
+```
 
 
 ## 15.74 Hypothesis metadata
 
 Každý experiment by měl mít:
 
-    hypothesis id,
-    prediction,
-    null hypothesis,
-    falsification criterion.
+```
+hypothesis id,
+prediction,
+null hypothesis,
+falsification criterion.
+```
 
 To přímo spojuje teorii s výsledkem.
 
@@ -1297,14 +1625,16 @@ To přímo spojuje teorii s výsledkem.
 
 Například:
 
-    prediction:
-        phase scramble decreases state separability
+```
+prediction:
+    phase scramble decreases state separability
 
-    null:
-        no significant change
+null:
+    no significant change
 
-    falsification:
-        no effect across predefined parameter range.
+falsification:
+    no effect across predefined parameter range.
+```
 
 Tím se omezuje post-hoc interpretace.
 
@@ -1313,14 +1643,16 @@ Tím se omezuje post-hoc interpretace.
 
 Framework by měl evidovat:
 
-    experiment id,
-    code version,
-    network version,
-    theory version,
-    seed,
-    date,
-    parameters,
-    result.
+```
+experiment id,
+code version,
+network version,
+theory version,
+seed,
+date,
+parameters,
+result.
+```
 
 To je zásadní pro reprodukovatelnost.
 
@@ -1329,11 +1661,15 @@ To je zásadní pro reprodukovatelnost.
 
 Každý experiment musí evidovat:
 
-    DPSH version.
+```
+DPSH version.
+```
 
 Například:
 
-    DPSH-0.1.
+```
+DPSH-0.1.
+```
 
 Pokud později změníme hypotézu, nesmíme zpětně reinterpretovat starý
 experiment bez označení.
@@ -1343,7 +1679,9 @@ experiment bez označení.
 
 Podobně:
 
-    Cognia engine version.
+```
+Cognia engine version.
+```
 
 Výsledek musí být reprodukovatelný proti konkrétnímu runtime.
 
@@ -1352,7 +1690,9 @@ Výsledek musí být reprodukovatelný proti konkrétnímu runtime.
 
 Každá síť může mít:
 
-    config hash.
+```
+config hash.
+```
 
 Tím lze ověřit, že dvě podmínky skutečně používají stejnou architekturu.
 
@@ -1361,77 +1701,101 @@ Tím lze ověřit, že dvě podmínky skutečně používají stejnou architektu
 
 Framework musí umožnit automaticky měnit:
 
-    stochasticity,
-    recurrence,
-    oscillator frequency,
-    phase,
-    delay,
-    learning rate.
+```
+stochasticity,
+recurrence,
+oscillator frequency,
+phase,
+delay,
+learning rate.
+```
 
 Výstup:
 
-    parameter -> metric.
+```
+parameter -> metric.
+```
 
 
 ## 15.81 Multidimensional sweep
 
 Například:
 
-    stochasticity x phase jitter x recurrence gain.
+```
+stochasticity x phase jitter x recurrence gain.
+```
 
 To bude důležité pro hledání:
 
-    critical regimes.
+```
+critical regimes.
+```
 
 
 ## 15.82 Nehledat pouze nejlepší výsledek
 
 Sweep nesmí být použit pouze k nalezení:
 
-    highest score.
+```
+highest score.
+```
 
 Musíme analyzovat:
 
-    regime transitions,
-    stability regions,
-    failure boundaries.
+```
+regime transitions,
+stability regions,
+failure boundaries.
+```
 
 
 ## 15.83 Criticality detection
 
 Pokud například při:
 
-    g_rec = g_c
+```
+g_rec = g_c
+```
 
 dojde k náhlému:
 
-    state coherence increase,
+```
+state coherence increase,
+```
 
 framework by měl umožnit zachytit:
 
-    phase transition-like behavior.
+```
+phase transition-like behavior.
+```
 
 
 ## 15.84 Replikace přes seeds
 
 Každý stochastic experiment musí být spuštěn:
 
-    across multiple seeds.
+```
+across multiple seeds.
+```
 
 Výsledkem není jeden běh.
 
 Je distribuce:
 
-    P(metric).
+```
+P(metric).
+```
 
 
 ## 15.85 Confidence intervals
 
 Experimentální výstup musí podporovat:
 
-    mean,
-    variance,
-    confidence interval.
+```
+mean,
+variance,
+confidence interval.
+```
 
 Bez toho nebude možné oddělit efekt od stochastic variability.
 
@@ -1440,10 +1804,12 @@ Bez toho nebude možné oddělit efekt od stochastic variability.
 
 Cognia framework by měl podporovat kontrolní architektury:
 
-    synchronous RNN-like model,
-    explicit memory model,
-    rate-coded attractor,
-    deterministic recurrent model.
+```
+synchronous RNN-like model,
+explicit memory model,
+rate-coded attractor,
+deterministic recurrent model.
+```
 
 DPSH musí být porovnávána s jednoduššími alternativami.
 
@@ -1452,26 +1818,36 @@ DPSH musí být porovnávána s jednoduššími alternativami.
 
 Zvlášť důležitý control:
 
-    same architecture
+```
+same architecture
+```
 
 ale:
 
-    synchronous batched updates.
+```
+synchronous batched updates.
+```
 
 Cílem je testovat rozdíl:
 
-    event-driven timing
+```
+event-driven timing
+```
 
 versus:
 
-    global discretization.
+```
+global discretization.
+```
 
 
 ## 15.88 Rate-based control
 
 Další:
 
-    convert spike activity to rates.
+```
+convert spike activity to rates.
+```
 
 To umožní testovat, zda timing obsahuje informace nad rámec rate.
 
@@ -1480,7 +1856,9 @@ To umožní testovat, zda timing obsahuje informace nad rámec rate.
 
 Například:
 
-    memory bit stores context A/B.
+```
+memory bit stores context A/B.
+```
 
 Pokud tato jednoduchá varianta vysvětlí všechny výsledky stejně dobře,
 DPSH musí prokázat jinou výhodu.
@@ -1490,9 +1868,11 @@ DPSH musí prokázat jinou výhodu.
 
 Veškeré metriky jako:
 
-    cluster id,
-    manifold dimension,
-    macrostate label
+```
+cluster id,
+manifold dimension,
+macrostate label
+```
 
 musí existovat mimo neuronální síť.
 
@@ -1505,11 +1885,13 @@ součást experimentu.
 Protože event-driven systém může být výpočetně náročný, engine musí
 měřit:
 
-    events per second,
-    queue size,
-    memory usage,
-    neuron updates,
-    synaptic events.
+```
+events per second,
+queue size,
+memory usage,
+neuron updates,
+synaptic events.
+```
 
 To umožní později řešit škálování.
 
@@ -1518,24 +1900,32 @@ To umožní později řešit škálování.
 
 Engine by měl být od začátku optimalizován pro:
 
-    sparse graph.
+```
+sparse graph.
+```
 
 To je důležité jak biologicky, tak výpočetně.
 
 Nesmí předpokládat:
 
-    all-to-all connectivity.
+```
+all-to-all connectivity.
+```
 
 
 ## 15.93 Velké množství jednoduchých neuronů
 
 Architektura musí umožnit experiment:
 
-    many simple neurons
+```
+many simple neurons
+```
 
 versus:
 
-    fewer complex neurons.
+```
+fewer complex neurons.
+```
 
 Toto je důležité pro pozdější scaling hypothesis.
 
@@ -1544,7 +1934,9 @@ Toto je důležité pro pozdější scaling hypothesis.
 
 Pozdější experimenty mohou vyžadovat:
 
-    dynamic recruitment
+```
+dynamic recruitment
+```
 
 neuronu do různých assemblies.
 
@@ -1556,10 +1948,12 @@ běhu neměnná.
 
 Pozdější verze by měla podporovat globální nebo regionální modulátory:
 
-    dopamine-like,
-    relevance,
-    arousal,
-    learning gain.
+```
+dopamine-like,
+relevance,
+arousal,
+learning gain.
+```
 
 Ne jako biologickou kopii, ale jako obecný modulatory signal.
 
@@ -1568,22 +1962,28 @@ Ne jako biologickou kopii, ale jako obecný modulatory signal.
 
 Cognia musí podporovat rozdíl:
 
-    external sensory input
+```
+external sensory input
+```
 
 a:
 
-    internal neural input.
+```
+internal neural input.
+```
 
 Interní moduly musí být schopny vstupovat do stejného dynamického
 systému jako senzorické kanály.
 
 To je důležité pro:
 
-    memory,
-    valuation,
-    attention,
-    prediction,
-    workspace feedback.
+```
+memory,
+valuation,
+attention,
+prediction,
+workspace feedback.
+```
 
 
 ## 15.97 Žádné privilegované external/internal API
@@ -1598,11 +1998,15 @@ Rozdíl je ve zdroji, ne nutně ve fyzice propagace.
 
 Síť musí být schopna běžet:
 
-    indefinitely
+```
+indefinitely
+```
 
 bez implicitního:
 
-    reset after sample.
+```
+reset after sample.
+```
 
 To je zásadní pro kontinuitu perceptu.
 
@@ -1611,8 +2015,10 @@ To je zásadní pro kontinuitu perceptu.
 
 Experiment může mít:
 
-    trial 1
-    trial 2.
+```
+trial 1
+trial 2.
+```
 
 Ale pokud testujeme kontinuitu, hranice trialu nesmí automaticky
 resetovat neuronální stav.
@@ -1624,20 +2030,26 @@ Reset musí být explicitní intervention.
 
 Framework musí explicitně podporovat:
 
-    no sensory input
+```
+no sensory input
+```
 
 při současném:
 
-    network continues to evolve.
+```
+network continues to evolve.
+```
 
 
 ## 15.101 Sleep-like offline period
 
 Pro Deep State Learning lze později zavést režim:
 
-    sensory disconnected
-    spontaneous dynamics active
-    selected plasticity active.
+```
+sensory disconnected
+spontaneous dynamics active
+selected plasticity active.
+```
 
 To může být použito pro experimenty s konsolidací.
 
@@ -1646,15 +2058,21 @@ To může být použito pro experimenty s konsolidací.
 
 Pro některé kontrolní experimenty bude užitečné:
 
-    freeze plasticity
+```
+freeze plasticity
+```
 
 nebo:
 
-    freeze oscillator phase
+```
+freeze oscillator phase
+```
 
 nebo:
 
-    freeze synaptic weights.
+```
+freeze synaptic weights.
+```
 
 Tím lze oddělit dynamické komponenty.
 
@@ -1663,11 +2081,15 @@ Tím lze oddělit dynamické komponenty.
 
 Sensory stream musí být možné:
 
-    record
+```
+record
+```
 
 a poté:
 
-    replay exactly.
+```
+replay exactly.
+```
 
 Dvě sítě pak dostanou identický externí svět.
 
@@ -1676,23 +2098,31 @@ Dvě sítě pak dostanou identický externí svět.
 
 Pro některé kontrolní experimenty může být užitečné replayovat také:
 
-    exact internal spike sequence.
+```
+exact internal spike sequence.
+```
 
 To umožní rozlišit:
 
-    architecture response
+```
+architecture response
+```
 
 od:
 
-    stochastic event generation.
+```
+stochastic event generation.
+```
 
 
 ## 15.105 State comparison
 
 Framework musí obsahovat funkce:
 
-    compare_states(S_A, S_B)
-    compare_trajectories(T_A, T_B).
+```
+compare_states(S_A, S_B)
+compare_trajectories(T_A, T_B).
+```
 
 Výsledná metrika může být pluggable.
 
@@ -1701,10 +2131,12 @@ Výsledná metrika může být pluggable.
 
 Možné metriky:
 
-    Euclidean latent distance,
-    dynamic time warping,
-    cosine similarity,
-    classifier separability.
+```
+Euclidean latent distance,
+dynamic time warping,
+cosine similarity,
+classifier separability.
+```
 
 Není nutné jednu metodu zakódovat do teorie.
 
@@ -1713,22 +2145,28 @@ Není nutné jednu metodu zakódovat do teorie.
 
 Framework musí detekovat:
 
-    M_A -> M_B
+```
+M_A -> M_B
+```
 
 na základě externího analytického modelu.
 
 To umožní měřit:
 
-    dwell time,
-    transition probability,
-    hysteresis.
+```
+dwell time,
+transition probability,
+hysteresis.
+```
 
 
 ## 15.108 Transition matrix
 
 Po více bězích vytvoříme:
 
-    P_ij.
+```
+P_ij.
+```
 
 To je klíčový objekt pro analýzu Perceptual Manifold.
 
@@ -1737,29 +2175,35 @@ To je klíčový objekt pro analýzu Perceptual Manifold.
 
 Framework musí umět počítat nebo exportovat podklady pro:
 
-    decodability,
-    persistence,
-    metastability,
-    history dependence,
-    temporal sensitivity,
-    prediction relevance,
-    causal impact,
-    robustness,
-    generalization,
-    integration.
+```
+decodability,
+persistence,
+metastability,
+history dependence,
+temporal sensitivity,
+prediction relevance,
+causal impact,
+robustness,
+generalization,
+integration.
+```
 
 
 ## 15.110 Žádný jediný consciousness score
 
 Cognia nesmí mít:
 
-    consciousness = 0.83.
+```
+consciousness = 0.83.
+```
 
 To by bylo metodologicky zavádějící.
 
 Může existovat:
 
-    DeepPerceptMetrics
+```
+DeepPerceptMetrics
+```
 
 jako vektor funkčních vlastností.
 
@@ -1768,10 +2212,12 @@ jako vektor funkčních vlastností.
 
 Výzkumný engine musí umožnit detailní debug:
 
-    why did neuron fire?
-    which spikes arrived?
-    what was phase?
-    what changed weight?
+```
+why did neuron fire?
+which spikes arrived?
+what was phase?
+what changed weight?
+```
 
 Bez toho bude interpretace malých experimentů obtížná.
 
@@ -1780,11 +2226,13 @@ Bez toho bude interpretace malých experimentů obtížná.
 
 Velmi užitečný bude později vizualizační nástroj:
 
-    raster plot,
-    population activity,
-    oscillator phase,
-    state-space trajectory,
-    transition graph.
+```
+raster plot,
+population activity,
+oscillator phase,
+state-space trajectory,
+transition graph.
+```
 
 Není nutný pro samotnou funkci sítě, ale zásadně pomůže výzkumu.
 
@@ -1793,14 +2241,18 @@ Není nutný pro samotnou funkci sítě, ale zásadně pomůže výzkumu.
 
 Pro stejný:
 
-    network,
-    input,
-    seed,
-    engine version
+```
+network,
+input,
+seed,
+engine version
+```
 
 musí být:
 
-    exact event log reproducible
+```
+exact event log reproducible
+```
 
 v rámci jednoho numerického prostředí.
 
@@ -1811,13 +2263,17 @@ To je základní validační podmínka.
 
 Engine musí explicitně definovat:
 
-    time precision.
+```
+time precision.
+```
 
 Například:
 
-    nanoseconds,
-    microseconds,
-    floating-point seconds.
+```
+nanoseconds,
+microseconds,
+floating-point seconds.
+```
 
 Nesmí docházet k náhodnému přerovnání událostí kvůli numerickému
 zaokrouhlení.
@@ -1827,11 +2283,15 @@ zaokrouhlení.
 
 Pokud engine používá například:
 
-    1 µs resolution,
+```
+1 µs resolution,
+```
 
 nejde o:
 
-    neural update clock.
+```
+neural update clock.
+```
 
 Je to pouze numerická přesnost reprezentace timestampu.
 
@@ -1842,7 +2302,9 @@ Pozdější optimalizace může zpracovávat nezávislé události paralelně.
 
 Musí však zachovat:
 
-    causal ordering.
+```
+causal ordering.
+```
 
 Výkonová optimalizace nesmí změnit fyziku experimentu.
 
@@ -1853,60 +2315,80 @@ Cognia může později využít GPU.
 
 Ale batch processing nesmí nechtěně zavést:
 
-    global synchronous update.
+```
+global synchronous update.
+```
 
 Pokud GPU vyžaduje batch, musí být jasně odlišeno:
 
-    implementation batching
+```
+implementation batching
+```
 
 od:
 
-    model synchronization.
+```
+model synchronization.
+```
 
 
 ## 15.118 Validation suite
 
 Před DPSH experimenty musí existovat unit/integration testy pro:
 
-    event ordering,
-    delay,
-    refractory period,
-    stochastic probability,
-    phase calculation,
-    STDP timing,
-    snapshot/restore,
-    random replay.
+```
+event ordering,
+delay,
+refractory period,
+stochastic probability,
+phase calculation,
+STDP timing,
+snapshot/restore,
+random replay.
+```
 
 
 ## 15.119 Test event ordering
 
 Například:
 
-    A at 10 ms
-    B at 9 ms.
+```
+A at 10 ms
+B at 9 ms.
+```
 
 Queue musí vždy doručit:
 
-    B before A.
+```
+B before A.
+```
 
 
 ## 15.120 Test non-commutative ordering
 
 Vytvořit neuron, pro který:
 
-    A -> B
+```
+A -> B
+```
 
 vede k:
 
-    state X
+```
+state X
+```
 
 a:
 
-    B -> A
+```
+B -> A
+```
 
 k:
 
-    state Y.
+```
+state Y.
+```
 
 Engine musí tento rozdíl zachovat.
 
@@ -1915,19 +2397,25 @@ Engine musí tento rozdíl zachovat.
 
 Spike:
 
-    source at 10 ms
-    delay 5 ms
+```
+source at 10 ms
+delay 5 ms
+```
 
 musí dorazit:
 
-    exactly 15 ms.
+```
+exactly 15 ms.
+```
 
 
 ## 15.122 Test random reproducibility
 
 Seed:
 
-    42
+```
+42
+```
 
 musí generovat stejnou sekvenci stochastic events.
 
@@ -1936,7 +2424,9 @@ musí generovat stejnou sekvenci stochastic events.
 
 Po:
 
-    snapshot at t=100 ms
+```
+snapshot at t=100 ms
+```
 
 musí obnovený běh se stejným seedem vytvořit stejnou budoucí trajektorii,
 pokud není provedena intervention.
@@ -1946,8 +2436,10 @@ pokud není provedena intervention.
 
 Z jednoho snapshotu:
 
-    branch A unchanged
-    branch B phase shifted.
+```
+branch A unchanged
+branch B phase shifted.
+```
 
 Rozdíl v trajektorii pak lze skutečně připsat intervention.
 
@@ -1956,12 +2448,16 @@ Rozdíl v trajektorii pak lze skutečně připsat intervention.
 
 Definovat:
 
-    pre at 10 ms
-    post at 15 ms.
+```
+pre at 10 ms
+post at 15 ms.
+```
 
 Ověřit očekávané:
 
-    Δw.
+```
+Δw.
+```
 
 Pak obrátit pořadí.
 
@@ -1970,7 +2466,9 @@ Pak obrátit pořadí.
 
 Ověřit:
 
-    phase(t)
+```
+phase(t)
+```
 
 a modulaci neuronální response.
 
@@ -2005,30 +2503,36 @@ pouze dynamiku.
 
 Další verze přidá:
 
-    STDP,
-    plasticity logging,
-    learning gates,
-    spontaneous replay,
-    manifold comparison.
+```
+STDP,
+plasticity logging,
+learning gates,
+spontaneous replay,
+manifold comparison.
+```
 
 
 ## 15.129 Cognia DPSH engine 0.3
 
 Poté:
 
-    prediction,
-    prediction-error modulation,
-    multiple sensory channels,
-    precision.
+```
+prediction,
+prediction-error modulation,
+multiple sensory channels,
+precision.
+```
 
 
 ## 15.130 Cognia DPSH engine 0.4
 
 Následně:
 
-    Global Workspace,
-    cross-module broadcast,
-    top-down feedback.
+```
+Global Workspace,
+cross-module broadcast,
+top-down feedback.
+```
 
 
 ## 15.131 První experimentální architektura
@@ -2037,33 +2541,43 @@ První síť by měla být velmi malá.
 
 Například:
 
-    Population A
-    Population B
+```
+Population A
+Population B
+```
 
 s:
 
-    recurrent excitation within population,
-    mutual inhibition,
-    stochastic baseline,
-    local oscillatory modulation.
+```
+recurrent excitation within population,
+mutual inhibition,
+stochastic baseline,
+local oscillatory modulation.
+```
 
 Úkolem je pouze zjistit:
 
-    can metastable symmetry-broken states emerge?
+```
+can metastable symmetry-broken states emerge?
+```
 
 
 ## 15.132 Druhá architektura
 
 Rozšířit o:
 
-    sensory A,
-    sensory B,
-    ambiguous X.
+```
+sensory A,
+sensory B,
+ambiguous X.
+```
 
 Test:
 
-    A -> blank -> X
-    B -> blank -> X.
+```
+A -> blank -> X
+B -> blank -> X.
+```
 
 To bude první Deep Percept context experiment.
 
@@ -2072,13 +2586,17 @@ To bude první Deep Percept context experiment.
 
 Přidat:
 
-    phase manipulation.
+```
+phase manipulation.
+```
 
 Test:
 
-    intact phase
-    vs
-    scrambled phase.
+```
+intact phase
+vs
+scrambled phase.
+```
 
 Při matched firing rate.
 
@@ -2087,44 +2605,60 @@ Při matched firing rate.
 
 Přidat:
 
-    STDP.
+```
+STDP.
+```
 
 Testovat:
 
-    experience changes state-space geometry.
+```
+experience changes state-space geometry.
+```
 
 
 ## 15.135 Pátá architektura
 
 Přidat:
 
-    predictive continuation.
+```
+predictive continuation.
+```
 
 Například:
 
-    A -> B -> C sequence.
+```
+A -> B -> C sequence.
+```
 
 
 ## 15.136 Šestá architektura
 
 Přidat:
 
-    second modality
+```
+second modality
+```
 
 a:
 
-    shared downstream modules.
+```
+shared downstream modules.
+```
 
 Testovat:
 
-    Perceptual Manifold integration.
+```
+Perceptual Manifold integration.
+```
 
 
 ## 15.137 Sedmá architektura
 
 Teprve poté:
 
-    Global Workspace.
+```
+Global Workspace.
+```
 
 To zabrání tomu, aby se v experimentu smíchalo příliš mnoho mechanismů.
 
@@ -2133,20 +2667,24 @@ To zabrání tomu, aby se v experimentu smíchalo příliš mnoho mechanismů.
 
 Každý běh by měl generovat:
 
-    metadata.json
-    events.csv
-    states.csv
-    synapses.csv
-    metrics.json.
+```
+metadata.json
+events.csv
+states.csv
+synapses.csv
+metrics.json.
+```
 
 Například:
 
-    metadata:
-        theory_version
-        engine_version
-        experiment
-        seed
-        parameters.
+```
+metadata:
+    theory_version
+    engine_version
+    experiment
+    seed
+    parameters.
+```
 
 
 ## 15.139 Standardní experimentální report
@@ -2155,40 +2693,56 @@ Každý experiment by měl skončit strukturovaným reportem:
 
 ### Hypothesis
 
-    H3.
+```
+H3.
+```
 
 ### Manipulation
 
-    phase scramble.
+```
+phase scramble.
+```
 
 ### Controls
 
-    matched rate,
-    matched spike count.
+```
+matched rate,
+matched spike count.
+```
 
 ### Primary metric
 
-    state separability.
+```
+state separability.
+```
 
 ### Secondary metrics
 
-    dwell time,
-    transition entropy.
+```
+dwell time,
+transition entropy.
+```
 
 ### Result
 
-    ...
+```
+...
+```
 
 ### Falsification status
 
-    supported / weakened / falsified / inconclusive.
+```
+supported / weakened / falsified / inconclusive.
+```
 
 
 ## 15.140 Inconclusive je validní výsledek
 
 Pokud experiment neodlišuje mechanismy, výsledek musí být:
 
-    inconclusive.
+```
+inconclusive.
+```
 
 Nesmí být automaticky interpretován jako podpora.
 
@@ -2198,7 +2752,9 @@ Nesmí být automaticky interpretován jako podpora.
 Jakmile je experiment definován, změna enginu během běhu experimentální
 série musí vytvořit novou:
 
-    engine version
+```
+engine version
+```
 
 a experiment musí být spuštěn znovu.
 
@@ -2209,17 +2765,19 @@ Jinak nelze výsledky porovnávat.
 
 Z hlediska DSL by měly být základní konstrukty přibližně:
 
-    neuron
-    population
-    synapse
-    oscillator
-    memory
-    modulator
-    controller
-    input
-    workspace
-    plasticity
-    experiment.
+```
+neuron
+population
+synapse
+oscillator
+memory
+modulator
+controller
+input
+workspace
+plasticity
+experiment.
+```
 
 Každý musí mít jasně oddělenou sémantiku.
 
@@ -2228,22 +2786,28 @@ Každý musí mít jasně oddělenou sémantiku.
 
 Pro DPSH může být velmi užitečné zavést:
 
-    event
+```
+event
+```
 
 jako explicitní první-class koncept jazyka nebo runtime.
 
 Protože velká část teorie se týká:
 
-    timing,
-    ordering,
-    propagation.
+```
+timing,
+ordering,
+propagation.
+```
 
 
 ## 15.144 Delay jako první třída
 
 Podobně:
 
-    delay
+```
+delay
+```
 
 nesmí být pouze interní technický detail synapse.
 
@@ -2254,21 +2818,27 @@ Je experimentální proměnná.
 
 Oscilační:
 
-    phase
+```
+phase
+```
 
 musí být dostupná:
 
-    modulation rules,
-    plasticity rules,
-    recorder,
-    experiment interventions.
+```
+modulation rules,
+plasticity rules,
+recorder,
+experiment interventions.
+```
 
 
 ## 15.146 Internal state jako první třída
 
 Neuron nebo další dynamický konstrukt musí mít:
 
-    state { ... }.
+```
+state { ... }.
+```
 
 To umožní vytvářet biologicky i abstraktně inspirované jednotky.
 
@@ -2279,11 +2849,13 @@ Cognia by měla podporovat skládání mechanismů.
 
 Například:
 
-    stochastic neuron
-        +
-    oscillator modulation
-        +
-    STDP synapses.
+```
+stochastic neuron
+    +
+oscillator modulation
+    +
+STDP synapses.
+```
 
 Ne vytvářet nový hardcoded typ pro každou kombinaci.
 
@@ -2294,9 +2866,11 @@ Každý mechanismus musí být viditelný ve zdrojovém popisu.
 
 Skrytá automatická optimalizace enginu, která mění:
 
-    timing,
-    firing,
-    connectivity
+```
+timing,
+firing,
+connectivity
+```
 
 může znehodnotit experiment.
 
@@ -2305,7 +2879,9 @@ může znehodnotit experiment.
 
 Engine nesmí měnit váhy, pokud není explicitně aktivní:
 
-    plasticity rule.
+```
+plasticity rule.
+```
 
 To je nutné pro kontroly.
 
@@ -2314,9 +2890,11 @@ To je nutné pro kontroly.
 
 Engine nesmí automaticky resetovat:
 
-    neuron states,
-    oscillator phases,
-    random streams
+```
+neuron states,
+oscillator phases,
+random streams
+```
 
 mezi stimuli.
 
@@ -2341,19 +2919,25 @@ Cognia DPSH engine musí respektovat:
 
 Každé tvrzení musí mít podobu:
 
-    mechanism
-        ->
-    predicted observable.
+```
+mechanism
+    ->
+predicted observable.
+```
 
 Pak:
 
-    intervention
-        ->
-    predicted change.
+```
+intervention
+    ->
+predicted change.
+```
 
 Pokud změna nenastane:
 
-    hypothesis weakened.
+```
+hypothesis weakened.
+```
 
 
 ## 15.154 Primární požadavky pro nejbližší implementaci
@@ -2362,43 +2946,51 @@ Pro první skutečnou vývojovou fázi Cognia doporučuje DPSH prioritu:
 
 ### P0 – nezbytné
 
-    event queue
-    absolute simulation timestamps
-    synaptic delays
-    stateful autonomous neuron
-    stochastic baseline firing
-    refractory state
-    local oscillator
-    phase modulation
-    recurrence
-    excitatory/inhibitory connections
-    snapshot/restore
-    fixed seed
-    event/state logging.
+```
+event queue
+absolute simulation timestamps
+synaptic delays
+stateful autonomous neuron
+stochastic baseline firing
+refractory state
+local oscillator
+phase modulation
+recurrence
+excitatory/inhibitory connections
+snapshot/restore
+fixed seed
+event/state logging.
+```
 
 ### P1 – první experimenty
 
-    phase scrambling
-    timing scrambling
-    rate-matched controls
-    population recorder
-    trajectory export
-    macrostate analysis.
+```
+phase scrambling
+timing scrambling
+rate-matched controls
+population recorder
+trajectory export
+macrostate analysis.
+```
 
 ### P2 – učení
 
-    STDP
-    learning gate
-    synaptic logging
-    frozen replay
-    spontaneous-learning condition.
+```
+STDP
+learning gate
+synaptic logging
+frozen replay
+spontaneous-learning condition.
+```
 
 ### P3 – vyšší architektura
 
-    predictive loops
-    multi-modal inputs
-    shared manifold projections
-    Global Workspace.
+```
+predictive loops
+multi-modal inputs
+shared manifold projections
+Global Workspace.
+```
 
 
 ## 15.155 Výzkumná hypotéza kapitoly
@@ -2431,7 +3023,9 @@ systému přidány další vyšší mechanismy.
 
 První implementační milestone tedy není:
 
-    create conscious Cognia.
+```
+create conscious Cognia.
+```
 
 Je:
 
@@ -2446,10 +3040,12 @@ Od tohoto okamžiku přestává být hlavním úkolem další rozšiřování te
 
 Hlavním úkolem je:
 
-    implement
-        ->
-    measure
-        ->
-    falsify
-        ->
-    revise.
+```
+implement
+    ->
+measure
+    ->
+falsify
+    ->
+revise.
+```

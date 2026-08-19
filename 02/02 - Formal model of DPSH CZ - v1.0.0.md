@@ -5,7 +5,9 @@
 Dynamic Perceptual State Hypothesis nepovažuje neuronální síť primárně
 za posloupnost diskrétních transformací
 
-    S(t) -> S(t + 1)
+```
+S(t) -> S(t + 1)
+```
 
 řízených společným globálním krokem.
 
@@ -22,7 +24,9 @@ lokálních procesů.
 
 Pro systém tvořený `N` jednotkami lze globální stav formálně zapsat
 
-    S(t) = {s1(t), s2(t), ..., sN(t)}
+```
+S(t) = {s1(t), s2(t), ..., sN(t)}
+```
 
 kde `si(t)` představuje interní stav jednotky `i` v čase `t`.
 
@@ -36,16 +40,20 @@ událostmi.
 
 Neuron `Ni` je dynamická jednotka s vlastním stavem
 
-    si(t)
+```
+si(t)
+```
 
 který může obsahovat například:
 
-    membrane potential
-    refractory state
-    activation history
-    adaptation state
-    stochastic state
-    local modulatory state
+```
+membrane potential
+refractory state
+activation history
+adaptation state
+stochastic state
+local modulatory state
+```
 
 Přesná biologická věrnost jednotlivých parametrů není v první fázi
 výzkumu cílem.
@@ -61,14 +69,16 @@ Podstatné jsou vlastnosti systému:
 
 Obecně lze jeho dynamiku popsat jako
 
-    dsi/dt = Fi(
-        si(t),
-        Ii(t),
-        Ri(t),
-        Oi(t),
-        Hi(t),
-        ξi(t)
-    )
+```
+dsi/dt = Fi(
+    si(t),
+    Ii(t),
+    Ri(t),
+    Oi(t),
+    Hi(t),
+    ξi(t)
+)
+```
 
 kde:
 
@@ -89,7 +99,9 @@ Základní komunikační jednotkou je spike.
 
 Spike chápeme jako časově lokalizovanou událost
 
-    ei = (i, t)
+```
+ei = (i, t)
+```
 
 znamenající, že neuron `i` generoval spike v čase `t`.
 
@@ -98,55 +110,73 @@ umělého neuronu.
 
 Informace může být obsažena v:
 
-    identitě zdroje,
-    počtu spikeů,
-    frekvenci spikeů,
-    relativním časování,
-    pořadí spikeů,
-    fázi vůči lokální oscilaci,
-    vztahu k aktivitě ostatních neuronů.
+```
+identitě zdroje,
+počtu spikeů,
+frekvenci spikeů,
+relativním časování,
+pořadí spikeů,
+fázi vůči lokální oscilaci,
+vztahu k aktivitě ostatních neuronů.
+```
 
 Základním nositelem informace tedy není nutně izolovaný spike.
 
 Může jím být časoprostorová struktura množiny událostí
 
-    E = {e1, e2, ..., en}.
+```
+E = {e1, e2, ..., en}.
+```
 
 
 ## 2.4 Globální netaktovanost
 
 Systém neobsahuje mechanismus typu
 
-    for every neuron:
-        calculate next state
+```
+for every neuron:
+    calculate next state
+```
 
 následovaný globálním
 
-    commit next state.
+```
+commit next state.
+```
 
 Takový mechanismus by vytvořil diskrétní posloupnost globálních stavů
 
-    S0 -> S1 -> S2 -> ... -> Sn.
+```
+S0 -> S1 -> S2 -> ... -> Sn.
+```
 
 DPSH místo toho předpokládá lokální kauzalitu.
 
 Pokud neuron `A` vyšle spike v čase
 
-    tA
+```
+tA
+```
 
 a signál potřebuje k dosažení neuronu `B` dobu
 
-    dAB,
+```
+dAB,
+```
 
 událost může ovlivnit neuron `B` v čase
 
-    tB = tA + dAB.
+```
+tB = tA + dAB.
+```
 
 Neuron `C` může být mezitím ovlivněn zcela jinou událostí.
 
 Neexistuje požadavek
 
-    tB = tC.
+```
+tB = tC.
+```
 
 Globální stav systému se tedy mění jako důsledek časově rozptýlených
 lokálních událostí.
@@ -158,22 +188,28 @@ Každá změna stavu musí mít lokální kauzální historii.
 
 Pokud
 
-    si(t1) != si(t0),
+```
+si(t1) != si(t0),
+```
 
 musí být možné určit mechanismus, kterým změna vznikla:
 
-    previous internal dynamics,
-    incoming spike,
-    stochastic transition,
-    oscillator/modulator,
-    external sensory event,
-    plasticity event.
+```
+previous internal dynamics,
+incoming spike,
+stochastic transition,
+oscillator/modulator,
+external sensory event,
+plasticity event.
+```
 
 Tento princip je důležitý pro experimentální interpretaci.
 
 Globální perceptuální stav nesmí být vytvořen operací enginu typu
 
-    create_global_state(...).
+```
+create_global_state(...).
+```
 
 Musí vzniknout jako důsledek lokálních interakcí.
 
@@ -187,25 +223,31 @@ Synapse mezi neurony `i` a `j` není pouze skalární váha.
 
 Minimální abstraktní reprezentace je
 
-    Wij = {
-        weight,
-        delay,
-        plasticity_state
-    }
+```
+Wij = {
+    weight,
+    delay,
+    plasticity_state
+}
+```
 
 Spike neuronu `i`
 
-    ei(t)
+```
+ei(t)
+```
 
 tedy nevytváří okamžitě změnu neuronu `j`.
 
 Vytvoří kauzální událost
 
-    ei(t)
-        ->
-    Wij
-        ->
-    ej_input(t + dij)
+```
+ei(t)
+    ->
+Wij
+    ->
+ej_input(t + dij)
+```
 
 kde `dij` je synaptické a/nebo axonální zpoždění.
 
@@ -215,21 +257,27 @@ V globálně netaktovaném systému se může stát součástí výpočtu.
 
 Dvě cesty
 
-    A -> B -> D
+```
+A -> B -> D
+```
 
 a
 
-    A -> C -> D
+```
+A -> C -> D
+```
 
 mohou mít různé celkové zpoždění.
 
 Jejich signály se proto mohou v neuronu `D`:
 
-    časově překrýt,
-    minout,
-    interferovat,
-    zesílit,
-    nebo ovlivnit různé fáze jeho dynamiky.
+```
+časově překrýt,
+minout,
+interferovat,
+zesílit,
+nebo ovlivnit různé fáze jeho dynamiky.
+```
 
 Topologie sítě tak současně vytváří topologii časovou.
 
@@ -238,16 +286,22 @@ Topologie sítě tak současně vytváří topologii časovou.
 
 Neuron nemusí mít deterministickou hranici
 
-    activation > threshold -> spike.
+```
+activation > threshold -> spike.
+```
 
 Obecnější model umožňuje
 
-    P(spike_i(t)) =
-        F(si(t), Ii(t), Ri(t), Oi(t), ξi(t)).
+```
+P(spike_i(t)) =
+    F(si(t), Ii(t), Ri(t), Oi(t), ξi(t)).
+```
 
 I při minimálním vstupu může platit
 
-    P(spike_i) > 0.
+```
+P(spike_i) > 0.
+```
 
 Tento baseline firing nepovažujeme automaticky za chybu.
 
@@ -258,14 +312,16 @@ Zároveň hypotéza nepředpokládá, že více stochasticity je vždy lepší.
 
 Předpokládáme možnost vztahu
 
-    too little stochasticity
-        -> rigid dynamics
+```
+too little stochasticity
+    -> rigid dynamics
 
-    intermediate stochasticity
-        -> exploration + structure
+intermediate stochasticity
+    -> exploration + structure
 
-    too much stochasticity
-        -> loss of coherence.
+too much stochasticity
+    -> loss of coherence.
+```
 
 Existence takového optima musí být experimentálně ověřena.
 
@@ -274,31 +330,39 @@ Existence takového optima musí být experimentálně ověřena.
 
 Důležitým důsledkem předchozího bodu je:
 
-    sensory input = 0
+```
+sensory input = 0
+```
 
 neimplikuje
 
-    neural dynamics = 0.
+```
+neural dynamics = 0.
+```
 
 Síť může vykazovat spontánní aktivitu.
 
 Její současný stav může ovlivňovat pravděpodobnost budoucích spontánních
 událostí, takže:
 
-    S(t)
-        ->
-    spontaneous activity
-        ->
-    S(t + dt).
+```
+S(t)
+    ->
+spontaneous activity
+    ->
+S(t + dt).
+```
 
 Síť tím pokračuje ve vlastní dynamice i bez nové senzorické informace.
 
 Tento mechanismus je kandidátem pro:
 
-    exploration of internal state space,
-    maintenance of metastable states,
-    spontaneous transitions,
-    consolidation of learned dynamics.
+```
+exploration of internal state space,
+maintenance of metastable states,
+spontaneous transitions,
+consolidation of learned dynamics.
+```
 
 Poslední bod je zatím hypotetický a musí být experimentálně testován.
 
@@ -309,7 +373,9 @@ Oscilátor je samostatný dynamický prvek systému.
 
 Lze jej abstraktně popsat například
 
-    Ok(t) = Ak * sin(ωk*t + φk)
+```
+Ok(t) = Ak * sin(ωk*t + φk)
+```
 
 nebo pomocí jiného periodického či kvaziperiodického dynamického
 mechanismu.
@@ -328,49 +394,63 @@ Oscilátor:
 
 Oscilátor však neurčuje:
 
-    "nyní aktualizuj všechny neurony."
+```
+"nyní aktualizuj všechny neurony."
+```
 
 Proto platí
 
-    endogenous oscillator != global processing clock.
+```
+endogenous oscillator != global processing clock.
+```
 
 
 ## 2.10 Více časových referencí
 
 Síť může obsahovat množinu oscilátorů
 
-    O = {O1, O2, ..., Om}
+```
+O = {O1, O2, ..., Om}
+```
 
 s různými:
 
-    frequencies,
-    phases,
-    amplitudes,
-    spatial ranges,
-    coupling strengths.
+```
+frequencies,
+phases,
+amplitudes,
+spatial ranges,
+coupling strengths.
+```
 
 Neuron může být ovlivněn více oscilátory:
 
-    P(spike_i, t) =
-        F(
-            ...,
-            O1(t),
-            O3(t),
-            O7(t)
-        ).
+```
+P(spike_i, t) =
+    F(
+        ...,
+        O1(t),
+        O3(t),
+        O7(t)
+    ).
+```
 
 Význam spiku pak může záviset nejen na absolutním okamžiku jeho vzniku,
 ale na jeho relativní pozici vůči několika lokálním časovým strukturám.
 
 Například:
 
-    phase(O1) = 0.2π
-    phase(O3) = 1.4π
+```
+phase(O1) = 0.2π
+phase(O3) = 1.4π
+```
 
 může představovat jiný dynamický kontext než
 
-    phase(O1) = 1.2π
-    phase(O3) = 0.4π
+```
+phase(O1) = 1.2π
+phase(O3) = 0.4π
+```
 
 i pokud je okamžitý počet spikeů stejný.
 
@@ -385,9 +465,11 @@ mít ve všech okamžicích stejný účinek.
 
 Může přibližně platit
 
-    response(spike, phase_A)
-        !=
-    response(spike, phase_B).
+```
+response(spike, phase_A)
+    !=
+response(spike, phase_B).
+```
 
 Dvě neuronální populace proto mohou komunikovat efektivněji v určitých
 vzájemných fázových konfiguracích.
@@ -396,40 +478,52 @@ Komunikační kanál není nutně pevně otevřen nebo uzavřen.
 
 Jeho efektivní propustnost může být dynamickou funkcí času:
 
-    Cij(t) = F(φi(t), φj(t), ...).
+```
+Cij(t) = F(φi(t), φj(t), ...).
+```
 
 To umožňuje, aby stejná anatomická síť vytvářela v různých okamžicích
 různé funkční sítě.
 
 
-## 2.12 Nekumutativita dynamiky
+## 2.12 Nekomutativita dynamiky
 
 Protože stav neuronu závisí na historii a události přicházejí v různých
 časech, obecně nelze předpokládat
 
-    A(B(S)) = B(A(S)).
+```
+A(B(S)) = B(A(S)).
+```
 
 Naopak očekáváme
 
-    A(B(S)) != B(A(S)).
+```
+A(B(S)) != B(A(S)).
+```
 
 Příchod událostí
 
-    A -> B
+```
+A -> B
+```
 
 může vést k jinému stavu než
 
-    B -> A.
+```
+B -> A.
+```
 
 Nekomutativita může vznikat minimálně prostřednictvím:
 
-    membrane dynamics,
-    refractory periods,
-    synaptic integration,
-    adaptation,
-    phase dependence,
-    STDP,
-    recurrent feedback.
+```
+membrane dynamics,
+refractory periods,
+synaptic integration,
+adaptation,
+phase dependence,
+STDP,
+recurrent feedback.
+```
 
 Důsledkem je, že neuronální systém nelze úplně charakterizovat pouze
 množinou událostí, které v něm nastaly.
@@ -441,32 +535,44 @@ Je nutné znát také jejich kauzální a časové uspořádání.
 
 Synaptická váha není nutně konstantní:
 
-    wij = const.
+```
+wij = const.
+```
 
 Obecně:
 
-    wij(t + dt) =
-        wij(t) + Δwij.
+```
+wij(t + dt) =
+    wij(t) + Δwij.
+```
 
 Jedním z mechanismů může být závislost na relativním časování pre- a
 postsynaptické aktivity:
 
-    Δt = t_post - t_pre
+```
+Δt = t_post - t_pre
+```
 
 a
 
-    Δwij = G(Δt, local_state, modulators, ...).
+```
+Δwij = G(Δt, local_state, modulators, ...).
+```
 
 Tím získává historie spikeů schopnost měnit samotný dynamický prostor,
 ve kterém budou probíhat budoucí interakce.
 
 Síť tedy současně:
 
-    evolves within its state space
+```
+evolves within its state space
+```
 
 a
 
-    modifies the structure of its state space.
+```
+modifies the structure of its state space.
+```
 
 To je klíčové pro učení.
 
@@ -477,22 +583,30 @@ DPSH nevylučuje explicitní stavové nebo paměťové prvky.
 
 Paměťová jednotka může například udržovat stav
 
-    M(t) = c
+```
+M(t) = c
+```
 
 dokud určitá událost nezpůsobí
 
-    M(t) -> c'.
+```
+M(t) -> c'.
+```
 
 Takové jednotky mohou být užitečné pro pracovní paměť, řízení,
 sekvenční úlohy nebo explicitní uchovávání informace.
 
 Hypotéza však rozlišuje mezi:
 
-    stored state
+```
+stored state
+```
 
 a
 
-    emergent dynamic state.
+```
+emergent dynamic state.
+```
 
 Paměťová buňka uchovává explicitní hodnotu.
 
@@ -511,19 +625,25 @@ pouze z distribuované dynamiky.
 
 Žádný neuron nemusí obsahovat informaci o kompletním globálním stavu
 
-    S(t).
+```
+S(t).
+```
 
 Neuron má přístup pouze k omezené množině informací:
 
-    local state,
-    incoming connections,
-    modulatory signals,
-    local oscillations,
-    internal history.
+```
+local state,
+incoming connections,
+modulatory signals,
+local oscillations,
+internal history.
+```
 
 Globální stav
 
-    S(t)
+```
+S(t)
+```
 
 je proto analytický popis systému pozorovatelem, nikoli nutně explicitní
 datová struktura dostupná neuronům.
@@ -532,7 +652,9 @@ To je zásadní požadavek.
 
 Pokud by Cognia engine udržoval objekt
 
-    GlobalPercept
+```
+GlobalPercept
+```
 
 a neurony z něj přímo četly, nevytvářeli bychom emergentní percept.
 
@@ -543,22 +665,28 @@ Pouze bychom jej implementovali jako skrytou centrální proměnnou.
 
 Předpokládejme množství lokálních jednotek
 
-    N1 ... NN.
+```
+N1 ... NN.
+```
 
 Jejich interakce mohou vytvořit kolektivní veličiny, které nejsou
 vlastností žádné jednotlivé jednotky.
 
 Označme takovou veličinu
 
-    Ψ(S).
+```
+Ψ(S).
+```
 
 `Ψ` může charakterizovat například:
 
-    population coherence,
-    cluster membership,
-    phase organization,
-    attractor occupancy,
-    metastable state identity.
+```
+population coherence,
+cluster membership,
+phase organization,
+attractor occupancy,
+metastable state identity.
+```
 
 DPSH předpokládá, že perceptuálně relevantní informace může existovat
 právě na této makroskopické úrovni.
@@ -574,21 +702,27 @@ Vzniká kolektivně.
 V některých situacích může několik globálních konfigurací představovat
 podobně pravděpodobné dynamické možnosti:
 
-    M1 ~ M2 ~ M3.
+```
+M1 ~ M2 ~ M3.
+```
 
 Malé lokální fluktuace mohou být prostřednictvím rekurence zesíleny:
 
-    fluctuation
-        ->
-    local advantage
-        ->
-    recurrent amplification
-        ->
-    population reorganization.
+```
+fluctuation
+    ->
+local advantage
+    ->
+recurrent amplification
+    ->
+population reorganization.
+```
 
 Výsledkem může být
 
-    M1 >> M2, M3.
+```
+M1 >> M2, M3.
+```
 
 Takový proces představuje kandidátní mechanismus spontánního výběru
 jedné z několika možných perceptuálních interpretací.
@@ -604,25 +738,33 @@ Definujeme metastabilní stav `M` jako oblast stavového prostoru, ve
 které dynamika systému po omezenou dobu zůstává, přestože jednotlivé
 komponenty pokračují ve změně.
 
-    S(t) in M
+```
+S(t) in M
+```
 
 pro
 
-    t0 < t < t1.
+```
+t0 < t < t1.
+```
 
 Potom může dojít k přechodu
 
-    M_A -> M_B.
+```
+M_A -> M_B.
+```
 
 Důležitými měřitelnými vlastnostmi budou:
 
-    lifetime,
-    internal variance,
-    transition probability,
-    separability,
-    robustness to perturbation,
-    dependence on sensory input,
-    dependence on previous state.
+```
+lifetime,
+internal variance,
+transition probability,
+separability,
+robustness to perturbation,
+dependence on sensory input,
+dependence on previous state.
+```
 
 Percept je v DPSH kandidátně spojován právě s touto úrovní dynamické
 organizace.
@@ -635,17 +777,23 @@ hysterezi.
 
 Při změně vstupu
 
-    A -> B
+```
+A -> B
+```
 
 nemusí přechod nastat ve stejném bodě jako při
 
-    B -> A.
+```
+B -> A.
+```
 
 Formálně:
 
-    transition_threshold(A -> B)
-        !=
-    transition_threshold(B -> A).
+```
+transition_threshold(A -> B)
+    !=
+transition_threshold(B -> A).
+```
 
 Hystereze poskytuje experimentálně měřitelný indikátor toho, že síť
 nevytváří reprezentaci pouze jako okamžitou funkci vstupu.
@@ -663,19 +811,27 @@ Proto zavádíme prediktivní mechanismus.
 
 Interní stav generuje očekávání
 
-    P(t + dt) = G(S(t)).
+```
+P(t + dt) = G(S(t)).
+```
 
 Senzorický systém následně poskytne
 
-    I(t + dt).
+```
+I(t + dt).
+```
 
 Vzniká lokálně realizovaná odchylka
 
-    ε = I - P.
+```
+ε = I - P.
+```
 
 DPSH nepředpokládá, že musí existovat jeden centrální skalár
 
-    global_prediction_error.
+```
+global_prediction_error.
+```
 
 Prediction error může být distribuovaný mezi mnoho lokálních okruhů.
 
@@ -714,16 +870,20 @@ strukturovanou oblast globálního stavového prostoru.
 
 Tuto strukturu označujeme pracovně jako
 
-    Perceptual Manifold.
+```
+Perceptual Manifold.
+```
 
 Lze ji chápat jako
 
-    M = {
-        perceptual states,
-        trajectories,
-        transition probabilities,
-        learned constraints
-    }.
+```
+M = {
+    perceptual states,
+    trajectories,
+    transition probabilities,
+    learned constraints
+}.
+```
 
 Perceptual Manifold tedy není statická mapa světa.
 
@@ -732,13 +892,15 @@ vyvíjet.
 
 Učení může měnit jeho geometrii:
 
-    experience
-        ->
-    plasticity
-        ->
-    altered state-space geometry
-        ->
-    altered future perception.
+```
+experience
+    ->
+plasticity
+    ->
+altered state-space geometry
+    ->
+altered future perception.
+```
 
 Známé nebo opakovaně zkušené struktury prostředí tak mohou odpovídat
 oblastem dynamiky, do kterých systém přechází snadněji nebo které jsou
@@ -780,7 +942,9 @@ Engine nesmí pouze poskytovat výsledný output.
 
 Výzkumným objektem je samotná trajektorie:
 
-    S(t0) -> S(t1) -> ... -> S(tn).
+```
+S(t0) -> S(t1) -> ... -> S(tn).
+```
 
 Bez jejího měření nebude možné rozhodnout, zda skutečně vznikají
 předpokládané metastabilní struktury.
@@ -792,13 +956,15 @@ Každý mechanismus musí být možné porovnat s kontrolní variantou.
 
 Například:
 
-    stochastic ON  vs stochastic OFF
-    oscillators ON vs oscillators OFF
-    phase intact   vs phase scrambled
-    asynchronous  vs synchronous
-    STDP ON        vs STDP OFF
-    recurrence ON  vs recurrence reduced
-    history intact vs state reset.
+```
+stochastic ON  vs stochastic OFF
+oscillators ON vs oscillators OFF
+phase intact   vs phase scrambled
+asynchronous  vs synchronous
+STDP ON        vs STDP OFF
+recurrence ON  vs recurrence reduced
+history intact vs state reset.
+```
 
 Důležitým principem bude kontrolovat ostatní veličiny.
 
@@ -807,20 +973,24 @@ nelze z výsledku usoudit, že příčinou změny byla fáze.
 
 Proto se budeme snažit konstruovat experimenty typu:
 
-    same input
-    same topology
-    same approximate firing rate
-    same approximate spike count
-    same network capacity
+```
+same input
+same topology
+same approximate firing rate
+same approximate spike count
+same network capacity
+```
 
 ale
 
-    different temporal organization.
+```
+different temporal organization.
+```
 
 Tím lze testovat kauzální význam jednotlivých dynamických vlastností.
 
 
-## 2.25 Výzkumná otázka kapitoly
+## 2.25 Výzkumná hypotéza kapitoly
 
 Formální model vede k první obecné experimentální otázce:
 
@@ -828,6 +998,18 @@ Formální model vede k první obecné experimentální otázce:
 > jednotek bez globálního update clocku spontánně vytvářet
 > reprodukovatelné metastabilní makrostavy, jejichž identita,
 > stabilita a přechody nesou informaci o senzorické historii systému?
+
+Tuto otázku formulujeme jako dílčí hypotézu H1:
+
+> **H1 – Globally Clockless Dynamics Hypothesis**
+>
+> Neuronální systém tvořený autonomními jednotkami, které si udržují
+> vlastní interní stav, komunikují diskrétními událostmi a aktualizují
+> se bez společného globálního update kroku, může prostřednictvím
+> lokální kauzality a časově orientovaných vazeb vytvářet
+> reprodukovatelné globální makrostavy. Absence globálního clocku není
+> pouze implementační detail, ale podmínka, za které je časová
+> struktura událostí nositelem informace.
 
 Pokud ne, základní mechanistický předpoklad DPSH bude nutné zásadně
 revidovat.
