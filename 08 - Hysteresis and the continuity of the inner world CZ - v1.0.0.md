@@ -45,6 +45,7 @@ new world.
 
 Průběžně existuje vnitřní dynamická reprezentace, která se mění v čase.
 
+
 ## 8.2 Kontinuita versus frame-based perception
 
 Jednoduchý diskrétní model percepce může být reprezentován jako:
@@ -76,6 +77,7 @@ kde každý nový stav vzniká transformací předchozího.
 Senzorický vstup je jedním z faktorů této transformace.
 
 Není jediným zdrojem stavu.
+
 
 ## 8.3 Hystereze
 
@@ -125,6 +127,7 @@ Musíme znát:
 history.
 ```
 
+
 ## 8.4 Hystereze jako makroskopická paměť
 
 Hystereze představuje formu paměti, která nemusí být realizována
@@ -158,6 +161,7 @@ attractor occupancy.
 
 Tím se minulost stává fyzickou vlastností současnosti.
 
+
 ## 8.5 Perceptuální kontinuita
 
 Jedním z důsledků hystereze může být stabilita perceptu při krátkodobém
@@ -186,6 +190,7 @@ M_object,
 pak objekt může zůstat součástí vnitřní reprezentace i během krátkého
 výpadku vstupu.
 
+
 ## 8.6 Persistence není totéž jako neměnnost
 
 Kontinuita vnitřního světa neznamená, že reprezentace musí být statická.
@@ -205,6 +210,7 @@ kontextu.
 
 Percept může být průběžně aktualizován bez toho, aby zanikla jeho
 identita.
+
 
 ## 8.7 Objektová permanence jako dynamický jev
 
@@ -237,6 +243,7 @@ Objekt tedy nezůstává "v paměti" nutně jako explicitní symbol.
 
 Může zůstat jako očekávaná součást dynamického modelu.
 
+
 ## 8.8 Predikce jako mechanismus kontinuity
 
 Pokud interní stav reprezentuje objekt, může generovat očekávání:
@@ -261,6 +268,7 @@ Tím vzniká:
 ```
 perceptual persistence.
 ```
+
 
 ## 8.9 Rozpad perceptu při dlouhodobém konfliktu
 
@@ -291,6 +299,7 @@ M_A -> unresolved state.
 ```
 
 To zabraňuje tomu, aby byl vnitřní svět úplně odtržen od reality.
+
 
 ## 8.10 Hystereze versus halucinace
 
@@ -325,6 +334,7 @@ a:
 excessive persistence.
 ```
 
+
 ## 8.11 Stavová setrvačnost
 
 Můžeme zavést vlastnost:
@@ -349,9 +359,10 @@ large perturbation required.
 
 Perceptuální kontinuita vyžaduje nenulovou, ale ne nekonečnou setrvačnost.
 
+
 ## 8.12 Hysterezní smyčka
 
-Experimentálně lze hysterézi měřit změnou vstupu nahoru a dolů.
+Experimentálně lze hysterezi měřit změnou vstupu nahoru a dolů.
 
 Například:
 
@@ -399,6 +410,7 @@ H = |θ_AB - θ_BA|
 
 může být jednoduchou metrikou state dependence.
 
+
 ## 8.13 Hystereze a nekomutativita
 
 Hystereze je úzce spojena s nekomutativní dynamikou.
@@ -427,6 +439,7 @@ F(M_B, X).
 
 Hystereze je tedy makroskopickým důsledkem toho, že historie změnila
 aktuální stav systému.
+
 
 ## 8.14 Hystereze a symmetry breaking
 
@@ -457,6 +470,7 @@ M_A
 hysteretic persistence.
 ```
 
+
 ## 8.15 Hystereze a metastabilita
 
 Hystereze nesmí vést k permanentnímu uzamčení.
@@ -478,6 +492,7 @@ transition.
 ```
 
 To vytváří kontinuální, ale adaptivní vnitřní svět.
+
 
 ## 8.16 Percept není rekonstrukce každého okamžiku
 
@@ -507,6 +522,7 @@ modified internal world.
 
 To je výrazně efektivnější než kompletní rekonstrukce od nuly.
 
+
 ## 8.17 Perceptual Manifold jako persistentní struktura
 
 Perceptual Manifold není vytvářen znovu při každém vstupu.
@@ -532,6 +548,7 @@ obsahuje důsledky předchozí zkušenosti.
 Nový input mění jeho lokální geometrii, aktivní oblasti a
 pravděpodobnosti přechodů.
 
+
 ## 8.18 Vnitřní svět jako aktivní model
 
 Vnitřní reprezentace není pasivní kopie okolního světa.
@@ -549,6 +566,7 @@ own body remains in position.
 
 Takové informace nemusí být v každém okamžiku přímo přítomny v
 senzorickém vstupu.
+
 
 ## 8.19 Rozdíl mezi senzorem a perceptem
 
@@ -584,6 +602,7 @@ previous internal state differs.
 
 To je jedna z hlavních predikcí této kapitoly.
 
+
 ## 8.20 Kontinuita identity objektu
 
 Jedním z problémů percepce je zachovat identitu objektu při změně jeho
@@ -608,6 +627,7 @@ same object identity.
 
 DPSH předpokládá, že tato kontinuita může být funkcí trajektorie v
 Perceptual Manifold, nikoli pouze podobnosti jednotlivých frames.
+
 
 ## 8.21 Trajektorie objektu
 
@@ -637,6 +657,7 @@ odpovídá kontinuální trajektorii uvnitř dynamického manifold.
 
 Objektová identita pak může být spojena s kontinuitou této trajektorie.
 
+
 ## 8.22 Predikce pohybu
 
 Pokud systém zná:
@@ -660,6 +681,7 @@ predicted state evolution.
 ```
 
 Po návratu senzorického vstupu se prediction porovná s realitou.
+
 
 ## 8.23 Oprava versus rekonstrukce
 
@@ -688,6 +710,7 @@ corrected internal state.
 DPSH očekává, že druhá strategie lépe odpovídá kontinuálnímu
 perceptuálnímu systému.
 
+
 ## 8.24 Hystereze a pozornost
 
 Pozornost může měnit stabilitu některých oblastí manifold.
@@ -700,13 +723,14 @@ attention(A)
 increase stability(M_A).
 ```
 
-To může zvýšit hysterézi pro relevantní percept.
+To může zvýšit hysterezi pro relevantní percept.
 
 Jiný stav může být naopak snadněji opuštěn.
 
 Pozornost tedy nemusí percept vytvářet.
 
 Může měnit jeho dynamickou stabilitu.
+
 
 ## 8.25 Hystereze a hodnocení
 
@@ -729,6 +753,7 @@ harder to leave.
 
 To poskytuje možný mechanismus, jak emoce a význam mění percepci.
 
+
 ## 8.26 Hystereze a intuice
 
 Dlouhodobá zkušenost může vytvořit stavové biasy.
@@ -742,7 +767,7 @@ context X
 M_warning.
 ```
 
-Při novém částečném vstupu může díky hysterézi a naučené geometrii:
+Při novém částečném vstupu může díky hysterezi a naučené geometrii:
 
 ```
 partial X
@@ -754,6 +779,7 @@ Akční systém může reagovat dříve, než je explicitní důvod globálně
 dostupný.
 
 To je kompatibilní s pracovní interpretací intuice.
+
 
 ## 8.27 Hystereze jako zdroj očekávání
 
@@ -773,6 +799,7 @@ P(M_j | M_A).
 
 Minulost se tak promítá do budoucnosti prostřednictvím transition
 structure.
+
 
 ## 8.28 Temporální hloubka perceptu
 
@@ -799,6 +826,7 @@ F(
 ```
 
 Tím vzniká časově hlubší vnitřní reprezentace.
+
 
 ## 8.29 "Přítomný okamžik" jako časové okno
 
@@ -834,6 +862,7 @@ temporally extended dynamic state.
 Toto tvrzení je zatím teoretické a vyžaduje samostatné experimentální
 ověření.
 
+
 ## 8.30 Kontinuita a Global Workspace
 
 Pokud Global Workspace získá přístup k:
@@ -855,6 +884,7 @@ expected transitions.
 Workspace tak nemusí rekonstruovat časovou kontinuitu sám.
 
 Může ji přebírat z perceptuální dynamiky.
+
 
 ## 8.31 Globální přístup není globální reset
 
@@ -887,7 +917,8 @@ modulation
 perceptual manifold.
 ```
 
-## 8.32 Experiment H1 – hysterézní stimulus sweep
+
+## 8.32 Experiment HY1 – hysterezní stimulus sweep
 
 Vytvoříme kontinuální stimulus:
 
@@ -926,9 +957,10 @@ Pokud:
 θ_AB != θ_BA,
 ```
 
-síť vykazuje hysterézi.
+síť vykazuje hysterezi.
 
-## 8.33 Experiment H2 – krátkodobá okluze
+
+## 8.33 Experiment HY2 – krátkodobá okluze
 
 Síť vytvoří:
 
@@ -959,7 +991,8 @@ prediction of reappearance.
 Měníme délku okluze a hledáme dobu, po kterou interní reprezentace
 zůstává funkční.
 
-## 8.34 Experiment H3 – conflict duration
+
+## 8.34 Experiment HY3 – conflict duration
 
 Po vytvoření:
 
@@ -993,7 +1026,8 @@ prediction error strength
 transition time.
 ```
 
-## 8.35 Experiment H4 – state reset control
+
+## 8.35 Experiment HY4 – state reset control
 
 Porovnáme dvě varianty.
 
@@ -1021,7 +1055,8 @@ object continuity,
 generalization.
 ```
 
-## 8.36 Experiment H5 – identical current input, different history
+
+## 8.36 Experiment HY5 – identical current input, different history
 
 Vytvoříme:
 
@@ -1053,7 +1088,8 @@ S(X | history A)
 S(X | history B).
 ```
 
-## 8.37 Experiment H6 – persistence curve
+
+## 8.37 Experiment HY6 – persistence curve
 
 Po vytvoření perceptu odstraníme podpůrný stimulus.
 
@@ -1075,7 +1111,8 @@ plateau + transition.
 
 Tvar persistence curve poskytne informaci o mechanismu udržování stavu.
 
-## 8.38 Experiment H7 – contradictory evidence
+
+## 8.38 Experiment HY7 – contradictory evidence
 
 Po vytvoření:
 
@@ -1098,7 +1135,8 @@ P(M_B | evidence strength).
 Pokud stav vykazuje dynamickou setrvačnost, přechod by měl být
 nelineární.
 
-## 8.39 Experiment H8 – hysteréze po učení
+
+## 8.39 Experiment HY8 – hystereze po učení
 
 Stejný hysteresis experiment provedeme:
 
@@ -1123,7 +1161,8 @@ hysteresis width.
 To poskytuje přímý důkaz, že učení mění persistence vlastnosti
 Perceptual Manifold.
 
-## 8.40 Experiment H9 – oscillator dependence
+
+## 8.40 Experiment HY9 – oscillator dependence
 
 Hysterezi změříme při:
 
@@ -1147,7 +1186,8 @@ state lifetime.
 
 Tím propojujeme kapitolu o oscilacích s kontinuitou.
 
-## 8.41 Experiment H10 – stochasticity dependence
+
+## 8.41 Experiment HY10 – stochasticity dependence
 
 Stejně měníme:
 
@@ -1179,7 +1219,8 @@ a:
 instability.
 ```
 
-## 8.42 Experiment H11 – dynamická versus explicitní paměť
+
+## 8.42 Experiment HY11 – dynamická versus explicitní paměť
 
 Kontrolní síť bude řešit kontinuitu pomocí:
 
@@ -1208,6 +1249,7 @@ Cílem není ukázat, že dynamická paměť je vždy lepší.
 Cílem je určit, zda vykazuje vlastnosti, které jednoduchá explicitní
 paměť nevysvětluje.
 
+
 ## 8.43 Metrika kontinuity
 
 Můžeme definovat:
@@ -1228,6 +1270,7 @@ similarity(
 ```
 
 Tím získáme kvantitativní měřítko kontinuity.
+
 
 ## 8.44 Metrika history dependence
 
@@ -1261,7 +1304,8 @@ H_dep >> 0,
 
 současná reprezentace je history-dependent.
 
-## 8.45 Metrika hysteréze
+
+## 8.45 Metrika hystereze
 
 Jednoduchá metrika:
 
@@ -1280,6 +1324,7 @@ H_dynamic =
     ).
 ```
 
+
 ## 8.46 Falsifikační kritéria
 
 Silná hypotéza hystereze a kontinuity bude oslabena, pokud:
@@ -1289,7 +1334,7 @@ Silná hypotéza hystereze a kontinuity bude oslabena, pokud:
 2. percept okamžitě zaniká při krátkodobém výpadku senzorické evidence,
 3. resetování sítě nemění výkon v časově závislých úlohách,
 4. forward a reverse stimulus sweep nevykazují žádnou měřitelnou
-   hysterézi,
+   hysterezi,
 5. předchozí percept neovlivňuje interpretaci ambivalentního vstupu,
 6. naučená zkušenost nemění persistence nebo transition geometry,
 7. veškerou pozorovanou kontinuitu lze vysvětlit jednoduchou explicitní
@@ -1297,6 +1342,7 @@ Silná hypotéza hystereze a kontinuity bude oslabena, pokud:
 
 V takovém případě by musela být představa kontinuálního
 Perceptual Manifold výrazně oslabena.
+
 
 ## 8.47 Výzkumná hypotéza kapitoly
 
@@ -1307,7 +1353,7 @@ Formulujeme dílčí hypotézu H7:
 > Interní perceptuální stav není vytvářen nezávisle z každého aktuálního
 > senzorického vstupu, ale kontinuálně vzniká transformací předchozího
 > dynamického stavu. V důsledku toho vykazuje percepční systém
-> history dependence, stavovou setrvačnost a hysterézi: stejný aktuální
+> history dependence, stavovou setrvačnost a hysterezi: stejný aktuální
 > vstup může být interpretován odlišně podle trajektorie, která mu
 > předcházela.
 

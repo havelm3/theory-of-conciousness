@@ -8,16 +8,22 @@ měnit výsledný stav systému.
 
 Pokud máme dvě události nebo dvě transformace:
 
-    A
-    B
+```
+A
+B
+```
 
 pak obecně nemusí platit:
 
-    A(B(S)) = B(A(S)).
+```
+A(B(S)) = B(A(S)).
+```
 
 Naopak očekáváme:
 
-    A(B(S)) != B(A(S)).
+```
+A(B(S)) != B(A(S)).
+```
 
 Taková dynamika je nekomutativní.
 
@@ -26,12 +32,14 @@ událostí, které nastaly.
 
 Je nutné znát také:
 
-    jejich pořadí,
-    relativní timing,
-    stav systému v okamžiku jejich příchodu,
-    fázi lokálních oscilací,
-    synaptickou historii,
-    aktuální plasticitu.
+```
+jejich pořadí,
+relativní timing,
+stav systému v okamžiku jejich příchodu,
+fázi lokálních oscilací,
+synaptickou historii,
+aktuální plasticitu.
+```
 
 Historie tedy není pouze záznamem minulosti.
 
@@ -42,30 +50,42 @@ Je aktivní součástí současného stavu systému.
 
 Uvažujme jednoduchý stav:
 
-    S0.
+```
+S0.
+```
 
 Na něj působí dvě události:
 
-    A
-    B.
+```
+A
+B.
+```
 
 V komutativním systému:
 
-    S_AB = B(A(S0))
+```
+S_AB = B(A(S0))
+```
 
 a:
 
-    S_BA = A(B(S0))
+```
+S_BA = A(B(S0))
+```
 
 přičemž:
 
-    S_AB = S_BA.
+```
+S_AB = S_BA.
+```
 
 Pořadí událostí nemá význam.
 
 V nekomutativním systému:
 
-    S_AB != S_BA.
+```
+S_AB != S_BA.
+```
 
 Stejná dvojice událostí tedy vytváří dva různé stavy podle toho, která
 přišla dříve.
@@ -75,13 +95,17 @@ svět.
 
 Sekvence:
 
-    door opens
-    person enters
+```
+door opens
+person enters
+```
 
 není ekvivalentní sekvenci:
 
-    person enters
-    door opens.
+```
+person enters
+door opens.
+```
 
 Obsahuje jinou kauzální strukturu.
 
@@ -90,37 +114,51 @@ Obsahuje jinou kauzální strukturu.
 
 Pokud je reakce neuronu funkcí jeho aktuálního stavu:
 
-    response = F(input, state),
+```
+response = F(input, state),
+```
 
 pak první událost změní stav, na který působí druhá.
 
 Tedy:
 
-    S1 = F_A(S0)
+```
+S1 = F_A(S0)
+```
 
 a potom:
 
-    S2 = F_B(S1).
+```
+S2 = F_B(S1).
+```
 
 Při opačném pořadí:
 
-    S1' = F_B(S0)
+```
+S1' = F_B(S0)
+```
 
 a:
 
-    S2' = F_A(S1').
+```
+S2' = F_A(S1').
+```
 
 Proto obecně:
 
-    S2 != S2'.
+```
+S2 != S2'.
+```
 
 Nekomutativita tedy nemusí být speciálně implementovaná vlastnost.
 
 Vzniká přirozeně v každém systému, ve kterém:
 
-    aktuální stav závisí na minulosti
-    a
-    události tento stav mění.
+```
+aktuální stav závisí na minulosti
+a
+události tento stav mění.
+```
 
 
 ## 5.4 Refractory period jako jednoduchý příklad
@@ -129,30 +167,40 @@ Představme si neuron s refractory period.
 
 Spike `A` dorazí v čase:
 
-    t0
+```
+t0
+```
 
 a aktivuje neuron.
 
 Krátce poté dorazí spike `B`:
 
-    t0 + dt.
+```
+t0 + dt.
+```
 
 Pokud je neuron stále refractory:
 
-    B -> weak/no response.
+```
+B -> weak/no response.
+```
 
 Při opačném pořadí:
 
-    B first
-    A second
+```
+B first
+A second
+```
 
 může být potlačen `A`.
 
 Takže:
 
-    response(A -> B)
-        !=
-    response(B -> A).
+```
+response(A -> B)
+    !=
+response(B -> A).
+```
 
 Pořadí vstupů mění jejich funkční efekt.
 
@@ -163,27 +211,37 @@ Dalším zdrojem nekomutativity je časová integrace.
 
 Neuron může integrovat vstupy v určitém okně:
 
-    τ.
+```
+τ.
+```
 
 Dva spiky:
 
-    A at t1
-    B at t2
+```
+A at t1
+B at t2
+```
 
 mohou společně překročit threshold.
 
 Pokud je však jeden z nich inhibitorní:
 
-    A = excitation
-    B = inhibition,
+```
+A = excitation
+B = inhibition,
+```
 
 pak:
 
-    excitation -> inhibition
+```
+excitation -> inhibition
+```
 
 nemusí mít stejný efekt jako:
 
-    inhibition -> excitation.
+```
+inhibition -> excitation.
+```
 
 První sekvence může vyvolat spike ještě před příchodem inhibice.
 
@@ -199,26 +257,34 @@ lokální fázi.
 
 Pak dvě stejné události:
 
-    A
-    B
+```
+A
+B
+```
 
 mohou působit v odlišných fázích:
 
-    A at φ1
-    B at φ2.
+```
+A at φ1
+B at φ2.
+```
 
 Při opačném pořadí:
 
-    B at φ1
-    A at φ2.
+```
+B at φ1
+A at φ2.
+```
 
 To nemusí být ekvivalentní.
 
 Obecně:
 
-    effect(A, φ1) + effect(B, φ2)
-        !=
-    effect(B, φ1) + effect(A, φ2).
+```
+effect(A, φ1) + effect(B, φ2)
+    !=
+effect(B, φ1) + effect(A, φ2).
+```
 
 Oscilační struktura tedy může výrazně zesílit nekomutativní charakter
 sítě.
@@ -230,17 +296,23 @@ Spike-timing-dependent plasticity poskytuje velmi přímý příklad.
 
 Pokud presynaptický neuron spikuje před postsynaptickým:
 
-    pre -> post
+```
+pre -> post
+```
 
 může dojít k jiné synaptické změně než při:
 
-    post -> pre.
+```
+post -> pre.
+```
 
 Formálně:
 
-    Δw(pre, post)
-        !=
-    Δw(post, pre).
+```
+Δw(pre, post)
+    !=
+Δw(post, pre).
+```
 
 Tím pořadí událostí nemění pouze okamžitou aktivitu.
 
@@ -248,54 +320,70 @@ Mění také budoucí strukturu sítě.
 
 Dostáváme dva stupně nekomutativity:
 
-    order
-        ->
-    different current state
+```
+order
+    ->
+different current state
+```
 
 a zároveň:
 
-    order
-        ->
-    different future dynamics.
+```
+order
+    ->
+different future dynamics.
+```
 
 
 ## 5.8 Nekomutativita a učení
 
 Pokud sekvence událostí mění váhy:
 
-    A -> B
-        ->
-    W_AB
+```
+A -> B
+    ->
+W_AB
+```
 
 zatímco:
 
-    B -> A
-        ->
-    W_BA,
+```
+B -> A
+    ->
+W_BA,
+```
 
 a:
 
-    W_AB != W_BA,
+```
+W_AB != W_BA,
+```
 
 pak zkušenost mění geometrii budoucího stavového prostoru podle
 kauzální historie.
 
 Síť se tedy neučí pouze:
 
-    co se vyskytlo,
+```
+co se vyskytlo,
+```
 
 ale také:
 
-    v jakém pořadí se to vyskytlo.
+```
+v jakém pořadí se to vyskytlo.
+```
 
 To je zásadní pro:
 
-    sekvence,
-    kauzalitu,
-    predikci,
-    motorické programy,
-    jazyk,
-    prostorově-časové vztahy.
+```
+sekvence,
+kauzalitu,
+predikci,
+motorické programy,
+jazyk,
+prostorově-časové vztahy.
+```
 
 
 ## 5.9 Nekomutativita a predictive processing
@@ -304,37 +392,51 @@ Predictive processing přirozeně pracuje s časovou strukturou.
 
 Pokud systém očekává:
 
-    A -> B,
+```
+A -> B,
+```
 
 pak sekvence:
 
-    A -> B
+```
+A -> B
+```
 
 může být dobře predikovatelná.
 
 Sekvence:
 
-    B -> A
+```
+B -> A
+```
 
 může vytvořit prediction error.
 
 To znamená, že interní model nemusí reprezentovat pouze pravděpodobnost
 jednotlivých událostí:
 
-    P(A),
-    P(B),
+```
+P(A),
+P(B),
+```
 
 ale také podmíněné vztahy:
 
-    P(B | A)
+```
+P(B | A)
+```
 
 a:
 
-    P(A | B).
+```
+P(A | B).
+```
 
 Obecně:
 
-    P(B | A) != P(A | B).
+```
+P(B | A) != P(A | B).
+```
 
 Časová asymetrie se tak stává součástí interního modelu světa.
 
@@ -345,15 +447,21 @@ Nekomutativita je úzce spojena s kauzalitou.
 
 Pokud:
 
-    A causes B,
+```
+A causes B,
+```
 
 pak sekvence:
 
-    A -> B
+```
+A -> B
+```
 
 má jiný význam než:
 
-    B -> A.
+```
+B -> A.
+```
 
 DPSH předpokládá, že vnitřní perceptuální stav musí být citlivý nejen na
 současné korelace, ale i na směrovost interakcí.
@@ -368,27 +476,39 @@ Musí být také kauzálně-časová.
 V komutativním systému může být výsledný stav převážně funkcí množiny
 vstupů:
 
-    S_final = F({A, B, C}).
+```
+S_final = F({A, B, C}).
+```
 
 V nekomutativním systému je vhodnější:
 
-    S_final = F(A -> B -> C).
+```
+S_final = F(A -> B -> C).
+```
 
 Sekvence:
 
-    A -> B -> C
+```
+A -> B -> C
+```
 
 vede po trajektorii:
 
-    S0 -> S1 -> S2 -> S3.
+```
+S0 -> S1 -> S2 -> S3.
+```
 
 Sekvence:
 
-    C -> B -> A
+```
+C -> B -> A
+```
 
 může vést:
 
-    S0 -> S1' -> S2' -> S3'.
+```
+S0 -> S1' -> S2' -> S3'.
+```
 
 DPSH proto považuje trajektorii stavovým prostorem za důležitější než
 samotný konečný bod.
@@ -398,29 +518,39 @@ samotný konečný bod.
 
 Nekomutativita vede k obecnější vlastnosti:
 
-    path dependence.
+```
+path dependence.
+```
 
 Stejný konečný senzorický vstup může být dosažen různými cestami:
 
-    path A
-        ->
-    input X
+```
+path A
+    ->
+input X
+```
 
 a:
 
-    path B
-        ->
-    input X.
+```
+path B
+    ->
+input X.
+```
 
 Pokud systém udržuje historii:
 
-    S_A != S_B,
+```
+S_A != S_B,
+```
 
 pak:
 
-    F(S_A, X)
-        !=
-    F(S_B, X).
+```
+F(S_A, X)
+    !=
+F(S_B, X).
+```
 
 Tím vzniká mechanismus, kterým předchozí zkušenost ovlivňuje současnou
 percepci.
@@ -432,21 +562,27 @@ Hystereze může být chápána jako makroskopický důsledek path dependence.
 
 Při změně:
 
-    A -> B
+```
+A -> B
+```
 
 může systém zůstat ve stavu `M_A` až do určitého threshold.
 
 Při opačném směru:
 
-    B -> A
+```
+B -> A
+```
 
 může být threshold jiný.
 
 Tedy:
 
-    threshold(A -> B)
-        !=
-    threshold(B -> A).
+```
+threshold(A -> B)
+    !=
+threshold(B -> A).
+```
 
 To ukazuje, že současný stav nelze určit pouze z aktuální hodnoty vstupu.
 
@@ -457,25 +593,33 @@ Záleží i na cestě, kterou systém prošel.
 
 Pokud percept odpovídá metastabilnímu dynamickému stavu:
 
-    M,
+```
+M,
+```
 
 pak cesta, kterou síť do `M` vstoupila, může ovlivnit jeho jemnou
 vnitřní strukturu.
 
 Můžeme tedy mít:
 
-    M_A^path1
+```
+M_A^path1
+```
 
 a:
 
-    M_A^path2
+```
+M_A^path2
+```
 
 které odpovídají podobnému makroskopickému perceptu, ale liší se v:
 
-    phase relations,
-    synaptic state,
-    local activation,
-    transition probabilities.
+```
+phase relations,
+synaptic state,
+local activation,
+transition probabilities.
+```
 
 To nabízí důležitou možnost:
 
@@ -490,35 +634,47 @@ V takovém systému se samotné pořadí stává nositelem informace.
 
 Například:
 
-    A -> B -> C
+```
+A -> B -> C
+```
 
 může reprezentovat jiný význam než:
 
-    A -> C -> B.
+```
+A -> C -> B.
+```
 
 Přestože množina událostí je stejná:
 
-    {A, B, C}.
+```
+{A, B, C}.
+```
 
 To je důležité pro jazyk.
 
 Sekvence slov:
 
-    pes kouše člověka
+```
+pes kouše člověka
+```
 
 není ekvivalentní:
 
-    člověka kouše pes
+```
+člověka kouše pes
+```
 
 ani v případě, že byly aktivovány velmi podobné konceptuální reprezentace.
 
 Stejný princip platí pro:
 
-    motoriku,
-    hudbu,
-    prostorové děje,
-    sociální interakce,
-    kauzální inference.
+```
+motoriku,
+hudbu,
+prostorové děje,
+sociální interakce,
+kauzální inference.
+```
 
 
 ## 5.16 Nekomutativita a časové kódování
@@ -528,17 +684,23 @@ firing rate.
 
 Dvě sekvence mohou mít:
 
-    same neurons,
-    same spike count,
-    same average firing rate,
+```
+same neurons,
+same spike count,
+same average firing rate,
+```
 
 ale rozdílné pořadí:
 
-    A -> B -> C
+```
+A -> B -> C
+```
 
 versus:
 
-    C -> B -> A.
+```
+C -> B -> A.
+```
 
 DPSH předpokládá, že takové sekvence mohou vytvářet odlišné interní
 stavy.
@@ -551,7 +713,9 @@ statistickou aktivitu a manipulovat pouze timingem.
 
 Představme si ambivalentní stav:
 
-    M_A ~ M_B.
+```
+M_A ~ M_B.
+```
 
 Malá událost `X` může posunout systém směrem k `M_A`.
 
@@ -559,13 +723,17 @@ Následná událost `Y` potom působí na již změněný stav.
 
 Sekvence:
 
-    X -> Y
+```
+X -> Y
+```
 
 může tedy stabilizovat `M_A`.
 
 Opačně:
 
-    Y -> X
+```
+Y -> X
+```
 
 může stabilizovat `M_B`.
 
@@ -583,9 +751,11 @@ Metastabilní stav má konečnou životnost.
 Pravděpodobnost jeho opuštění může záviset na sekvenci příchozích
 událostí:
 
-    P(M_A -> M_B | X -> Y)
-        !=
-    P(M_A -> M_B | Y -> X).
+```
+P(M_A -> M_B | X -> Y)
+    !=
+P(M_A -> M_B | Y -> X).
+```
 
 To znamená, že transition graph systému není pouze funkcí množiny
 stimulačních událostí.
@@ -598,22 +768,30 @@ Je funkcí časově uspořádaných sekvencí.
 Pro formální popis lze jednotlivým událostem nebo modulům přiřadit
 transformace:
 
-    T_A
-    T_B
-    T_C.
+```
+T_A
+T_B
+T_C.
+```
 
 Vývoj systému:
 
-    S' = T_C T_B T_A S.
+```
+S' = T_C T_B T_A S.
+```
 
 Pokud transformace nekomutují:
 
-    [T_A, T_B] != 0,
+```
+[T_A, T_B] != 0,
+```
 
 kde komutátor definujeme:
 
-    [T_A, T_B] =
-        T_A T_B - T_B T_A,
+```
+[T_A, T_B] =
+    T_A T_B - T_B T_A,
+```
 
 pak pořadí jejich aplikace mění stav.
 
@@ -632,19 +810,25 @@ intuitivně zajímavá.
 
 Není však nutné předpokládat:
 
-    quantum brain
+```
+quantum brain
+```
 
 ani:
 
-    quantum computation.
+```
+quantum computation.
+```
 
 Klasický dynamický systém s:
 
-    nonlinearity,
-    memory,
-    delays,
-    adaptation,
-    recurrence
+```
+nonlinearity,
+memory,
+delays,
+adaptation,
+recurrence
+```
 
 může být silně nekomutativní.
 
@@ -660,25 +844,31 @@ neuronální dynamiky.
 
 Pokud současný stav závisí na celé trajektorii:
 
-    S(t) = F(history),
+```
+S(t) = F(history),
+```
 
 pak zkušenost systému není pouze archivem minulých dat.
 
 Minulost je fyzicky zakódována v současném:
 
-    synaptic state,
-    membrane state,
-    phase state,
-    adaptation,
-    network trajectory.
+```
+synaptic state,
+membrane state,
+phase state,
+adaptation,
+network trajectory.
+```
 
 To vede k důležitému principu:
 
-    history
-        ->
-    current state
-        ->
-    interpretation of future input.
+```
+history
+    ->
+current state
+    ->
+interpretation of future input.
+```
 
 Vnitřní zkušenost tedy může být chápána jako stavová stopa předchozí
 interakce systému se světem.
@@ -690,26 +880,34 @@ Tento princip může později souviset také s intuitivním rozhodováním.
 
 Síť může během dlouhé zkušenosti projít velkým množstvím trajektorií:
 
-    experience
-        ->
-    plasticity
-        ->
-    learned state-space geometry.
+```
+experience
+    ->
+plasticity
+    ->
+learned state-space geometry.
+```
 
 Nový vstup potom může systém velmi rychle přesunout do oblasti:
 
-    M_A
+```
+M_A
+```
 
 bez potřeby explicitně rekonstruovat všechny předchozí kauzální kroky.
 
 Rozhodnutí:
 
-    action_A
+```
+action_A
+```
 
 tak může být výsledkem celé naučené dynamiky, přestože systém nemá
 globálně dostupnou explicitní reprezentaci:
 
-    "proč jsem zvolil A".
+```
+"proč jsem zvolil A".
+```
 
 V tomto smyslu může být intuitivní rozhodování makroskopickým důsledkem
 historicky utvářené nekomutativní dynamiky.
@@ -722,33 +920,45 @@ pouze jako množinu bodů.
 
 Je třeba zahrnout:
 
-    states
-    +
-    directed transitions
-    +
-    transition histories.
+```
+states
++
+directed transitions
++
+transition histories.
+```
 
 Formálně může být vhodnější:
 
-    M = (S, E)
+```
+M = (S, E)
+```
 
 kde:
 
-    S = set of perceptual states
+```
+S = set of perceptual states
+```
 
 a:
 
-    E = directed transitions.
+```
+E = directed transitions.
+```
 
 Přechod:
 
-    M_A -> M_B
+```
+M_A -> M_B
+```
 
 nemusí být ekvivalentní:
 
-    M_B -> M_A.
+```
+M_B -> M_A.
+```
 
-Manifold tedy získává směrovou strukturu.
+Perceptual Manifold tedy získává směrovou strukturu.
 
 
 ## 5.24 Časová geometrie
@@ -758,15 +968,19 @@ dvěma stavy nemusí být symetrická v čistě funkčním smyslu.
 
 Například:
 
-    cost(M_A -> M_B)
-        !=
-    cost(M_B -> M_A).
+```
+cost(M_A -> M_B)
+    !=
+cost(M_B -> M_A).
+```
 
 Stejně tak:
 
-    transition_probability(M_A -> M_B)
-        !=
-    transition_probability(M_B -> M_A).
+```
+transition_probability(M_A -> M_B)
+    !=
+transition_probability(M_B -> M_A).
+```
 
 Perceptual Manifold proto může mít nejen geometrii stavů, ale i
 dynamickou orientaci.
@@ -776,35 +990,47 @@ dynamickou orientaci.
 
 Základní experiment použije dvě události:
 
-    A
-    B.
+```
+A
+B.
+```
 
 Porovnáme:
 
-    A -> B
+```
+A -> B
+```
 
 a:
 
-    B -> A.
+```
+B -> A.
+```
 
 Kontrolujeme:
 
-    same inputs,
-    same duration,
-    same number of events,
-    same approximate firing rate,
-    same initial state distribution.
+```
+same inputs,
+same duration,
+same number of events,
+same approximate firing rate,
+same initial state distribution.
+```
 
 Měříme:
 
-    D(S_AB, S_BA),
-    trajectory divergence,
-    state separability,
-    later behavioral effect.
+```
+D(S_AB, S_BA),
+trajectory divergence,
+state separability,
+later behavioral effect.
+```
 
 Pokud:
 
-    D(S_AB, S_BA) ~ 0
+```
+D(S_AB, S_BA) ~ 0
+```
 
 pro všechny relevantní podmínky, silná verze hypotézy order dependence
 bude oslabena.
@@ -814,27 +1040,35 @@ bude oslabena.
 
 Pořadí zůstane:
 
-    A -> B,
+```
+A -> B,
+```
 
 ale budeme měnit:
 
-    Δt = t_B - t_A.
+```
+Δt = t_B - t_A.
+```
 
 Například:
 
-    -50 ms
-    -20 ms
-    -10 ms
-    -5 ms
-    0 ms
-    5 ms
-    10 ms
-    20 ms
-    50 ms.
+```
+-50 ms
+-20 ms
+-10 ms
+-5 ms
+0 ms
+5 ms
+10 ms
+20 ms
+50 ms.
+```
 
 Tím získáme funkci:
 
-    Q(Δt).
+```
+Q(Δt).
+```
 
 Pokud timing skutečně ovlivňuje dynamický stav, měla by existovat
 strukturovaná závislost na `Δt`.
@@ -844,22 +1078,28 @@ strukturovaná závislost na `Δt`.
 
 Vytvoříme dvě sekvence:
 
-    sequence 1:
-        A -> B -> C
+```
+sequence 1:
+    A -> B -> C
 
-    sequence 2:
-        C -> B -> A.
+sequence 2:
+    C -> B -> A.
+```
 
 Zajistíme co nejpodobnější:
 
-    neuron participation,
-    spike count,
-    mean firing rates,
-    stimulus energy.
+```
+neuron participation,
+spike count,
+mean firing rates,
+stimulus energy.
+```
 
 Manipulujeme pouze:
 
-    temporal order.
+```
+temporal order.
+```
 
 Pokud dekodér dokáže spolehlivě rozlišit výsledné interní stavy i po
 ukončení sekvence, máme evidence pro order-dependent representation.
@@ -869,19 +1109,25 @@ ukončení sekvence, máme evidence pro order-dependent representation.
 
 Použijeme:
 
-    A -> B -> ambiguous X
+```
+A -> B -> ambiguous X
+```
 
 a:
 
-    B -> A -> ambiguous X.
+```
+B -> A -> ambiguous X.
+```
 
 Samotný `X` je identický.
 
 Pokud:
 
-    P(Y_A | A -> B -> X)
-        !=
-    P(Y_A | B -> A -> X),
+```
+P(Y_A | A -> B -> X)
+    !=
+P(Y_A | B -> A -> X),
+```
 
 pak časová historie mění následnou interpretaci stejného stimulu.
 
@@ -892,25 +1138,33 @@ To propojuje nekomutativitu přímo s perceptuální funkcí.
 
 Síť budeme učit dvěma režimy:
 
-    training 1:
-        A -> B
+```
+training 1:
+    A -> B
 
-    training 2:
-        B -> A.
+training 2:
+    B -> A.
+```
 
 Po učení porovnáme:
 
-    W_AB
+```
+W_AB
+```
 
 a:
 
-    W_BA,
+```
+W_BA,
+```
 
 ale také:
 
-    spontaneous dynamics,
-    metastable state geometry,
-    response to incomplete inputs.
+```
+spontaneous dynamics,
+metastable state geometry,
+response to incomplete inputs.
+```
 
 Tím zjistíme, zda pořadí zkušeností mění nejen lokální synapse, ale
 globální stavový prostor.
@@ -923,17 +1177,21 @@ komutativní.
 
 Například:
 
-    aggregate all spikes in window
-        ->
-    calculate rate
-        ->
-    update state.
+```
+aggregate all spikes in window
+    ->
+calculate rate
+    ->
+update state.
+```
 
 Takový model může zachovat:
 
-    spike count,
-    average activity,
-    input identity,
+```
+spike count,
+average activity,
+input identity,
+```
 
 ale odstranit část timing information.
 
@@ -945,31 +1203,41 @@ structure poskytuje funkční výhodu.
 
 Pro dvě transformace můžeme definovat jednoduchou empirickou míru:
 
-    C(A,B,S) =
-        D(
-            T_B(T_A(S)),
-            T_A(T_B(S))
-        ).
+```
+C(A,B,S) =
+    D(
+        T_B(T_A(S)),
+        T_A(T_B(S))
+    ).
+```
 
 Pokud:
 
-    C ~ 0,
+```
+C ~ 0,
+```
 
 jsou transformace v daném stavu přibližně komutativní.
 
 Pokud:
 
-    C >> 0,
+```
+C >> 0,
+```
 
 pořadí má výrazný efekt.
 
 Důležité je, že:
 
-    C
+```
+C
+```
 
 může záviset na samotném stavu:
 
-    C = C(A,B,S).
+```
+C = C(A,B,S).
+```
 
 Síť tedy nemusí být globálně nekomutativní stejnou měrou.
 
@@ -981,21 +1249,27 @@ stavového prostoru.
 
 To umožňuje vytvořit mapu:
 
-    state-space region
-        ->
-    degree of noncommutativity.
+```
+state-space region
+    ->
+degree of noncommutativity.
+```
 
 Může se například ukázat, že:
 
-    stable trivial states
-        ->
-    low C
+```
+stable trivial states
+    ->
+low C
+```
 
 zatímco:
 
-    metastable perceptual regions
-        ->
-    high C.
+```
+metastable perceptual regions
+    ->
+high C.
+```
 
 Pokud by takový vztah existoval, bylo by to velmi zajímavé.
 
@@ -1043,15 +1317,19 @@ Silnější predikce zní:
 
 Hypotéza tedy nepředpokládá:
 
-    noncommutativity = consciousness.
+```
+noncommutativity = consciousness.
+```
 
 Tvrdí:
 
-    temporal order
-        ->
-    different state trajectory
-        ->
-    different internal representation.
+```
+temporal order
+    ->
+different state trajectory
+    ->
+different internal representation.
+```
 
 Tím se historie systému stává přímo součástí jeho současné
 perceptuální dynamiky.

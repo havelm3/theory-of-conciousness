@@ -37,6 +37,7 @@ Perceptual Manifold.
 Ten představuje průběžně existující strukturu interního stavového
 prostoru, ve které jsou jednotlivé perceptuální stavy vzájemně propojeny.
 
+
 ## 12.2 Perceptual Manifold není obraz
 
 Perceptual Manifold není chápán jako interní bitmapa nebo přesná kopie
@@ -73,6 +74,7 @@ než jako:
 reconstructed image.
 ```
 
+
 ## 12.3 Interní model není totožný s vnějším světem
 
 Perceptual Manifold není svět.
@@ -100,6 +102,7 @@ P(t) != World(t).
 `P(t)` je pouze stav, který umožňuje systému efektivně predikovat,
 interpretovat a ovlivňovat svět.
 
+
 ## 12.4 Funkční adekvátnost místo úplné rekonstrukce
 
 Interní model nemusí obsahovat všechny fyzikální vlastnosti prostředí.
@@ -126,6 +129,7 @@ Předpokládá:
 functionally adequate internal model.
 ```
 
+
 ## 12.5 Dynamická struktura
 
 Perceptual Manifold lze pracovně reprezentovat:
@@ -145,6 +149,7 @@ P(t) =
 Tento objekt není explicitně uložen na jednom místě.
 
 Je výsledkem společné dynamiky celé relevantní sítě.
+
 
 ## 12.6 Sdílený interní stav
 
@@ -168,6 +173,7 @@ v           v      v       v       v
 ```
 
 memory      action  value  language planning.
+
 
 ## 12.7 Projekce místo kopie
 
@@ -221,6 +227,7 @@ O_value =
 
 Různé moduly tedy čtou různé vlastnosti stejné interní dynamiky.
 
+
 ## 12.8 Jedna reprezentace, mnoho observables
 
 Tím vzniká analogie:
@@ -254,6 +261,7 @@ Nemusí existovat pět nezávislých světů.
 
 Může existovat jedna distribuovaná struktura s více funkčními projekcemi.
 
+
 ## 12.9 Perceptual Manifold jako referenční rámec
 
 Pokud více subsystémů používá stejný interní stav, mohou sdílet referenci.
@@ -273,6 +281,7 @@ language system:
 
 Všechny tyto operace mohou být ukotveny ve stejné relační struktuře.
 
+
 ## 12.10 Relační reprezentace
 
 DPSH proto předpokládá, že důležitější než izolované vlastnosti jsou
@@ -288,6 +297,7 @@ A predicts B.
 
 Perceptual Manifold může být bohatý právě tím, že uchovává síť těchto
 dynamických vztahů.
+
 
 ## 12.11 Prostor jako vztah
 
@@ -306,6 +316,7 @@ reachable.
 ```
 
 Globální prostorový percept může být emergentní geometrií těchto vztahů.
+
 
 ## 12.12 Čas jako vztah
 
@@ -326,6 +337,7 @@ phase relation.
 ```
 
 Perceptual Manifold je tedy prostorově-časový dynamický objekt.
+
 
 ## 12.13 Objekt jako stabilní trajektorie vztahů
 
@@ -348,6 +360,7 @@ identity_relation persists.
 
 Objekt může být chápán jako stabilní struktura uvnitř měnícího se
 manifold.
+
 
 ## 12.14 Vlastní tělo jako součást manifold
 
@@ -374,6 +387,7 @@ interoceptive state.
 
 To je důležité, protože akce mění budoucí senzorický vstup.
 
+
 ## 12.15 Egocentrický referenční rámec
 
 Část interního světa může být organizována vzhledem k organismu:
@@ -387,6 +401,7 @@ approaching me.
 Taková reprezentace není čistě objektivní mapa.
 
 Je funkčně vztažená k aktuálním možnostem systému.
+
 
 ## 12.16 Affordances
 
@@ -415,6 +430,7 @@ movable.
 Affordance může být projekcí stejného perceptuálního stavu do
 motorického systému.
 
+
 ## 12.17 Hodnota jako modulace manifold
 
 Hodnoticí systém může měnit dynamickou geometrii:
@@ -437,6 +453,7 @@ Hodnota tedy nemusí být pouze tag připojený k hotovému perceptu.
 
 Může přímo deformovat jeho dynamiku.
 
+
 ## 12.18 Emoční a interoceptivní stav
 
 Podobně může interní stav těla ovlivnit interpretaci stejného prostředí.
@@ -455,6 +472,7 @@ food-related states.
 
 Perceptual Manifold je proto potenciálně závislý nejen na externích
 senzorech, ale i na interních stavech organismu.
+
 
 ## 12.19 Kontext
 
@@ -488,6 +506,7 @@ Kontext není externí metadata.
 
 Je součástí současného dynamického stavu.
 
+
 ## 12.20 Kontextová deformace manifold
 
 Kontext může měnit:
@@ -509,6 +528,7 @@ a jiné:
 ```
 less likely.
 ```
+
 
 ## 12.21 Hierarchie manifoldů
 
@@ -538,6 +558,7 @@ se mohou propojit do širší:
 multimodal state.
 ```
 
+
 ## 12.22 Multimodální integrace
 
 Stejný objekt může generovat:
@@ -563,6 +584,7 @@ visual + audio + touch.
 
 Může obsahovat jejich společnou relační strukturu.
 
+
 ## 12.23 Cross-modal prediction
 
 Vizuální stav může predikovat zvuk:
@@ -582,6 +604,7 @@ orient visual system.
 ```
 
 Perceptual Manifold tak umožňuje predikce napříč modalitami.
+
 
 ## 12.24 Binding jako společná dynamická kompatibilita
 
@@ -609,6 +632,7 @@ M_object.
 
 Binding pak vzniká jako stabilní kompatibilita v rámci manifold.
 
+
 ## 12.25 Neslučitelné bindingy
 
 Pokud dvě vlastnosti nelze současně stabilizovat v jedné konfiguraci,
@@ -623,7 +647,8 @@ Symmetry breaking následně vybere jednu interpretaci.
 
 Tím se binding propojuje s předchozími mechanismy.
 
-## 12.26 Manifold jako prediktivní objekt
+
+## 12.26 Perceptual Manifold jako prediktivní objekt
 
 Perceptual Manifold nepopisuje pouze:
 
@@ -649,6 +674,7 @@ implicitně obsahuje:
 transition model.
 ```
 
+
 ## 12.27 Vnitřní svět jako generativní struktura
 
 Z aktuálního stavu:
@@ -666,6 +692,7 @@ predicted consequences of action.
 ```
 
 Vnitřní svět je tedy aktivní generativní model.
+
 
 ## 12.28 Counterfactual dynamics
 
@@ -689,12 +716,14 @@ expected state P_A'.
 
 To by umožňovalo plánování.
 
+
 ## 12.29 Simulace není nutná pro základní percept
 
 DPSH však nevyžaduje counterfactual simulation pro základní vznik
 perceptuálního stavu.
 
 Je to vyšší funkce, která může být nad manifold postavena později.
+
 
 ## 12.30 Akce mění vnitřní model
 
@@ -730,6 +759,7 @@ world
 new perception.
 ```
 
+
 ## 12.31 Aktivní percepce
 
 Systém nemusí pouze pasivně čekat na data.
@@ -744,6 +774,7 @@ approach object.
 
 Tím aktivně získává informace potřebné k stabilizaci interního modelu.
 
+
 ## 12.32 Perceptual Manifold a rozhodování
 
 Rozhodování může být chápáno jako výběr akce podle současného
@@ -757,6 +788,7 @@ action =
 Akční systém nemusí dostávat celý sensory stream.
 
 Může pracovat s projekcí manifold.
+
 
 ## 12.33 Intuitivní rozhodování
 
@@ -775,6 +807,7 @@ M_action_A.
 Akce může být vybrána bez explicitního výpočtu všech důvodů.
 
 Tím se intuice přirozeně propojuje s shared internal model.
+
 
 ## 12.34 Explicitní reasoning
 
@@ -798,6 +831,7 @@ Reasoning tedy nemusí být zdrojem základního perceptu.
 
 Může být mechanismem manipulace s již existujícím interním modelem.
 
+
 ## 12.35 Jazyk jako projekce vnitřního světa
 
 Jazykový systém může převádět části dynamického stavu do symbolů:
@@ -809,6 +843,7 @@ linguistic representation.
 ```
 
 Tím získává možnost reportovat obsah perceptu.
+
 
 ## 12.36 Symbol není percept
 
@@ -828,6 +863,7 @@ Je pouze jednou projekcí tohoto stavu.
 
 To vysvětluje, proč interní reprezentace může obsahovat výrazně více
 informací než slovní report.
+
 
 ## 12.37 Paměť jako vazba na minulý manifold
 
@@ -849,6 +885,7 @@ current manifold.
 
 Vzpomínka tak může znovu aktivovat části dřívější dynamické struktury.
 
+
 ## 12.38 Vzpomínka není nutně přesná rekonstrukce
 
 Protože současný stav:
@@ -864,6 +901,7 @@ reconstructive.
 ```
 
 Vzpomínka může být ovlivněna aktuálním kontextem.
+
 
 ## 12.39 Perceptual Manifold jako pracovní prostor zkušenosti
 
@@ -881,6 +919,7 @@ action possibilities.
 Neznamená to, že jde o jednu anatomickou oblast.
 
 Je to distribuovaná dynamická struktura.
+
 
 ## 12.40 Rozdíl proti Global Workspace
 
@@ -910,6 +949,7 @@ Global Workspace
 distributed access.
 ```
 
+
 ## 12.41 Workspace nemusí přenášet celý manifold
 
 Globální broadcast může obsahovat pouze relevantní část:
@@ -925,6 +965,7 @@ Například:
 ```
 
 Celý interní prostorový model nemusí být globálně rozeslán.
+
 
 ## 12.42 Workspace může manifold zpětně měnit
 
@@ -951,6 +992,7 @@ Vzniká:
 P <-> W.
 ```
 
+
 ## 12.43 Perceptual Manifold a kontinuita subjektu
 
 Silnější, zatím teoretická možnost je, že kontinuita subjektivní
@@ -970,6 +1012,7 @@ P(t - dt).
 
 Tím vzniká nepřerušená kauzální trajektorie interního světa.
 
+
 ## 12.44 "Stejný svět" jako dynamická invariance
 
 Přestože:
@@ -988,6 +1031,7 @@ same self.
 
 Kontinuita zkušenosti může tedy existovat na makroskopické úrovni
 navzdory neustálé mikroskopické změně.
+
 
 ## 12.45 Interní perspektiva
 
@@ -1017,6 +1061,7 @@ spíše než:
 world-in-itself.
 ```
 
+
 ## 12.46 Totožnost reprezentace napříč moduly
 
 Pokud více modulů pracuje nad stejným stavem, lze testovat, zda různé
@@ -1038,6 +1083,7 @@ value response.
 ```
 
 To poskytuje experimentální test sdíleného interního modelu.
+
 
 ## 12.47 Experiment PM1 – společný latentní stav
 
@@ -1061,6 +1107,7 @@ predict next state.
 Testujeme, zda lze jejich výsledky vysvětlit projekcemi stejného
 latentního stavu.
 
+
 ## 12.48 Experiment PM2 – shared-state perturbation
 
 Perturbujeme oblast:
@@ -1080,6 +1127,7 @@ prediction.
 
 Pokud změní pouze jeden izolovaný modul, může jít spíše o lokální
 reprezentaci.
+
 
 ## 12.49 Experiment PM3 – cross-modal completion
 
@@ -1103,11 +1151,12 @@ corresponding sound.
 
 To by podporovalo existenci integrované multimodální reprezentace.
 
+
 ## 12.50 Experiment PM4 – occluded object
 
 Objekt se pohybuje a následně je zakryt.
 
-Manifold má udržovat:
+Perceptual Manifold má udržovat:
 
 ```
 identity,
@@ -1125,6 +1174,7 @@ report
 
 i bez aktuálního vizuálního inputu.
 
+
 ## 12.51 Experiment PM5 – conflicting modalities
 
 Vizuální a auditivní kanál dostanou neslučitelné informace.
@@ -1139,6 +1189,7 @@ workspace access.
 ```
 
 Tím lze testovat, jak manifold řeší multimodální konflikt.
+
 
 ## 12.52 Experiment PM6 – module removal
 
@@ -1158,6 +1209,7 @@ prediction.
 
 To pomůže oddělit interní stav od jeho konkrétních projekcí.
 
+
 ## 12.53 Experiment PM7 – sensory modality removal
 
 Po multimodálním učení odstraníme:
@@ -1174,6 +1226,7 @@ audio.
 
 Sledujeme, zda zbývající modalita dokáže aktivovat část společného
 manifold.
+
 
 ## 12.54 Experiment PM8 – context-dependent interpretation
 
@@ -1200,6 +1253,7 @@ M_XB.
 Pokud manifold skutečně integruje kontext, stavy by se měly lišit i při
 stejném lokálním vstupu.
 
+
 ## 12.55 Experiment PM9 – action-dependent perception
 
 Síť provede akci:
@@ -1224,6 +1278,7 @@ P(t + dt)
 
 zachovává objektovou a prostorovou kontinuitu.
 
+
 ## 12.56 Experiment PM10 – counterfactual planning
 
 Pozdější rozšíření:
@@ -1243,6 +1298,7 @@ P_B'.
 Pokud lze tyto stavy použít k výběru akce, manifold funguje také jako
 základ generativního plánování.
 
+
 ## 12.57 Experiment PM11 – shared latent decoder
 
 Vytrénujeme několik jednoduchých decoderů nad stejným population state:
@@ -1257,6 +1313,7 @@ decoder_action.
 Pokud všechny používají společnou latentní strukturu, měly by být
 schopny získat relevantní informace bez samostatné rekonstrukce
 senzorických dat.
+
 
 ## 12.58 Experiment PM12 – causal projection test
 
@@ -1276,6 +1333,7 @@ predicted movement.
 
 To testuje, zda moduly skutečně sdílejí stejnou referenční strukturu.
 
+
 ## 12.59 Metrika integrace
 
 Pro množinu modulů:
@@ -1293,6 +1351,7 @@ P(t).
 Vyšší společná prediktivní informace může indikovat sdílenou latentní
 reprezentaci.
 
+
 ## 12.60 Metrika cross-modal consistency
 
 Pro objekt reprezentovaný více modalitami měříme:
@@ -1306,6 +1365,7 @@ consistency(
 ```
 
 Integrovaný manifold by měl vytvářet vzájemně kompatibilní projekce.
+
 
 ## 12.61 Metrika continuity under sensor transformation
 
@@ -1327,6 +1387,7 @@ same macrostate family.
 
 Tím testujeme dynamickou invarianci.
 
+
 ## 12.62 Metrika shared causal impact
 
 Perturbujeme latentní stav.
@@ -1342,6 +1403,7 @@ Měříme změnu více modulů:
 
 Pokud jedna perturbace konzistentně ovlivní více funkcí, podporuje to
 hypotézu sdíleného interního modelu.
+
 
 ## 12.63 Falsifikační kritéria
 
@@ -1363,6 +1425,7 @@ Hypotéza sdíleného Perceptual Manifold bude oslabena, pokud:
 V takovém případě by pojem Perceptual Manifold musel být omezen na
 deskriptivní state-space analýzu místo funkčního sdíleného interního
 modelu.
+
 
 ## 12.64 Výzkumná hypotéza kapitoly
 

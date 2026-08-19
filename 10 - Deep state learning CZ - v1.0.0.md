@@ -52,6 +52,7 @@ predictive structure.
 Pracovní termín **Deep State Learning** označuje právě tuto druhou
 úroveň učení.
 
+
 ## 10.2 Co znamená Deep State Learning
 
 Deep State Learning zde neoznačuje hlubokou neuronovou síť ve smyslu
@@ -87,6 +88,7 @@ local plasticity
     ->
 modified future trajectories.
 ```
+
 
 ## 10.3 Učení jako změna dynamické geometrie
 
@@ -133,6 +135,7 @@ Učení lze tedy interpretovat jako deformaci:
 Ω_after.
 ```
 
+
 ## 10.4 Zkušenost mění budoucí možnosti
 
 Pokud systém opakovaně zažívá sekvenci:
@@ -175,6 +178,7 @@ Zkušenost tak mění:
 future possibilities.
 ```
 
+
 ## 10.5 Lokální plasticita
 
 DPSH preferuje mechanismy, které mohou být realizovány lokálně.
@@ -214,6 +218,7 @@ Obecně:
     ).
 ```
 
+
 ## 10.6 STDP jako základní časově citlivý mechanismus
 
 Spike-timing-dependent plasticity umožňuje:
@@ -252,6 +257,7 @@ V rámci DPSH však STDP není samo o sobě cílem.
 Je jedním z mechanismů, kterým se časová organizace může zapisovat do
 budoucí dynamiky sítě.
 
+
 ## 10.7 Fáze jako modulátor učení
 
 Pokud spike timing závisí na lokální oscilaci, pak:
@@ -277,6 +283,7 @@ Silnější model může obsahovat přímo:
 
 To znamená, že stejná dvojice spikeů nemusí mít stejný learning effect
 v různých dynamických kontextech.
+
 
 ## 10.8 Zpoždění jako učitelná časová struktura
 
@@ -309,6 +316,7 @@ connectivity
 effective timing.
 ```
 
+
 ## 10.9 Učení časové topologie
 
 Po opakované zkušenosti může vzniknout:
@@ -335,6 +343,7 @@ Ta určuje:
 when information can efficiently propagate.
 ```
 
+
 ## 10.10 Recurrence jako objekt učení
 
 V rekurentní síti nemění plasticita pouze průchod informace dopředu.
@@ -349,6 +358,7 @@ metastability.
 ```
 
 Malá lokální změna může proto postupně změnit globální dynamický režim.
+
 
 ## 10.11 Učení metastabilního stavu
 
@@ -375,6 +385,7 @@ lifetime(M_A) increases.
 Učení tedy může stabilizovat perceptuální oblast, aniž ji nutně změnilo
 na permanentní attractor.
 
+
 ## 10.12 Učení hranic mezi stavy
 
 Stejně důležité jako stabilita samotného stavu jsou hranice mezi:
@@ -394,6 +405,7 @@ perturbation sensitivity.
 
 Zkušenost tak může měnit způsob, jakým systém rozlišuje mezi podobnými
 percepty.
+
 
 ## 10.13 Učení jako vytváření preference
 
@@ -422,6 +434,7 @@ P(M_C | M_A) low.
 ```
 
 Systém se tím učí statistickou strukturu prostředí.
+
 
 ## 10.14 Učení a predictive processing
 
@@ -454,6 +467,7 @@ plasticity_gain =
     F(prediction_error).
 ```
 
+
 ## 10.15 Prediction error jako učící omezení
 
 Důležité je nepředpokládat:
@@ -474,6 +488,7 @@ increased local plasticity.
 ```
 
 Globální zlepšení modelu potom vzniká z mnoha takových lokálních změn.
+
 
 ## 10.16 Učení interního modelu
 
@@ -507,6 +522,7 @@ může být oslabena.
 
 Interní generativní model se tak zapisuje do dynamiky manifold.
 
+
 ## 10.17 Spontánní aktivita jako interní training signal
 
 Zvláštní část DPSH je hypotéza, že učení nemusí probíhat pouze při
@@ -537,6 +553,7 @@ trajektorie mohou dále měnit:
 W.
 ```
 
+
 ## 10.18 Ongoing learning
 
 Tím vzniká mechanismus:
@@ -561,6 +578,7 @@ ongoing learning.
 
 Je jednou z nejsilnějších částí Deep State Learning hypotézy.
 
+
 ## 10.19 Reaktivace bez externího teacheru
 
 Při spontaneous replay systém nemá nový externí teaching signal.
@@ -581,6 +599,7 @@ consolidation
 
 bez nové zkušenosti.
 
+
 ## 10.20 Konsolidace
 
 Užitečný režim může vypadat:
@@ -598,6 +617,7 @@ strengthened useful transitions.
 ```
 
 Tím se krátkodobě vzniklá struktura může stát stabilnější.
+
 
 ## 10.21 Generalizace
 
@@ -630,6 +650,7 @@ mohou postupně vytvořit širší:
 M_A.
 ```
 
+
 ## 10.22 Nebezpečí self-reinforcement
 
 Stejný mechanismus však může mít opačný důsledek.
@@ -656,6 +677,7 @@ self-reinforcement.
 
 Systém může zesilovat vlastní chyby.
 
+
 ## 10.23 Interní halucinace jako learning failure
 
 Extrémní případ:
@@ -674,6 +696,7 @@ Bez dostatečného externího constraintu může síť vytvořit interní
 struktury, které nejsou podloženy prostředím.
 
 Deep State Learning proto potřebuje mechanismus kontroly.
+
 
 ## 10.24 Senzorická evidence jako korekce učení
 
@@ -701,6 +724,7 @@ internal learning
 external validation.
 ```
 
+
 ## 10.25 Learning gate
 
 Jednou z možností je modulovat, kdy je plasticita povolena.
@@ -719,6 +743,7 @@ plasticity =
 ```
 
 Ne každý spike tedy musí automaticky měnit synapsi.
+
 
 ## 10.26 Consolidation gate
 
@@ -744,6 +769,7 @@ To může být později experimentálně porovnáno s:
 always-on plasticity.
 ```
 
+
 ## 10.27 Homeostatická plasticita
 
 Aby síť nekonvergovala k extrémním vahám, může potřebovat homeostatické
@@ -760,6 +786,7 @@ inhibitory balancing.
 Homeostáza není v DPSH hlavním principem vědomí.
 
 Může však být nezbytným stabilizačním mechanismem výzkumné architektury.
+
 
 ## 10.28 Plasticita excitace a inhibice
 
@@ -785,6 +812,7 @@ a:
 ```
 inhibitory plasticity.
 ```
+
 
 ## 10.29 Učení oscilatorické organizace
 
@@ -814,6 +842,7 @@ learning.
 
 Vzniká obousměrná vazba.
 
+
 ## 10.30 Učení fázové geometrie
 
 Pro lokální oscilátory:
@@ -838,6 +867,7 @@ Učení tak nemusí vytvářet pouze neuronální assemblies.
 
 Může vytvářet preferované fázové vztahy mezi nimi.
 
+
 ## 10.31 Učení dynamického routingu
 
 Pokud communication efficiency závisí na relativní fázi:
@@ -856,6 +886,7 @@ tak, aby některé komunikační cesty byly snadněji dostupné.
 
 Výsledkem je naučený dynamický routing.
 
+
 ## 10.32 Deep State Learning a nekomutativita
 
 Protože pořadí událostí mění plasticitu:
@@ -873,6 +904,7 @@ Výsledná dynamika proto obsahuje historii zkušenosti.
 Deep State Learning není pouze statistika výskytu.
 
 Je také statistikou pořadí.
+
 
 ## 10.33 Deep State Learning a hystereze
 
@@ -897,6 +929,7 @@ harder to leave.
 
 Učení se tak může projevit jako změna dynamické setrvačnosti perceptu.
 
+
 ## 10.34 Deep State Learning a intuition
 
 Po dlouhém učení může být cesta:
@@ -912,6 +945,7 @@ rekonstrukce všech naučených pravidel.
 
 Takový mechanismus může poskytovat funkční základ intuitivního
 rozhodování.
+
 
 ## 10.35 Explicitní znalost versus implicitní geometrie
 
@@ -932,6 +966,7 @@ geometry causes:
 Druhá forma nemusí být přímo dostupná pro symbolický report.
 
 Přesto může ovlivnit rozhodování.
+
 
 ## 10.36 Učení Global Workspace přístupu
 
@@ -954,6 +989,7 @@ mohou častěji získat globální dostupnost.
 
 Tato část však patří do další kapitoly.
 
+
 ## 10.37 Více časových škál učení
 
 Synaptické změny mohou mít různé časové konstanty.
@@ -971,6 +1007,7 @@ long-term state-space geometry.
 ```
 
 DPSH umožňuje existenci více learning timescales.
+
 
 ## 10.38 Krátkodobá plastická stopa
 
@@ -991,6 +1028,7 @@ transition probability.
 To poskytuje další mechanismus mezi čistou aktivitou a dlouhodobou
 pamětí.
 
+
 ## 10.39 Dlouhodobé učení
 
 Opakovaně potvrzené vztahy mohou přecházet do:
@@ -1001,6 +1039,7 @@ Opakovaně potvrzené vztahy mohou přecházet do:
 
 Tím se zkušenost postupně stává součástí dlouhodobé geometrie
 Perceptual Manifold.
+
 
 ## 10.40 Konsolidace mezi časovými škálami
 
@@ -1026,6 +1065,7 @@ postupně převést na:
 persistent future bias.
 ```
 
+
 ## 10.41 Deep State Learning není backpropagation requirement
 
 DPSH nevyžaduje, aby se síť učila pomocí globálního backpropagation.
@@ -1044,6 +1084,7 @@ To je experimentální předpoklad, nikoli dogma.
 
 Pokud lokální mechanismy nebudou postačovat, bude nutné hypotézu
 revidovat.
+
 
 ## 10.42 Controller versus lokální učení
 
@@ -1074,6 +1115,7 @@ plasticity gain.
 
 Samotná synaptická změna však může zůstat lokální.
 
+
 ## 10.43 Interní relevance
 
 Ne všechny zkušenosti musí mít stejnou learning strength.
@@ -1101,6 +1143,7 @@ learning_rate =
     F(relevance).
 ```
 
+
 ## 10.44 Učení bez vědomého přístupu
 
 Pokud lokální dynamika může měnit synapse před vstupem do Global
@@ -1112,6 +1155,7 @@ implicit learning.
 
 Systém se tedy může učit strukturu prostředí, aniž je celý learning
 proces globálně dostupný.
+
 
 ## 10.45 Vědomé učení jako modulovaný režim
 
@@ -1137,6 +1181,7 @@ a:
 globally modulated learning.
 ```
 
+
 ## 10.46 Co přesně se má v Cognia měřit
 
 Nestačí sledovat:
@@ -1160,6 +1205,7 @@ prediction accuracy,
 generalization,
 representational drift.
 ```
+
 
 ## 10.47 Experiment D1 – state-space before/after learning
 
@@ -1187,6 +1233,7 @@ state stability.
 ```
 
 Pokud učení probíhá na úrovni dynamiky, změna musí být pozorovatelná.
+
 
 ## 10.48 Experiment D2 – sequence learning
 
@@ -1216,6 +1263,7 @@ A -> C -> B
 
 by měla mít nižší pravděpodobnost, pokud nebyla naučena.
 
+
 ## 10.49 Experiment D3 – timing-dependent learning
 
 Použijeme stejné události, ale různé pořadí:
@@ -1239,6 +1287,7 @@ future prediction.
 ```
 
 Tím testujeme, zda se nekomutativní zkušenost zapisuje do dynamiky.
+
 
 ## 10.50 Experiment D4 – phase-dependent learning
 
@@ -1264,6 +1313,7 @@ transition geometry.
 
 Pokud fáze organizuje učení, rozdíl musí být měřitelný.
 
+
 ## 10.51 Experiment D5 – learning with plasticity OFF
 
 Kontrolní síť:
@@ -1279,6 +1329,7 @@ plasticity ON.
 ```
 
 Pokud se manifold nemění, learning hypothesis selhává.
+
 
 ## 10.52 Experiment D6 – STDP versus rate-based plasticity
 
@@ -1304,6 +1355,7 @@ metastability.
 ```
 
 Tím zjistíme, zda timing-sensitive plasticity přidává něco specifického.
+
 
 ## 10.53 Experiment D7 – spontaneous replay
 
@@ -1331,6 +1383,7 @@ Měříme:
 ```
 spontaneous/evoked similarity.
 ```
+
 
 ## 10.54 Experiment D8 – plasticity during replay
 
@@ -1361,6 +1414,7 @@ state geometry.
 
 To je klíčový test ongoing learning.
 
+
 ## 10.55 Experiment D9 – silent control
 
 Třetí varianta:
@@ -1390,6 +1444,7 @@ od:
 effect of learning during spontaneous dynamics.
 ```
 
+
 ## 10.56 Experiment D10 – held-out generalization
 
 Po spontaneous learning nesmíme testovat pouze známé patterny.
@@ -1415,6 +1470,7 @@ held-out performance decreases,
 může jít o self-reinforcing memorization místo skutečného zlepšení
 interního modelu.
 
+
 ## 10.57 Experiment D11 – self-reinforcement test
 
 Do sítě záměrně vložíme malou chybnou interní asociaci:
@@ -1435,6 +1491,7 @@ amplifies.
 
 To je přímý test stability Deep State Learning.
 
+
 ## 10.58 Experiment D12 – external correction
 
 Po zesílení interní chybné asociace prezentujeme opakovaně správnou
@@ -1452,6 +1509,7 @@ restore correct transition.
 ```
 
 Tím testujeme schopnost systému korigovat vlastní chyby.
+
 
 ## 10.59 Experiment D13 – consolidation gate
 
@@ -1476,6 +1534,7 @@ generalization.
 ```
 
 To může ukázat, zda ongoing learning potřebuje řízení.
+
 
 ## 10.60 Experiment D14 – learning-rate sweep
 
@@ -1503,6 +1562,7 @@ Hledáme oblast:
 η*.
 ```
 
+
 ## 10.61 Experiment D15 – stochasticity × plasticity
 
 Testujeme mřížku:
@@ -1523,6 +1583,7 @@ vede k nejlepší generalizaci.
 
 Tím přímo propojujeme stochasticitu s Deep State Learning.
 
+
 ## 10.62 Experiment D16 – oscillator × plasticity
 
 Podobně:
@@ -1542,6 +1603,7 @@ learned temporal geometry.
 Pokud phase organization skutečně strukturuje learning, interakční efekt
 musí být měřitelný.
 
+
 ## 10.63 Experiment D17 – delay learning
 
 Pokud Cognia umožní adaptivní delays, sledujeme:
@@ -1555,6 +1617,7 @@ Testujeme, zda se síť učí časově kompatibilní cesty.
 
 Pokud delays nejsou učitelné, lze alespoň testovat selekci vah podle
 fixních delays.
+
 
 ## 10.64 Experiment D18 – basin deformation
 
@@ -1586,6 +1649,7 @@ entry probability.
 
 Tím přímo testujeme metaforu "učení jako deformace krajiny".
 
+
 ## 10.65 Experiment D19 – hysteresis after learning
 
 Změříme:
@@ -1608,6 +1672,7 @@ hysteresis width.
 
 To propojuje Deep State Learning s kontinuitou.
 
+
 ## 10.66 Experiment D20 – dynamic routing after learning
 
 Měříme effective connectivity:
@@ -1620,6 +1685,7 @@ před učením a po něm.
 
 Pokud se naučily fázové vztahy, mohou vzniknout nové preferované
 komunikační cesty bez změny hrubé anatomické topologie.
+
 
 ## 10.67 Metrika změny manifold
 
@@ -1643,6 +1709,7 @@ transition matrix,
 dwell times,
 phase geometry.
 ```
+
 
 ## 10.68 Metrika spontaneous/evoked similarity
 
@@ -1676,6 +1743,7 @@ R_replay =
 
 Vyšší hodnota po učení podporuje reaktivaci naučené dynamiky.
 
+
 ## 10.69 Metrika generalizace
 
 Nejdůležitější ochrana proti self-reinforcement:
@@ -1688,6 +1756,7 @@ G =
 Deep State Learning je užitečný pouze tehdy, pokud nezvyšuje jen
 interní confidence, ale zachovává nebo zlepšuje schopnost reagovat na
 novou zkušenost.
+
 
 ## 10.70 Metrika representational drift
 
@@ -1710,6 +1779,7 @@ D -> large
 
 může znamenat rozpad reprezentace.
 
+
 ## 10.71 Stability-plasticity dilemma
 
 Systém musí řešit konflikt:
@@ -1729,6 +1799,7 @@ lokální modulace plasticity mohou poskytovat mechanismy tohoto kompromisu.
 
 To však musí být experimentálně ověřeno.
 
+
 ## 10.72 Co by bylo nejsilnějším výsledkem
 
 Velmi silný výsledek by byl:
@@ -1746,7 +1817,8 @@ Takový výsledek by byl mnohem silnější než prosté:
 network remembers stimulus.
 ```
 
-## 10.73 Co by hypotézu oslabilo
+
+## 10.73 Falsifikační kritéria
 
 Deep State Learning hypotéza bude oslabena, pokud:
 
@@ -1761,6 +1833,7 @@ Deep State Learning hypotéza bude oslabena, pokud:
 7. timing, phase a delays nejsou pro learning relevantní,
 8. všechny potřebné vlastnosti lze vysvětlit explicitní pamětí a
    supervised mappingem bez dynamického state-space learningu.
+
 
 ## 10.74 Deep State Learning jako samostatně falsifikovatelná část
 
@@ -1780,6 +1853,7 @@ spontaneous ongoing learning is not beneficial.
 
 Proto musí být tato hypotéza testována samostatně.
 
+
 ## 10.75 Vztah k fenomenálnímu prožitku
 
 Ani úspěšné Deep State Learning neprokazuje vznik qualia.
@@ -1792,6 +1866,7 @@ Ukazovalo by však důležitou vlastnost:
 To by posílilo funkční model kontinuální interní zkušenosti.
 
 Fenomenální interpretace však zůstává samostatnou hypotézou.
+
 
 ## 10.76 Požadavky na Cognia
 
@@ -1812,6 +1887,7 @@ Pro testování Deep State Learning musí Cognia umožnit minimálně:
 13. held-out testy,
 14. možnost měřit representational drift,
 15. možnost řídit learning gate externím nebo interním modulátorem.
+
 
 ## 10.77 Výzkumná hypotéza kapitoly
 
