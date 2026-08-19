@@ -1,6 +1,7 @@
 # 1. Úvod do DPSH
 
 > **Hypotéza dynamického perceptuálního stavu**
+>
 > *Dynamic Perceptual State Hypothesis (DPSH)*
 
 ## 1.1 Problém vzniku vjemu
