@@ -1,5 +1,7 @@
 # 2. Formální model dynamického neuronálního systému
 
+**Applies to:** dpsh
+
 ## 2.1 Základní předpoklad
 
 Dynamic Perceptual State Hypothesis nepovažuje neuronální síť primárně

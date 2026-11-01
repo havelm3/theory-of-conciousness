@@ -1,5 +1,7 @@
 # 10. Učení dynamiky a Deep State Learning
 
+**Applies to:** dpsh
+
 ## 10.1 Učení není pouze mapování vstupu na výstup
 
 V běžném strojovém učení je cílem často nalézt transformaci:

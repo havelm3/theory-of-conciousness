@@ -1,5 +1,7 @@
 # 8. Hystereze a kontinuita vnitřního světa
 
+**Applies to:** dpsh
+
 ## 8.1 Vnitřní stav nezačíná znovu
 
 Dynamic Perceptual State Hypothesis předpokládá, že percepční systém

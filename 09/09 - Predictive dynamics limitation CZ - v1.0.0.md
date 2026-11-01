@@ -1,5 +1,7 @@
 # 9. Prediktivní omezení dynamiky
 
+**Applies to:** dpsh
+
 ## 9.1 Problém volné vnitřní dynamiky
 
 Předchozí kapitoly předpokládají systém, který je:

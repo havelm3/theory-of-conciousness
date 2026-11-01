@@ -1,5 +1,7 @@
 # 11. Global Workspace a globální dostupnost perceptu
 
+**Applies to:** dpsh
+
 ## 11.1 Vznik perceptu není totéž jako globální dostupnost
 
 Dynamic Perceptual State Hypothesis rozlišuje dvě odlišné otázky:

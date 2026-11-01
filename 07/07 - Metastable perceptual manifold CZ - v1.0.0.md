@@ -1,5 +1,7 @@
 # 7. Metastabilní Perceptual Manifold
 
+**Applies to:** dpsh
+
 ## 7.1 Od výběru stavu k jeho existenci
 
 Předchozí kapitoly popsaly mechanismy, které mohou umožnit vznik

@@ -1,5 +1,7 @@
 # 4. Endogenní oscilátory jako časová struktura
 
+**Applies to:** dpsh
+
 ## 4.1 Čas uvnitř sítě
 
 Dynamic Perceptual State Hypothesis rozlišuje mezi dvěma principiálně

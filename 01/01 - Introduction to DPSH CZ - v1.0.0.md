@@ -1,5 +1,7 @@
 # 1. Úvod do DPSH
 
+**Applies to:** dpsh
+
 > **Hypotéza dynamického perceptuálního stavu**
 >
 > *Dynamic Perceptual State Hypothesis (DPSH)*

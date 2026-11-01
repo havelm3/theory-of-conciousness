@@ -1,5 +1,7 @@
 # 13. Fenomenální stav a qualia
 
+**Applies to:** dpsh
+
 ## 13.1 Nejtěžší část hypotézy
 
 Předchozí kapitoly formulovaly mechanistický model, který je alespoň

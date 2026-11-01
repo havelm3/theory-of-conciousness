@@ -1,5 +1,7 @@
 # 6. Samoorganizace a spontánní narušení symetrie
 
+**Applies to:** dpsh
+
 ## 6.1 Od lokální aktivity ke globálnímu stavu
 
 Dynamic Perceptual State Hypothesis předpokládá, že koherentní

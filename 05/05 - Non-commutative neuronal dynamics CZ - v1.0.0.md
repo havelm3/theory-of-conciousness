@@ -1,5 +1,7 @@
 # 5. Nekomutativní neuronální dynamika
 
+**Applies to:** dpsh
+
 ## 5.1 Proč záleží na pořadí
 
 Jedním z hlavních důsledků globálně netaktované, stavové a časově

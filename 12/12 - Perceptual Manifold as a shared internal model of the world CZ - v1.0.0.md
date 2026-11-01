@@ -1,5 +1,7 @@
 # 12. Perceptual Manifold jako sdílený interní model světa
 
+**Applies to:** dpsh
+
 ## 12.1 Od jednotlivého perceptu k vnitřnímu světu
 
 Předchozí kapitoly pracovaly převážně s jednotlivými metastabilními

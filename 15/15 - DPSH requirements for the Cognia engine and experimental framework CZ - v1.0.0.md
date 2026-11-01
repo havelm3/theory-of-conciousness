@@ -1,5 +1,7 @@
 # 15. Požadavky DPSH na Cognia engine a experimentální framework
 
+**Applies to:** dpsh
+
 ## 15.1 Účel této kapitoly
 
 Dynamic Perceptual State Hypothesis je experimentální hypotéza.

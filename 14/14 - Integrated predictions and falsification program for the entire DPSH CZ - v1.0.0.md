@@ -1,5 +1,7 @@
 # 14. Integrované predikce a falsifikační program celé DPSH
 
+**Applies to:** dpsh
+
 ## 14.1 Účel integrační kapitoly
 
 Předchozí kapitoly formulovaly jednotlivé mechanismy Dynamic Perceptual

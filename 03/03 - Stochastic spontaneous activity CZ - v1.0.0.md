@@ -1,5 +1,7 @@
 # 3. Spontánní stochastická aktivita
 
+**Applies to:** dpsh
+
 ## 3.1 Aktivní síť bez vnějšího vstupu
 
 Jedním ze základních předpokladů Dynamic Perceptual State Hypothesis
